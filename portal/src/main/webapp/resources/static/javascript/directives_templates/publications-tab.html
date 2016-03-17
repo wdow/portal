@@ -1,0 +1,43 @@
+<div class=" ui-view-container  well " >
+
+<div class="panel panel-info">
+  <div class="panel-heading"> <h4>Publications</h4></div>
+  <div class="panel-body">
+        
+     
+        <uib-accordion>
+            <uib-accordion-group heading='Papers' is-open="true">
+                <br>
+                <ul>
+                    <li ng-repeat="paper in papers"><a class="link" href="resources/static/papers/{{paper.link}}.pdf">{{paper.title}}</a>
+                    <br/>
+                    <strong>Authors :</strong> {{paper.author}}
+                    
+<!--                     <li><a class="link" href="resources/static/papers/RSnelickNIST1.pdf">Dynamically Generating Conformance Tests for Messaging Systems</a></li> -->
+<!--                   
+  R. Snelick, L. Gebase, S. Henrard. Published in the 2006 Software Engineering Research and Practice (SERP06) conference proceedings (Editor: H.R. Arabnia), WORLDCOMP 06 June 26-29, 2006, Las Vegas, Nevada. -->
+                <br/> <strong>KeyWords :</strong> {{paper.keywords}}
+                </li>
+                </ul>
+      
+            </uib-accordion-group>
+            <uib-accordion-group heading='Presentations'>
+                <br>
+                <ul>
+                    <li><a class="link" href="resources/static/slides/IESA07.ppt">The HL7 Conformance Profile Approach</a></li>
+                    <br>
+                    <li><a class="link" href="resources/static/slides/MM_guide.ppt">Guide to Using Message Maker</a></li>
+                    <br>
+                    <li><a class="link" href="resources/static/slides/Design.ppt">Message Maker Overview</a></li>
+                    <br>
+                    <li><a class="link" href="resources/static/slides/HL7_conf_MessageMaker.ppt">HL7 Conformance Testing with Message Maker</a></li>
+                </ul>
+            </uib-accordion-group>
+
+        </uib-accordion>
+  </div>
+</div>
+
+        
+  
+  </div>

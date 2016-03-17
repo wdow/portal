@@ -1,0 +1,78 @@
+<div class=" ui-view-container  well " >
+
+<!--   <div > -->
+<!-- 	<div  style="display : inline;"> -->
+<!--         <label>tools categories</label> -->
+<!--     <select class= "Select" ng-model="cat.categorie" > -->
+<!--         <option value='' >all</option> -->
+<!--         <option value='ONC Certification Related Tools'>ONC Certification Related Tools</option> -->
+<!--          <option value='IHE Related Tools'>IHE Related Tools</option> -->
+<!--         <option value='Laboratory Reporting Related Tools'>Laboratory Reporting Related Tools</option> -->
+<!--         <option value='Productivity Tools'>Productivity Tools</option> -->
+<!--     </select> -->
+<!--     {{categorie}} -->
+<!-- <!--     <label> --> 
+<!-- <!--     <input type="radio" ng-model="activity" value="Active" > --> 
+<!-- <!--     Active --> 
+<!-- <!--   </label> --> 
+<!-- <!--   <label> --> 
+<!-- <!--     <input type="radio" ng-model="activity" value="Archived" > --> 
+<!-- <!--     Archived --> 
+<!-- <!--   </label> --> 
+<!-- <!--   <label> --> 
+<!-- <!--     <input type="radio" ng-model="activity" value="in developpement"  > --> 
+<!-- <!--    in developpement --> 
+<!-- <!--   </label> --> 
+
+
+
+<!--   <div style="float : right; margin-right : 100px;" class="input-group col-md-2"> -->
+<!--   <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></span> -->
+<!--   <input type= "text" ng-model ="sort.title" class="form-control"></input> -->
+<!-- </div> -->
+<!-- <div><div class="foo" style="background: rgb(249, 198, 103);"/> <div class= "textfoo">active tools </div></div> -->
+<!-- <div><div class="foo" style="background-color:#13b4ff"/> <div class= "textfoo">in developpement</div> </div> -->
+<!-- <div><div class="foo" style="background-color:#ae163e;"/> <div class= "textfoo">archived tools</div> </div> -->
+
+<!-- </div> -->
+
+<!--         <div class="row row-centered"> -->
+<!--            <div > <a href={{tool.link}} ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " > -->
+<!--                 <button class=" col-xs-6 col-centered box1 " ng-class="{archived: isArchived(tool),Activedtool :isActiveTool(tool), inDev: isInDev(tool)}"> -->
+<!--                     <div> -->
+<!--                         <p ns-popover ns-popover-template="popover" ns-popover-trigger="mouseover" ns-popover-placement="bottom" ns-popover-timeout="0" ns-popover-hide-on-inside-click="false" ns-popover-theme="ns-popover-theme">{{ tool.title}} -->
+<!--                     </div> -->
+<!--                 </button> -->
+                
+<!--             </a> </div> -->
+<!--         </div> -->
+<!--         </div> -->
+<!--         <nav> -->
+
+<!--     <ul class="pager"> -->
+<!--         <li><a  ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li> -->
+<!--         <li><a  ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</a></li>  -->
+
+<!--     </ul> -->
+
+<!--         </nav> -->
+
+	<div class="row">
+		<div class="box1 col-md-6" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage ">
+			<div><a  href= {{tool.link}} class="boxhead">{{tool.title}}</a></div>
+			<div class="row">
+			<a href={{tool.link}}>	<div class="col-md-6 col-xs-offset-4"> </div> </a>
+				<div class="col-md-1"> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				 </div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</div>

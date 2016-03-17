@@ -1,0 +1,51 @@
+
+<div class=" ui-view-container well ">
+ <h2>Resources</h2>
+    
+        	<div  style="display : inline;">
+        <label>domain</label>
+    <select class= "Select" ng-model="domain">
+        <option value=''>all</option>
+        <option value='iz'>iz(Immunization Information System Reporting)</option>
+        <option value='ss'>ss</option>
+</div>
+  <div style="float : right; margin-right : 100px;" class="input-group col-md-2">
+  <span class="input-group-addon" id="basic-addon1">
+  <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
+  <input type= "text" ng-model ="sort.title" class="form-control"></input>
+</div>
+    
+        
+        <uib-accordion>
+            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}}>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>profile</th>
+                            <th>value_set</th>
+                            <th>constraints</th>
+                            <th>standard version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Profile.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td>
+                                {{artifact.standardVersion}}
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+           
+        </uib-accordion>
+  
+  </div>

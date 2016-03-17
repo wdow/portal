@@ -1,0 +1,127 @@
+
+<div class=" ui-view-container well  ">
+
+<div class="panel panel-info">
+  <div class="panel-heading"><h4>Resources</h4></div>
+  <div class="panel-body">
+
+
+    
+
+<!--         <label>domain</label> -->
+<!--     <select class= "Select" ng-model="domain"> -->
+<!--         <option value=''>all</option> -->
+<!--         <option value='iz'>iz(Immunization Information System Reporting)</option> -->
+<!--         <option value='ss'>ss</option> -->
+
+<!--   <div style="float : right; margin-right : 100px;" class="input-group col-md-2"> -->
+<!--   <span class="input-group-addon" id="basic-addon1"> -->
+<!--   <span class="glyphicon glyphicon-search" aria-hidden="true" ></span> -->
+<!--   <input type= "text" ng-model ="sort.title" class="form-control"></input> -->
+<!-- </div> -->
+    
+        
+<!--         <uib-accordion> -->
+<!--             <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}}> -->
+<!--                 <table class="table table-hover"> -->
+<!--                     <thead> -->
+<!--                         <tr> -->
+<!--                             <th>profile</th> -->
+<!--                             <th>value_set</th> -->
+<!--                             <th>constraints</th> -->
+<!--                             <th>standard version</th> -->
+<!--                         </tr> -->
+<!--                     </thead> -->
+<!--                     <tbody> -->
+<!--                         <tr> -->
+<!--                            <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Profile.xml"><img src="resources/static/images/get.png"></a> -->
+<!--                             </td> -->
+<!--                             <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml"><img src="resources/static/images/get.png"></a> -->
+<!--                             </td> -->
+<!--                             <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml"><img src="resources/static/images/get.png"></a> -->
+<!--                             </td> -->
+<!--                             <td> -->
+<!--                                 {{artifact.standardVersion}} -->
+<!--                             </td> -->
+<!--                         </tr> -->
+                        
+<!--                     </tbody> -->
+<!--                 </table> -->
+           
+<!--         </uib-accordion> -->
+  
+<!--   </div> -->
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">PROFILES</h3>
+  </div>
+  
+  
+
+        
+        
+     
+  <div class="panel-body">
+  
+          <label>domain</label>
+    	<select class= "Select" ng-model="domain.domain">
+        <option value=''>all</option>
+        <option value='iz'>iz(Immunization Information System Reporting)</option>
+        <option value='ss'>ss</option>
+        
+        </select>
+         <uib-accordion >
+            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}} >
+              <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
+                        <i class="fa fa-download"></i>
+                        Download All Artifacts (.zip)
+                    </button></a>
+                
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>profile</th>
+                            <th>value_set</th>
+                            <th>constraints</th>
+                            <th>standard version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Profile.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml"><img src="resources/static/images/get.png"></a>
+                            </td>
+                            <td>
+                                {{artifact.standardVersion}}
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+           
+        </uib-accordion>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">SCHEMA</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+  </div>
+</div>
+
+
+</div>
+
