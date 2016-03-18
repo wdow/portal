@@ -1,15 +1,19 @@
 <div class=" ui-view-container  well " >
 
-<!--   <div > -->
-<!-- 	<div  style="display : inline;"> -->
-<!--         <label>tools categories</label> -->
-<!--     <select class= "Select" ng-model="cat.categorie" > -->
-<!--         <option value='' >all</option> -->
-<!--         <option value='ONC Certification Related Tools'>ONC Certification Related Tools</option> -->
-<!--          <option value='IHE Related Tools'>IHE Related Tools</option> -->
-<!--         <option value='Laboratory Reporting Related Tools'>Laboratory Reporting Related Tools</option> -->
-<!--         <option value='Productivity Tools'>Productivity Tools</option> -->
-<!--     </select> -->
+
+
+<div class="panel panel-info">
+  <div class="panel-heading"><h4>Tools</h4></div>
+  <div class="panel-body">
+        <div class= "row ">
+    <select class= "Select col-md-6 " ng-model="cat.categorie" >
+        <option value='' >Choose category</option>
+        <option value='ONC Certification Related Tools'>ONC Certification Related Tools</option>
+         <option value='IHE Related Tools'>IHE Related Tools</option>
+        <option value='Laboratory Reporting Related Tools'>Laboratory Reporting Related Tools</option>
+        <option value='Productivity Tools'>Productivity Tools</option>
+    </select>
+    
 <!--     {{categorie}} -->
 <!-- <!--     <label> --> 
 <!-- <!--     <input type="radio" ng-model="activity" value="Active" > --> 
@@ -26,43 +30,28 @@
 
 
 
-<!--   <div style="float : right; margin-right : 100px;" class="input-group col-md-2"> -->
-<!--   <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></span> -->
-<!--   <input type= "text" ng-model ="sort.title" class="form-control"></input> -->
-<!-- </div> -->
-<!-- <div><div class="foo" style="background: rgb(249, 198, 103);"/> <div class= "textfoo">active tools </div></div> -->
-<!-- <div><div class="foo" style="background-color:#13b4ff"/> <div class= "textfoo">in developpement</div> </div> -->
-<!-- <div><div class="foo" style="background-color:#ae163e;"/> <div class= "textfoo">archived tools</div> </div> -->
-
-<!-- </div> -->
-
-<!--         <div class="row row-centered"> -->
-<!--            <div > <a href={{tool.link}} ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " > -->
-<!--                 <button class=" col-xs-6 col-centered box1 " ng-class="{archived: isArchived(tool),Activedtool :isActiveTool(tool), inDev: isInDev(tool)}"> -->
-<!--                     <div> -->
-<!--                         <p ns-popover ns-popover-template="popover" ns-popover-trigger="mouseover" ns-popover-placement="bottom" ns-popover-timeout="0" ns-popover-hide-on-inside-click="false" ns-popover-theme="ns-popover-theme">{{ tool.title}} -->
-<!--                     </div> -->
-<!--                 </button> -->
-                
-<!--             </a> </div> -->
-<!--         </div> -->
-<!--         </div> -->
-<!--         <nav> -->
-
-<!--     <ul class="pager"> -->
-<!--         <li><a  ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li> -->
-<!--         <li><a  ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</a></li>  -->
-
-<!--     </ul> -->
-
-<!--         </nav> -->
-
-	<div class="row">
+  <div  class="input-group col-md-2 col-xs-offset-1">
+  <span class="input-group-addon" id="basic-addon1">
+  <span class="glyphicon glyphicon-search" aria-hidden="true" 
+  ></span></span>
+  <input type= "text" ng-model ="sort.title" class="form-control"></input> </div>
+ </div>
+	<div class="row toolsboxes">
 		<div class="box1 col-md-6" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage ">
-			<div><a  href= {{tool.link}} class="boxhead">{{tool.title}}</a></div>
+			<a href={{tool.link}}>	
+			<div class="boxhead">
+			<span style="font-size: 20px; font-weight: bold; color: white;">{{tool.title}}</span>
+			</div></a>
 			<div class="row">
-			<a href={{tool.link}}>	<div class="col-md-6 col-xs-offset-4"> </div> </a>
-				<div class="col-md-1"> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		
+		<a href={{tool.link}}>	<div class="col-md-6 col-xs-offset-4">
+		
+			</div> </a>
+			
+			
+				<div class="col-md-1" > 
+				
+	<span class = "glyphicon glyphicon-info-sign info" ng-click="open(tool)"/> 
 				 </div>
 
 			</div>
@@ -74,5 +63,69 @@
 
 
 
+        <nav>
+
+    <ul class="pager">
+        <li><a  ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li>
+        <li><a  ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</a></li> 
+
+    </ul>
+
+        </nav>
+  </div>
+</div>
+
+
+<a></a>
+<!--   <div > -->
+<!-- 	<div  style="display : inline;"> -->
+
+<hr/>
+		<footer id="footer" style= "border-top:2px solid;" >
+			<a href="http://www.nist.gov" target="_blank"><img
+				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a
+				href="http://www.itl.nist.gov/" target="_blank"><img
+				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a>
+			<div style="text-align: right;">
+				<p>
+					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm"
+						target="_blank" title="View Disclaimer">Disclaimer</a> | <a
+						href="mailto:haffo[at]nist[dot]gov"
+						title="Email Website Administrator: rochb">Email Website
+						Administrator</a> | <a
+						href="http://www.nist.gov/public_affairs/privacy.htm"
+						target="_blank" title="View Privacy Policy">Privacy/Policy</a>
+				</p>
+			</div>
+		</footer>
 
 </div>
+
+<script type="text/ng-template" id="myModalContent.html">
+<div class="panel panel-info">
+  <div class="panel-heading"><h2>{{tool.title}}</h2></div>
+  <div class="panel-body">
+   <div >
+	
+
+	
+	<p ng-bind-html="tool.description |sanitize"></p>
+	<hr />
+		<h4>Last Update:</h4>
+	{{tool.last_update}}
+		<hr/>
+		<h4>Current Version: {{tool.version}}</h4>
+		<hr/>
+		<h4>Status: {{tool.activity}}</h4>
+		<hr/>
+		<h4>Category: {{tool.categorie}}</h4>
+		<hr/>
+		<h4>Conforamce profiles</h4>
+		{{tool.contact}}
+		<hr/>
+ 		see more: <a href={{tool.link}} target="_blank"> {{tool.link}}</a>
+	</div>
+  </div>
+</div>
+
+</script>

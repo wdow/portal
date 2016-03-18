@@ -2,36 +2,21 @@ var app = angular.module('app', ['720kb.tooltips', 'simplePagination', 'nsPopove
 
 app.controller('ModalCtrl', function($scope, $uibModal, $log) {
 
-    $scope.items = ['item1', 'item2', 'item3'];
+  
 
-    //$scope.animationsEnabled = true;
-
-    $scope.open = function(size) {
-
-        var modalInstance = $uibModal.open({
-            animation: $scope.animationsEnabled,
-            templateUrl: 'myModalContent.html',
-            windowClass: 'my-modal-popup',
-      controller: 'toolController',
-            size: size,
-
-        });
-
-    };
-    $scope.toggleAnimation = function() {
-        $scope.animationsEnabled = !$scope.animationsEnabled;
-    };
+	  
 
 });
 
 
 
 
-app.controller('toolController', ['$scope','$filter', 'Pagination','$http', function($scope,$filter, Pagination, $http) {
+app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log) {
 
    $scope.tools =[];
    $scope.papers =[];
    $scope.artifacts =[];
+   $scope.presentations =[];
    $scope.sort ={
 		   title : ""
    };
@@ -145,7 +130,30 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
 	  console.log(response);
       $scope.artifacts = response;
   });
+  
+  $http.get("/portal/presentations").success(function (response) {
+	  console.log(response);
+      $scope.presentations = response;
+  });
+  
+  
+  $scope.open = function(tool) {
+	  $scope.tool = tool;
+      var modalInstance = $uibModal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: 'myModalContent.html',
+          scope: $scope,
+          size:'lg',
+          windowClass: 'my-modal-popup'
+          //size: size,
     
+
+      });
+
+
+
+
+  };
 
 }]);
 
@@ -219,6 +227,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
          templateUrl: 'resources/static/javascript/directives_templates/artifact-tab.html'
     });
     $urlRouterProvider.otherwise('/');
+    
+    
+    
+    
+    
+    
 });
 
 

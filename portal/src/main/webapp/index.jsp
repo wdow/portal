@@ -55,7 +55,7 @@
 					</li>
 					<li ng-class="{active :isActive(3)}" ng-click="setActive(3)"><a
 						ui-sref="resources"><span style="color: black;">
-								Resources</span></a></li>
+								Documents</span></a></li>
 					</a>
 					</li>
 					<li ng-class="{ active :isActive(4)}" ng-click="setActive(4)"><a
@@ -71,23 +71,23 @@
 			<div ui-view></div>
 		</div>
 			</div>
-		<footer id="footer" class="appContent">
-			<a href="http://www.nist.gov" target="_blank"><img
-				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a
-				href="http://www.itl.nist.gov/" target="_blank"><img
-				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a>
-			<div style="text-align: right;">
-				<p>
-					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm"
-						target="_blank" title="View Disclaimer">Disclaimer</a> | <a
-						href="mailto:haffo[at]nist[dot]gov"
-						title="Email Website Administrator: rochb">Email Website
-						Administrator</a> | <a
-						href="http://www.nist.gov/public_affairs/privacy.htm"
-						target="_blank" title="View Privacy Policy">Privacy/Policy</a>
-				</p>
-			</div>
-		</footer>
+<!-- 		<footer id="footer" class="appContent"> -->
+<!-- 			<a href="http://www.nist.gov" target="_blank"><img -->
+<!-- 				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a -->
+<!-- 				href="http://www.itl.nist.gov/" target="_blank"><img -->
+<!-- 				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a> -->
+<!-- 			<div style="text-align: right;"> -->
+<!-- 				<p> -->
+<!-- 					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm" -->
+<!-- 						target="_blank" title="View Disclaimer">Disclaimer</a> | <a -->
+<!-- 						href="mailto:haffo[at]nist[dot]gov" -->
+<!-- 						title="Email Website Administrator: rochb">Email Website -->
+<!-- 						Administrator</a> | <a -->
+<!-- 						href="http://www.nist.gov/public_affairs/privacy.htm" -->
+<!-- 						target="_blank" title="View Privacy Policy">Privacy/Policy</a> -->
+<!-- 				</p> -->
+<!-- 			</div> -->
+<!-- 		</footer> -->
 
 		</div>
 </body>

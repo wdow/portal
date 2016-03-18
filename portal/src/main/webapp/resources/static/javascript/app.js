@@ -16,6 +16,7 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    $scope.tools =[];
    $scope.papers =[];
    $scope.artifacts =[];
+   $scope.presentations =[];
    $scope.sort ={
 		   title : ""
    };
@@ -129,6 +130,13 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
 	  console.log(response);
       $scope.artifacts = response;
   });
+  
+  $http.get("/portal/presentations").success(function (response) {
+	  console.log(response);
+      $scope.presentations = response;
+  });
+  
+  
   $scope.open = function(tool) {
 	  $scope.tool = tool;
       var modalInstance = $uibModal.open({

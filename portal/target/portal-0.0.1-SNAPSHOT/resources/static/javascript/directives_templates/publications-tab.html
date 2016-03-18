@@ -1,29 +1,12 @@
-<div class=" ui-view-container  well  " >
-<div>
-        <h2>publications</h2>
-        <hr/>
+<div class=" ui-view-container  well " >
+
+<div class="panel panel-info">
+  <div class="panel-heading"> <h4>Publications</h4></div>
+  <div class="panel-body">
+        
+     
         <uib-accordion>
-            <uib-accordion-group heading='Users Guide'>
-                <br>
-                <ul>
-                    <li><a class="link" href="papers/UsersGuide1.4.doc">User's Guide (.doc file)</a></li>
-                    <br>
-                    <li><a class="link" href="papers/UsersGuide1.4.pdf">User's Guide (.pdf file)</a></li>
-                </ul>
-            </uib-accordion-group>
-            <uib-accordion-group heading='Presentations'>
-                <br>
-                <ul>
-                    <li><a class="link" href="resources/static/slides/IESA07.ppt">The HL7 Conformance Profile Approach</a></li>
-                    <br>
-                    <li><a class="link" href="resources/static/slides/MM_guide.ppt">Guide to Using Message Maker</a></li>
-                    <br>
-                    <li><a class="link" href="resources/static/slides/Design.ppt">Message Maker Overview</a></li>
-                    <br>
-                    <li><a class="link" href="resources/static/slides/HL7_conf_MessageMaker.ppt">HL7 Conformance Testing with Message Maker</a></li>
-                </ul>
-            </uib-accordion-group>
-            <uib-accordion-group heading='Papers'>
+            <uib-accordion-group heading='Papers' is-open="true">
                 <br>
                 <ul>
                     <li ng-repeat="paper in papers"><a class="link" href="resources/static/papers/{{paper.link}}.pdf">{{paper.title}}</a>
@@ -36,8 +19,39 @@
                 <br/> <strong>KeyWords :</strong> {{paper.keywords}}
                 </li>
                 </ul>
-                </div>
+      
             </uib-accordion-group>
+            <uib-accordion-group heading='Presentations'>
+                <br>
+                <ul>
+                    <li ng-repeat ="presentation in presentations"><a class="link" href="resources/static/slides/{{presentation.link}}">{{presentation.title}}</a>
+                    <br/> <strong>Speaker:</strong> {{presentation.author}}
+                    <br/> <strong>Publication date:</strong> {{presentation.publication_date}}
+                    </li>
+                 
+                </ul>
+            </uib-accordion-group>
+
         </uib-accordion>
   </div>
+</div>
+		<footer id="footer" style= "border-top:2px solid;" >
+			<a href="http://www.nist.gov" target="_blank"><img
+				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a
+				href="http://www.itl.nist.gov/" target="_blank"><img
+				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a>
+			<div style="text-align: right;">
+				<p>
+					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm"
+						target="_blank" title="View Disclaimer">Disclaimer</a> | <a
+						href="mailto:haffo[at]nist[dot]gov"
+						title="Email Website Administrator: rochb">Email Website
+						Administrator</a> | <a
+						href="http://www.nist.gov/public_affairs/privacy.htm"
+						target="_blank" title="View Privacy Policy">Privacy/Policy</a>
+				</p>
+			</div>
+		</footer>
+        
+  
   </div>

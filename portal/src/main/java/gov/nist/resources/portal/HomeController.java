@@ -6,9 +6,11 @@ import java.util.List;
 
 import gov.nist.resources.portal.domain.Artifact;
 import gov.nist.resources.portal.domain.Paper;
+import gov.nist.resources.portal.domain.Presentation;
 import gov.nist.resources.portal.domain.Tool;
 import gov.nist.resources.portal.repository.ArtifactRepository;
 import gov.nist.resources.portal.repository.PaperRepository;
+import gov.nist.resources.portal.repository.PresentationRepository;
 import gov.nist.resources.portal.repository.ToolRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ PaperRepository papers;
 
 @Autowired
 ArtifactRepository artifacts;
+@Autowired
+PresentationRepository presentations; 
 
 @RequestMapping(value="/", method= RequestMethod.GET)
 	public String home(){
@@ -69,6 +73,16 @@ System.out.println("adaaaaaaaaaaa");
 }
 
 
+@RequestMapping(value="/presentations", method= RequestMethod.GET)
+public List<Presentation> getPresentations(){
+
+
+
+   List<Presentation> all= presentations.findAll();
+   System.out.println(all.size());
+    System.out.println(all);
+	return all;
+}
 
 
 }
