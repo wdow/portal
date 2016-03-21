@@ -1,17 +1,10 @@
 var app = angular.module('app', ['720kb.tooltips', 'simplePagination', 'nsPopover', 'ngAnimate', 'ui.bootstrap','ui.router']);
 
-app.controller('ModalCtrl', function($scope, $uibModal, $log) {
-
-  
-
-	  
-
-});
 
 
 
 
-app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log) {
+app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance) {
 
    $scope.tools =[];
    $scope.papers =[];
@@ -31,7 +24,7 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   standardVersion : ""
    };
     $scope.displayPopover = true;
-    $scope.pagination = Pagination.getNew(12);
+    $scope.pagination = Pagination.getNew(18);
     $scope.pagination.numPages = Math.ceil($scope.tools.length/$scope.pagination.perPage);
     $scope.tab = 1;
     $scope.math=Math;
@@ -146,14 +139,17 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
           size:'lg',
           windowClass: 'my-modal-popup'
           //size: size,
-    
+        	 
 
       });
-
-
-
-
+      $scope.modalInstance = modalInstance;
   };
+
+	  $scope.cancel = function () {
+		  $scope.modalInstance.dismiss('cancel');
+	  };
+
+
 
 }]);
 

@@ -1,5 +1,7 @@
 package gov.nist.resources.portal.domain;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,6 +21,13 @@ public class Tool {
 	 private String categorie;
 	 private String link;
 	 private String status;
+	 private List<String> profiles;
+ 	public List<String> getProfiles() {
+		return profiles;
+	}
+	public void setProfiles(List<String> profiles) {
+		this.profiles = profiles;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -77,10 +86,10 @@ public class Tool {
 		this.categorie = categorie;
 	}
 	
-	
-	
+
 	public Tool(Object id, String title, String description, String version,
-			String last_update, String activity, String categorie) {
+			String last_update, String activity, String categorie, String link,
+			String status, List<String> profiles) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -89,6 +98,9 @@ public class Tool {
 		this.last_update = last_update;
 		this.activity = activity;
 		this.categorie = categorie;
+		this.link = link;
+		this.status = status;
+		this.profiles = profiles;
 	}
 	public Tool()
 	{

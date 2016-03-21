@@ -2,7 +2,7 @@
 <div class=" ui-view-container well  ">
 
 <div class="panel panel-info">
-  <div class="panel-heading"><h4>Documents</h4></div>
+  <div class="panel-heading">  <h3><strong>Documents</strong></h3></div>
   <div class="panel-body">
 
 
@@ -75,7 +75,7 @@
         </select>
         <br/>
          <uib-accordion >
-            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}} >
+            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}}----------------------------------------specification>
               <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
