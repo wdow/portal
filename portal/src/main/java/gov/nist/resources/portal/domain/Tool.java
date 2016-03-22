@@ -21,7 +21,21 @@ public class Tool {
 	 private String categorie;
 	 private String link;
 	 private String status;
-	 private List<String> profiles;
+	 private String spec;
+	 private String html_title;
+	 public String getHtml_title() {
+		return html_title;
+	}
+	public void setHtml_title(String html_title) {
+		this.html_title = html_title;
+	}
+	public String getSpec() {
+		return spec;
+	}
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+	private List<String> profiles;
  	public List<String> getProfiles() {
 		return profiles;
 	}

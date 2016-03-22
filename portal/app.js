@@ -33,6 +33,11 @@ app.controller('toolController', ['$scope','$filter', 'Pagination', function($sc
 
       return temp;
     };
+    $scope.comapre = function(domain) {
+        if(tool.hasOwnProperty('activity'))
+        return tool.activity === $scope.activity;
+      else return false;
+    };
 
     
 

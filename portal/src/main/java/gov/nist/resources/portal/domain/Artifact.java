@@ -12,6 +12,13 @@ private String title;
 private String resourceSet;
 private String profile;
 private String constraintes;
+private String spec;
+public String getSpec() {
+	return spec;
+}
+public void setSpec(String spec) {
+	this.spec = spec;
+}
 public Object getId() {
 	return id;
 }

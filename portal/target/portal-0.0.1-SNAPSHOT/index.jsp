@@ -55,7 +55,7 @@
 					</li>
 					<li ng-class="{active :isActive(3)}" ng-click="setActive(3)"><a
 						ui-sref="resources"><span style="color: black;">
-								Documents</span></a></li>
+								Resources</span></a></li>
 					</a>
 					</li>
 					<li ng-class="{ active :isActive(4)}" ng-click="setActive(4)"><a

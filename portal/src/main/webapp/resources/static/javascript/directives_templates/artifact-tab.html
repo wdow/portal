@@ -75,19 +75,25 @@
         </select>
         <br/>
          <uib-accordion >
-            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" heading={{artifact.title}}----------------------------------------specification>
-              <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
+            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" >
+            <uib-accordion-heading>
+        <strong>{{artifact.title}}   </strong>                            <span style="float: right;"> {{artifact.spec}}</span>
+      </uib-accordion-heading>
+            
+             <div ng-show="compareToDomainss(artifact.domain)==false " > 
+             
+             <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
-                    </button></a>
+                    </button></a> {{compareToDomain(iz)}}
                 
-                <table class="table table-hover">
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th>profile</th>
                             <th>value_set</th>
                             <th>constraints</th>
-                            <th>standard version</th>
+                      
                         </tr>
                     </thead>
                     <tbody>
@@ -101,13 +107,46 @@
                             <td class="getLogo">
                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml" target="_blank"><img src="resources/static/images/get.png">{{artifact.title}}_Constraints.xml</a>
                             </td>
-                            <td>
-                                {{artifact.standardVersion}}
+
+                        </tr>
+                        
+                    </tbody>
+                </table> </div>
+                
+                <div ng-show="compareToDomainss(artifact.domain)==true">
+                    <a href="resources/static/Artifact/{{artifact.domain}}/ss.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
+                        <i class="fa fa-download"></i>
+                        Download All Artifacts (.zip)
+                    </button></a>
+                    <table class="table table-hover" >
+                    <thead>
+                        <tr>
+                            <th>profile</th>
+                            <th>value_set</th>
+                            <th>constraints</th>
+                      
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a>
                             </td>
+                            <td class="getLogo">
+                            <ul>
+                               <li> <a href="resources/static/Artifact/{{artifact.domain}}/ValueSetLibrary_SS_CB.xml" target="_blank"><img src="resources/static/images/get.png"/> ValueSetLibrary_SS_CB.xml</a></li>
+                              <li>   <a href="resources/static/Artifact/{{artifact.domain}}/ValueSetLibrary_SS_CF.xml" target="_blank"><img src="resources/static/images/get.png"/> ValueSetLibrary_SS_CF.xml</a></li>
+                                </ul>
+                            </td>
+                            <td class="getLogo">
+                                <a href="resources/static/Artifact/{{artifact.domain}}/Constraints.xml" target="_blank"><img src="resources/static/images/get.png">Constraints.xml</a>
+                            </td>
+
                         </tr>
                         
                     </tbody>
                 </table>
+                          </div>   
            
         </uib-accordion>
   </div>

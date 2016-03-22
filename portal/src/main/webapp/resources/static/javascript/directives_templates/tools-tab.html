@@ -42,7 +42,7 @@
 			<a href={{tool.link}}>	
 			<div class="boxhead">
 			<span style="font-size: 20px; color: white;">
-			<p ng-bind-html="tool.title |sanitize"></p>
+			<p ng-bind-html="tool.html_title |sanitize"></p>
 			</span>
 			</div></a>
 			<div class="row">
@@ -105,38 +105,43 @@
 </div>
 
 <script type="text/ng-template" id="myModalContent.html">
-<div class="panel panel-info">
-  <div class="panel-heading"><h2 ng-bind-html="tool.title |sanitize"></h2></div>
-  <div class="panel-body">
-   <div >
-	
 
-	
-	<p ng-bind-html="tool.description |sanitize"></p>
-	<hr />
+<div class="panel panel-info ">
+	<div class="panel-heading">
+		<h2 ng-bind-html="tool.title |sanitize"></h2>
+	</div>
+	<div class="panel-body" style=" overflow-y: scroll;">
+
+
+
+		<p ng-bind-html="tool.description |sanitize"></p>
+		<hr />
 		<h4>Specification</h4>
-	<hr />
+		{{tool.spec}}
+		<hr />
 		<h4>Last Update:</h4>
-	{{tool.last_update}}
-		<hr/>
+		{{tool.last_update}}
+		<hr />
 		<h4>Current Version: {{tool.version}}</h4>
-		<hr/>
-		<h4>use: {{tool.categorie}}</h4>
-		<hr/>
+		<hr />
+		<h4>Use: {{tool.categorie}}</h4>
+		<hr />
 		<h4>Status: {{tool.activity}}</h4>
-		<hr/>
+		<hr />
 		<h4>Conforamce profiles</h4>
-	 <ul>
-<li ng-repeat="profil in tool.profiles">{{profil}}</li>
-</ul>
-		<hr/>
- 		see more: <a href={{tool.link}} target="_blank"> <span style="font-size : 18px;">{{tool.link}} </span></a>
+		<div>
+		<ul>
+			<li ng-repeat="profil in tool.profiles">{{profil}}</li>
+		</ul>
+		</div>
+		<hr />
+		see more: <a href={{tool.link}} target="_blank"> <span
+			style="font-size: 18px;">{{tool.link}} </span></a>
+
+		<div class="modal-footer">
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+		</div>
 	</div>
 
-    <div class="modal-footer">
-             <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
-        </div>
-  </div>
 </div>
-
 </script>

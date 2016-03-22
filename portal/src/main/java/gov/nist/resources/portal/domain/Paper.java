@@ -12,6 +12,13 @@ public class Paper {
 	private String publication_date;
 	private String author;
 	public String keywords;
+	private String place;
+	public String getPlace() {
+		return place;
+	}
+	public void setPlace(String place) {
+		this.place = place;
+	}
 	public Paper(Object id, String title, String link, String publication_date,
 			String author, String keywords) {
 		super();

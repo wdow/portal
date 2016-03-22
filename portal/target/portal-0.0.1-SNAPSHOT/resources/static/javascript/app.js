@@ -1,17 +1,10 @@
 var app = angular.module('app', ['720kb.tooltips', 'simplePagination', 'nsPopover', 'ngAnimate', 'ui.bootstrap','ui.router']);
 
-app.controller('ModalCtrl', function($scope, $uibModal, $log) {
-
-  
-
-	  
-
-});
 
 
 
 
-app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log) {
+app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance) {
 
    $scope.tools =[];
    $scope.papers =[];
@@ -31,14 +24,19 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   standardVersion : ""
    };
     $scope.displayPopover = true;
-    $scope.pagination = Pagination.getNew(12);
+    $scope.pagination = Pagination.getNew(18);
     $scope.pagination.numPages = Math.ceil($scope.tools.length/$scope.pagination.perPage);
     $scope.tab = 1;
     $scope.math=Math;
     $scope.categorie='';
     $scope.activity='Active';
     
-    
+    $scope.compareToDomain = function(domain){
+    	return domain==$scope.domain.domain;
+    }
+    $scope.compareToDomainss = function(domain){
+    	return domain=="ss";
+    }
       //$scope.limit=tools.filter($scope.myFilter).filter($scope.ActivityFilter);
     $scope.myFilter = function(tool) {
         if(tool.hasOwnProperty('categorie'))
@@ -143,17 +141,20 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
           animation: $scope.animationsEnabled,
           templateUrl: 'myModalContent.html',
           scope: $scope,
-          size:'lg',
-          windowClass: 'my-modal-popup'
+          size:'lg'
+     
           //size: size,
-    
+        	 
 
       });
-
-
-
-
+      $scope.modalInstance = modalInstance;
   };
+
+	  $scope.cancel = function () {
+		  $scope.modalInstance.dismiss('cancel');
+	  };
+
+
 
 }]);
 

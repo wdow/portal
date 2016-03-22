@@ -31,7 +31,12 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
     $scope.categorie='';
     $scope.activity='Active';
     
-    
+    $scope.compareToDomain = function(domain){
+    	return domain==$scope.domain.domain;
+    }
+    $scope.compareToDomainss = function(domain){
+    	return domain=="ss";
+    }
       //$scope.limit=tools.filter($scope.myFilter).filter($scope.ActivityFilter);
     $scope.myFilter = function(tool) {
         if(tool.hasOwnProperty('categorie'))
@@ -136,8 +141,8 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
           animation: $scope.animationsEnabled,
           templateUrl: 'myModalContent.html',
           scope: $scope,
-          size:'lg',
-          windowClass: 'my-modal-popup'
+          size:'lg'
+     
           //size: size,
         	 
 

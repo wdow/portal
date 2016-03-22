@@ -23,6 +23,10 @@ no-repeat 50% -10px;
 .navcolor{
 	background-color: #f3c60d;
 }
+.fixheight{
+	height: 300px;
+	border:2px solid;
+}
 .appContent{
 padding-left: 6rem;
 padding-right: 6rem;
@@ -346,13 +350,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', end
     text-shadow: none;
 }
 
-.my-modal-popup {
-    @media (min-width: 1400px) {
-        .modal-lg {
-            width: 1800px;
-        }
-    }
-}
+/* .my-modal-popup { */
+/*    @media (min-width: 1400px) {  */
+/*          .modal-lg {  */
+/* /*             width: 1800px; */ */
+/*                 overflow-y: scroll; */
+/*    				overflow-x: scroll; */
+/*        }  */
+/* /*     } */ */
+    
+    
+/* } */
 
 
 .accord {
