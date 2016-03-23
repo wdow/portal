@@ -7,7 +7,9 @@ var app = angular.module('app', ['720kb.tooltips', 'simplePagination', 'nsPopove
 app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance) {
 
    $scope.tools =[];
+   $scope.FilteredTools=[];
    $scope.papers =[];
+   $scope.IGs = [];
    $scope.artifacts =[];
    $scope.presentations =[];
    $scope.sort ={
@@ -31,8 +33,45 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
     $scope.categorie='';
     $scope.activity='Active';
     
+
+    $scope.FilterTools=function(tools){
+    	
+    	var temp=[];
+		   if($scope.cat.categorie===""){
+ 			   temp=$scope.tools;
+ 			   console.log(temp.length)
+ 			     $scope.FilteredTools = temp;
+ 			  return temp; 
+ 		   }
+ 	   for (var i = tools.length - 1; i >= 0; i--) {
+ 	
+ 		  if(tools[i].hasOwnProperty('categorie')&& tools[i].categorie=== $scope.cat.categorie){
+ 			  temp.push(tools[i]);
+ 	        	
+ 	        	
+ 	        }
+ 	        	
+ 	      }
+ 	  $scope.FilteredTools = temp;
+ 	
+ 	  return temp;
+    }
+    
+    
     $scope.compareToDomain = function(domain){
     	return domain==$scope.domain.domain;
+    }
+    $scope.initialize = function(){
+    	   $scope.sort ={
+    			   title : ""
+    	   };
+    	   $scope.cat ={
+    			   categorie : ""
+    	   };
+    	   $scope.domain ={
+    			   domain : ""
+    			   
+    	   };
     }
     $scope.compareToDomainss = function(domain){
     	return domain=="ss";
@@ -66,21 +105,32 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
     }
     $scope.$watch("tools", update, true);
     
+   
+  
 
-   $scope.FilteredTools= $scope.arrayFilter($scope.arrayFilter($scope.tools, $scope.myFilter),$scope.ActivityFilter);
-   $scope.isSet = function(checkTab) {
-       return $scope.tab === checkTab;
-   };
+//   $scope.FilteredTools= $scope.arrayFilter($scope.arrayFilter($scope.tools, $scope.myFilter),$scope.ActivityFilter);
+//   $scope.isSet = function(checkTab) {
+//       return $scope.tab === checkTab;
+//   };
 
-
+   
 
 $scope.limit= Math.ceil($scope.FilteredTools.length/$scope.pagination.perPage);
     $scope.setTab = function(activeTab) {
         $scope.tab = activeTab;
     };
+    $scope.Nexthide=function(){
+    	$scope.FilterTools($scope.tools)
+    	if($scope.FilteredTools.length===$scope.tools.length){ 
+    		
+    		return $scope.pagination.page + 1 >= $scope.pagination.numPages;
+    		}
+    	else {
+    		return $scope.limit===$scope.pagination.page;
+    	}
+    }
 
-
-//$scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.perPage);
+$scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.perPage);
     
 $scope.tab = 0;
 $scope.isActive= function(checkTab) {
@@ -88,6 +138,7 @@ $scope.isActive= function(checkTab) {
   };
 
 $scope.setActive = function(activeTab) {
+	$scope.initialize()
     $scope.tab = activeTab;
   };
   
@@ -134,6 +185,11 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
       $scope.presentations = response;
   });
   
+  $http.get("/portal/IGs").success(function (response) {
+	  console.log(response);
+      $scope.IGs = response;
+  });
+  
   
   $scope.open = function(tool) {
 	  $scope.tool = tool;
@@ -141,8 +197,8 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
           animation: $scope.animationsEnabled,
           templateUrl: 'myModalContent.html',
           scope: $scope,
-          size:'lg'
-     
+          size:'lg',
+          windowClass: 'my-modal-popup'
           //size: size,
         	 
 

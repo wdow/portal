@@ -54,7 +54,22 @@
 <!--         </uib-accordion> -->
   
 <!--   </div> -->
-<div class="panel panel-info">
+         <label>domain</label>
+    	<select class= "Select" ng-model="domain.domain">
+        <option value=''>all</option>
+        <option value='iz'>iz(Immunization Information System Reporting)</option>
+        <option value='ss'>ss</option>
+        
+        </select>
+        <br/>
+          <br/>
+<div class="panel panel-info" ng-repeat="ig in IGs">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ig.name}}</h3>
+  </div>
+
+    <div class="panel-body">
+<div class="panel panel-warning">
   <div class="panel-heading">
     <h3 class="panel-title">PROFILES</h3>
   </div>
@@ -66,18 +81,20 @@
      
   <div class="panel-body">
   
-          <label>domain</label>
-    	<select class= "Select" ng-model="domain.domain">
-        <option value=''>all</option>
-        <option value='iz'>iz(Immunization Information System Reporting)</option>
-        <option value='ss'>ss</option>
-        
-        </select>
+
         <br/>
          <uib-accordion >
-            <uib-accordion-group  ng-repeat= "artifact in artifacts | filter : domain |filter :sort" >
+            <uib-accordion-group  ng-repeat= "artifact in ig.profiles | filter : domain |filter :sort" >
             <uib-accordion-heading>
-        <strong>{{artifact.title}}   </strong>                            <span style="float: right;"> {{artifact.spec}}</span>
+            <div class=row>
+            <div class= "col-md-6">    <strong>{{artifact.title}}   </strong></div>
+              <div class= "col-md-6" style=" color:black;font-size:12px;">    <strong> {{artifact.spec}}   </strong></div>
+            </div>
+<!--         <strong>{{artifact.title}}   </strong>                            <span style="float: right;"> {{artifact.spec}}</span> -->
+        
+        
+
+                    
       </uib-accordion-heading>
             
              <div ng-show="compareToDomainss(artifact.domain)==false " > 
@@ -85,7 +102,7 @@
              <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
-                    </button></a> {{compareToDomain(iz)}}
+                    </button></a> 
                 
                 <table class="table table-hover" >
                     <thead>
@@ -133,10 +150,9 @@
                                 <a href="resources/static/Artifact/{{artifact.domain}}/Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a>
                             </td>
                             <td class="getLogo">
-                            <ul>
-                               <li> <a href="resources/static/Artifact/{{artifact.domain}}/ValueSetLibrary_SS_CB.xml" target="_blank"><img src="resources/static/images/get.png"/> ValueSetLibrary_SS_CB.xml</a></li>
-                              <li>   <a href="resources/static/Artifact/{{artifact.domain}}/ValueSetLibrary_SS_CF.xml" target="_blank"><img src="resources/static/images/get.png"/> ValueSetLibrary_SS_CF.xml</a></li>
-                                </ul>
+                         
+                                <a href="resources/static/Artifact/{{artifact.domain}}/ValueSetLibrary_SS_CF.xml" target="_blank"><img src="resources/static/images/get.png"/> ValueSetLibrary_SS_CF.xml</a></li>
+                              
                             </td>
                             <td class="getLogo">
                                 <a href="resources/static/Artifact/{{artifact.domain}}/Constraints.xml" target="_blank"><img src="resources/static/images/get.png">Constraints.xml</a>
@@ -150,6 +166,8 @@
            
         </uib-accordion>
   </div>
+</div>
+</div>
 </div>
 <div class="panel panel-info">
   <div class="panel-heading">

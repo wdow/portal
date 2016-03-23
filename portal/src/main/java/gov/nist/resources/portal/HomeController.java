@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gov.nist.resources.portal.domain.Artifact;
+import gov.nist.resources.portal.domain.IG_Document;
 import gov.nist.resources.portal.domain.Paper;
 import gov.nist.resources.portal.domain.Presentation;
 import gov.nist.resources.portal.domain.Tool;
 import gov.nist.resources.portal.repository.ArtifactRepository;
+import gov.nist.resources.portal.repository.IG_DocumentRepository;
 import gov.nist.resources.portal.repository.PaperRepository;
 import gov.nist.resources.portal.repository.PresentationRepository;
 import gov.nist.resources.portal.repository.ToolRepository;
@@ -31,6 +33,8 @@ PaperRepository papers;
 ArtifactRepository artifacts;
 @Autowired
 PresentationRepository presentations; 
+@Autowired
+IG_DocumentRepository IGs; 
 
 @RequestMapping(value="/", method= RequestMethod.GET)
 	public String home(){
@@ -83,6 +87,18 @@ public List<Presentation> getPresentations(){
     System.out.println(all);
 	return all;
 }
+
+@RequestMapping(value="/IGs", method= RequestMethod.GET)
+public  List<IG_Document> getIGs(){
+
+
+
+   List<IG_Document> all= IGs.findAll();
+   System.out.println(all.size());
+    System.out.println(all);
+	return all;
+}
+
 
 
 }

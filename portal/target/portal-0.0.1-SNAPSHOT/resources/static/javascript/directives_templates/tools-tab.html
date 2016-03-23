@@ -6,9 +6,9 @@
   <div class="panel-heading"><h3><strong> HL7 V2 Tools</strong></h3></div>
   <div class="panel-body">
         <div class= "row ">
-    <select class= "Select col-md-6 " ng-model="cat.categorie" >
+    <select class= "Select col-md-6 " ng-model="cat.categorie" ng-click="FilterTools(tools)" >
         <option value='' >Choose a category filter</option>
-        <option value='ONC Certification Related Tools'>ONC Certification Related Tools</option>
+        <option value='ONC Certification Related Tools' ng-click="pagination.toPageId(0)">ONC Certification Related Tools</option>
          <option value='IHE Related Tools'>IHE Related Tools</option>
         <option value='Laboratory Reporting Related Tools'>Laboratory Reporting Related Tools</option>
         <option value='Productivity Tools'>Productivity Tools</option>
@@ -68,11 +68,20 @@
 
         <nav>
 
-    <ul class="pager">
-        <li><a  ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li>
-        <li><a  ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</a></li> 
+<!--     <ul class="pager"> -->
+<!--         <li><a  ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li> -->
+<!--         <li><a  ng-click="pagination.nextPage()" ng-hide="Nexthide()">Next</a></li>  -->
 
-    </ul>
+<!--     </ul> -->
+    
+    
+    <ul class="pager">
+<li><a href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+  <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+  <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+  </li>
+  <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+</ul>
 
         </nav>
   </div>
@@ -102,7 +111,8 @@
 			</div>
 		</footer>
 
-</div>
+</div> 
+
 
 <script type="text/ng-template" id="myModalContent.html">
 
@@ -129,7 +139,7 @@
 		<h4>Status: {{tool.activity}}</h4>
 		<hr />
 		<h4>Conforamce profiles</h4>
-		<div>
+		<div class="conformace">
 		<ul>
 			<li ng-repeat="profil in tool.profiles">{{profil}}</li>
 		</ul>

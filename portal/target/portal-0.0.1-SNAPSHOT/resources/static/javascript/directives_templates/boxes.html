@@ -5,7 +5,7 @@
 
 
 <div class="panel panel-info">
-  <div class="panel-heading"> <h4>Welcome to the NIST HL7 V2 Resource Portal !</h4></div>
+  <div class="panel-heading"> <h4><strong>Welcome to the NIST HL7 V2 Resource Portal!</strong></h4></div>
  <div class= " col-md-12">
 <br/> 
  NIST provides a number of tools and utilities in support of the HL7 v2.x messaging standard. Conformance testing tools include web applications and web services for validating HL7 v2.x message instances based on message profiles. The foundation of the tool kit is a set of Java APIs that supports testing activities such as automated message generation and message validation. The APIs are organized as a testing framework which can be used to build tools such as web services and web applications. NIST provides the testing tools via these portal or the utilities can be incorporated into 3rd party applications and testing environments. Additionally, NIST is in the process of developing productivity tools to support the creation of HL7 v2 implementation guides (including the message profiles) and to develop test plans (i.e., creating test cases based on message profiles). This site provides access to the NIST HL7 v2 Toolkit.<br/>
@@ -14,7 +14,7 @@
   
   <div class="panel-body">
   <div class=row>
-	<a ui-sref="tools">
+	<a ui-sref="tools" ng-click="setActive(1)">
 	<div class="col-md-3 ">
 	<div class="panel panel-default fixheight">
   	<div class="panel-heading heading">
@@ -38,7 +38,7 @@
 </div>
 </div>
 </a>
-<a ui-sref="publications">
+<a ui-sref="publications" ng-click="setActive(2)">
 <div class="col-md-3 ">
 	<div class="panel panel-default fixheight">
   	<div class="panel-heading heading">
@@ -61,7 +61,7 @@
 </div>
 </div>
 </a>
-<a ui-sref="resources">
+<a ui-sref="resources" ng-click="setActive(3)">
 <div class="col-md-3">
 	<div class="panel panel-default fixheight">
   	<div class="panel-heading heading">
@@ -85,7 +85,7 @@
 </div>
 </div>
 </a>
-<a ui-sref="sourcecodes">
+<a ui-sref="sourcecodes" ng-click="setActive(1)">
 <div class="col-md-3 ">
 	<div class="panel panel-default fixheight">
   	<div class="panel-heading heading">

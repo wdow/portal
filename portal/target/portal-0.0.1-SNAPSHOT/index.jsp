@@ -53,7 +53,7 @@
 								Publications</span></a></li>
 					</a>
 					</li>
-					<li ng-class="{active :isActive(3)}" ng-click="setActive(3)"><a
+					<li ng-class="{active :isActive(3)}" ng-click="setActive(3)" ><a
 						ui-sref="resources"><span style="color: black;">
 								Resources</span></a></li>
 					</a>
