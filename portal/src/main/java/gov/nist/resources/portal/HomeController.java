@@ -36,27 +36,25 @@ PresentationRepository presentations;
 @Autowired
 IG_DocumentRepository IGs; 
 
-@RequestMapping(value="/", method= RequestMethod.GET)
+@RequestMapping(value="/", method= RequestMethod.POST)
 	public String home(){
-	System.out.println("adaaaaaaaaaaa");
+	
 		return "index";
 	}
 
 
-@RequestMapping(value="/tools", method= RequestMethod.GET)
-public List<Tool> gettools(){
-System.out.println("adaaaaaaaaaaa");
+@RequestMapping(value="/tools", method= RequestMethod.POST)
+public List<Tool> getTools(){
 
 
    List<Tool> all= tools.findAll();
-   System.out.println(all.size());
-    System.out.println(all);
+
 	return all;
 }
 
-@RequestMapping(value="/papers", method= RequestMethod.GET)
+@RequestMapping(value="/papers2", method= RequestMethod.POST)
 public List<Paper> getpapers(){
-System.out.println("adaaaaaaaaaaa");
+
 
 
    List<Paper> all= papers.findAll();
@@ -65,37 +63,33 @@ System.out.println("adaaaaaaaaaaa");
 	return all;
 }
 
-@RequestMapping(value="/artifacts", method= RequestMethod.GET)
-public List<Artifact> getArtifacts(){
-System.out.println("adaaaaaaaaaaa");
+@RequestMapping(value="/artifacts", method= RequestMethod.POST)
+public List<Artifact> POSTArtifacts(){
 
 
    List<Artifact> all= artifacts.findAll();
-   System.out.println(all.size());
-    System.out.println(all);
+  
 	return all;
 }
 
 
-@RequestMapping(value="/presentations", method= RequestMethod.GET)
-public List<Presentation> getPresentations(){
+@RequestMapping(value="/presentations", method= RequestMethod.POST)
+public List<Presentation> POSTPresentations(){
 
 
 
    List<Presentation> all= presentations.findAll();
-   System.out.println(all.size());
-    System.out.println(all);
+
 	return all;
 }
 
-@RequestMapping(value="/IGs", method= RequestMethod.GET)
+@RequestMapping(value="/IGs", method= RequestMethod.POST)
 public  List<IG_Document> getIGs(){
 
 
 
    List<IG_Document> all= IGs.findAll();
-   System.out.println(all.size());
-    System.out.println(all);
+
 	return all;
 }
 

@@ -8,15 +8,7 @@ public class Presentation {
 	@Id
 	private Object id; 
 	private String title;
-	public Presentation(Object id, String title, String link,
-			String publication_date, String author) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.link = link;
-		this.publication_date = publication_date;
-		this.author = author;
-	}
+
 	public String getTitle() {
 		return title;
 	}

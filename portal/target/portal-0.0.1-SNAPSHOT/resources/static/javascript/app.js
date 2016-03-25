@@ -1,10 +1,10 @@
-var app = angular.module('app', ['720kb.tooltips', 'simplePagination', 'nsPopover', 'ngAnimate', 'ui.bootstrap','ui.router']);
+var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap','ui.router']);
 
 
 
 
 
-app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance) {
+app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log','$templateCache', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance,$templateCache) {
 
    $scope.tools =[];
    $scope.FilteredTools=[];
@@ -25,8 +25,8 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    $scope.version ={
 		   standardVersion : ""
    };
-    $scope.displayPopover = true;
-    $scope.pagination = Pagination.getNew(18);
+   
+    $scope.pagination = Pagination.getNew(20);
     $scope.pagination.numPages = Math.ceil($scope.tools.length/$scope.pagination.perPage);
     $scope.tab = 1;
     $scope.math=Math;
@@ -76,6 +76,21 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
     $scope.compareToDomainss = function(domain){
     	return domain=="ss";
     }
+    $scope.panelEmty=function(ig){
+    	var temp=true;
+    	if(ig.profiles.length===0){
+    		tem= true;
+    	}
+    	else {
+    		  for (var i = ig.profiles.length - 1; i >= 0; i--){
+    			  if(ig.profiles[i].domain=== $scope.domain.domain|| $scope.domain.domain===''){
+    				  temp=false;
+    			  }
+    		  } 
+    	}
+    	return temp;
+    }
+    
       //$scope.limit=tools.filter($scope.myFilter).filter($scope.ActivityFilter);
     $scope.myFilter = function(tool) {
         if(tool.hasOwnProperty('categorie'))
@@ -163,32 +178,38 @@ $scope.setActive = function(activeTab) {
 		  return false;
   };	  	  
 
+  $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.perPage);
 
-  $http.get("/portal/tools").success(function (response) {
+  $http.post("/portal/tools").success(function (response) {
 	  console.log(response);
       $scope.tools = response;
   });
   
-$scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.perPage);
-  $http.get("/portal/papers").success(function (response) {
-	  console.log(response);
-      $scope.papers = response;
-  });
+
+
+  
+  
+//  $http.post("/portal/papers").success(function (response) {
+//	  console.log(response);
+//      $scope.papers = response;
+//  });
     
-  $http.get("/portal/artifacts").success(function (response) {
-	  console.log(response);
+  $http.post("/portal/artifacts").success(function (response) {
       $scope.artifacts = response;
   });
   
-  $http.get("/portal/presentations").success(function (response) {
-	  console.log(response);
+  $http.post("/portal/presentations").success(function (response) {
       $scope.presentations = response;
   });
   
-  $http.get("/portal/IGs").success(function (response) {
-	  console.log(response);
+  $http.post("/portal/IGs").success(function (response) {
       $scope.IGs = response;
   });
+  
+$http.post("/portal/papers2").success(function (response) {
+  console.log(response);
+  $scope.papers = response;
+});
   
   
   $scope.open = function(tool) {
@@ -199,8 +220,7 @@ $scope.pagination.numPages = Math.ceil($scope.tools.length / $scope.pagination.p
           scope: $scope,
           size:'lg',
           windowClass: 'my-modal-popup'
-          //size: size,
-        	 
+
 
       });
       $scope.modalInstance = modalInstance;
@@ -269,17 +289,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         
     .state('publications', {
-        // we'll get to this in a bit  
+    
     	 url: '/publications',
          templateUrl: 'resources/static/javascript/directives_templates/publications-tab.html'
     })
     .state('sourcecodes', {
-        // we'll get to this in a bit  
+
     	 url: '/sourcecodes',
          templateUrl: 'resources/static/javascript/directives_templates/codes-tab.html'
     })
     .state('resources', {
-        // we'll get to this in a bit       
+  
     	 url: '/resources',
          templateUrl: 'resources/static/javascript/directives_templates/artifact-tab.html'
     });

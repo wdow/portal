@@ -19,16 +19,7 @@ public class Paper {
 	public void setPlace(String place) {
 		this.place = place;
 	}
-	public Paper(Object id, String title, String link, String publication_date,
-			String author, String keywords) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.link = link;
-		this.publication_date = publication_date;
-		this.author = author;
-		this.keywords = keywords;
-	}
+
 	public Paper() {
 		super();
 	}

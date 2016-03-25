@@ -7,7 +7,7 @@
   <div class="panel-body">
         <div class= "row ">
     <select class= "Select col-md-6 " ng-model="cat.categorie" ng-click="FilterTools(tools)" >
-        <option value='' >Choose a category filter</option>
+        <option value='' >All Tools</option>
         <option value='ONC Certification Related Tools' ng-click="pagination.toPageId(0)">ONC Certification Related Tools</option>
          <option value='IHE Related Tools'>IHE Related Tools</option>
         <option value='Laboratory Reporting Related Tools'>Laboratory Reporting Related Tools</option>
@@ -138,14 +138,14 @@
 		<hr />
 		<h4>Status: {{tool.activity}}</h4>
 		<hr />
-		<h4>Conforamce profiles</h4>
+		<h4>Conformance profiles</h4>
 		<div class="conformace">
 		<ul>
 			<li ng-repeat="profil in tool.profiles">{{profil}}</li>
 		</ul>
 		</div>
 		<hr />
-		see more: <a href={{tool.link}} target="_blank"> <span
+		See more: <a href={{tool.link}} target="_blank"> <span
 			style="font-size: 18px;">{{tool.link}} </span></a>
 
 		<div class="modal-footer">

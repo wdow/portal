@@ -58,7 +58,10 @@
     	<select class= "Select" ng-model="domain.domain">
         <option value=''>all</option>
         <option value='iz'>iz(Immunization Information System Reporting)</option>
-        <option value='ss'>ss</option>
+        <option value='ss'>ss(Syndromic Surveillance )</option>
+        <option value='lri'>lri(Laboratory Results Interface )</option>
+        <option value='elr'>elr(Electronic Laboratory Reporting)</option>
+        
         
         </select>
         <br/>
@@ -81,6 +84,7 @@
      
   <div class="panel-body">
   
+  <div ng-show="panelEmty(ig)"> <span style="font-size:20px; color: red;">No profile corresponding to the {{domain.domain}} domain</span></div>
 
         <br/>
          <uib-accordion >
@@ -169,16 +173,16 @@
 </div>
 </div>
 </div>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">SCHEMAS</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
-  </div>
-</div>
+<!-- <div class="panel panel-info"> -->
+<!--   <div class="panel-heading"> -->
+<!--     <h3 class="panel-title">SCHEMAS</h3> -->
+<!--   </div> -->
+<!--   <div class="panel-body"> -->
+<!--     Panel content -->
+<!--   </div> -->
+<!-- </div> -->
+<!--   </div> -->
+<!-- </div> -->
 
 
 		<footer id="footer" style= "border-top:2px solid;" >

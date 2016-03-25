@@ -3,27 +3,21 @@
 
 <head>
 <title>portal</title>
-<script src="resources/static/angular/angular.js"></script>
-<script src="resources/static/ng-simplePagination/simplePagination.js"></script>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js">
-	
-</script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js"></script>
-<script
-	src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
-<script src="resources/static/nsPopover-master/src/nsPopover.js"></script>
-<script
-	src="resources/static/angular-tooltips-master/dist/angular-tooltips.js"></script>
-<script src="resources/static/javascript/app.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<!--<link rel="stylesheet" href="style/nsPopover.css">-->
+
+<link rel="stylesheet"	href="resources/static/javascript/external_modules/bootstrap/dist/css/bootstrap.css">
+
 <link rel="stylesheet" href="resources/static/style/style.css">
 
+<script src="resources/static/javascript/external_modules/angular/angular.js"></script>
+ <script src="resources/static/javascript/external_modules/ng-simplePagination/simplePagination.js"></script> 
+<script src="resources/static/javascript/external_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="resources/static/javascript/external_modules/angular-animate/angular-animate.js"></script>
+
+<script src="resources/static/javascript/external_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<script src="resources/static/javascript/app.js"></script> 
 </head>
 
 <body ng-app="app" ng-controller="toolController">
@@ -71,23 +65,6 @@
 			<div ui-view></div>
 		</div>
 			</div>
-<!-- 		<footer id="footer" class="appContent"> -->
-<!-- 			<a href="http://www.nist.gov" target="_blank"><img -->
-<!-- 				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a -->
-<!-- 				href="http://www.itl.nist.gov/" target="_blank"><img -->
-<!-- 				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a> -->
-<!-- 			<div style="text-align: right;"> -->
-<!-- 				<p> -->
-<!-- 					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm" -->
-<!-- 						target="_blank" title="View Disclaimer">Disclaimer</a> | <a -->
-<!-- 						href="mailto:haffo[at]nist[dot]gov" -->
-<!-- 						title="Email Website Administrator: rochb">Email Website -->
-<!-- 						Administrator</a> | <a -->
-<!-- 						href="http://www.nist.gov/public_affairs/privacy.htm" -->
-<!-- 						target="_blank" title="View Privacy Policy">Privacy/Policy</a> -->
-<!-- 				</p> -->
-<!-- 			</div> -->
-<!-- 		</footer> -->
 
 		</div>
 </body>
