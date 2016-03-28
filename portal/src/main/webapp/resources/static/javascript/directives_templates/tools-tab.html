@@ -141,14 +141,16 @@
 		<h4>Conformance profiles</h4>
 		<div class="conformace">
 		<ul>
-			<li ng-repeat="profil in tool.profiles">{{profil}}</li>
+			<li class="col-md-4" ng-repeat="profil in tool.profiles">{{profil}}</li>
 		</ul>
 		</div>
+		
+		<div class="col-md-12">
 		<hr />
 		See more: <a href={{tool.link}} target="_blank"> <span
 			style="font-size: 18px;">{{tool.link}} </span></a>
-
-		<div class="modal-footer">
+	</div>
+		<div class="modal-footer col-md-12">
 			<button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
 		</div>
 	</div>

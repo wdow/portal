@@ -12,6 +12,8 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    $scope.IGs = [];
    $scope.artifacts =[];
    $scope.presentations =[];
+   $scope.schemaDomain = [];
+  
    $scope.sort ={
 		   title : ""
    };
@@ -20,6 +22,10 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    };
    $scope.domain ={
 		   domain : ""
+		   
+   };
+   $scope.status ={
+		   open : "true"
 		   
    };
    $scope.version ={
@@ -210,7 +216,12 @@ $http.post("/portal/papers2").success(function (response) {
   console.log(response);
   $scope.papers = response;
 });
-  
+
+$http.post("/portal/schemaDomain").success(function (response) {
+	  console.log(response);
+	  $scope.schemaDomain = response;
+	});
+
   
   $scope.open = function(tool) {
 	  $scope.tool = tool;
@@ -252,6 +263,12 @@ app.directive('publicationsTab', function() {
     return {
         restrict: 'E',
         templateUrl: 'resources/static/javascript/directives_templates/puclications-tab.html'
+    };
+});
+app.directive('aboutTab', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'resources/static/javascript/directives_templates/about-tab.html'
     };
 });
 
@@ -302,7 +319,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
   
     	 url: '/resources',
          templateUrl: 'resources/static/javascript/directives_templates/artifact-tab.html'
-    });
+    }).
+    state('about', {
+    	  
+   	 url: '/about',
+        templateUrl: 'resources/static/javascript/directives_templates/about-tab.html'
+   });
     $urlRouterProvider.otherwise('/');
     
     

@@ -234,6 +234,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     
     
 }
+.footerImage {
+	height: 60px
+}
 
 .box22 {
 
@@ -268,9 +271,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     
     
 }
+.box {
+	display: block;
+	margin-left: 20px;
+	float: left;
+	margin-right: 10px;
+	text-align: left;
+	border: 0
+}
 .conformace{
-	height: 150px;
-	overflow-y: scroll;
+/* 	height: 150px; */
+/* 	overflow-y: scroll; */
 }
 #footer {
 /*     border-top: 1px solid #8d9bb8; */

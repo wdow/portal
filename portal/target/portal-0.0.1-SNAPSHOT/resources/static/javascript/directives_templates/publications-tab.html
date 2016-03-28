@@ -6,23 +6,26 @@
         
      
         <uib-accordion>
-            <uib-accordion-group heading='Papers' is-open="true">
-                <br>
-
+            <uib-accordion-group  is-open="status.open">
+           
+<uib-accordion-heading>
+     <i class="glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"> </i> Papers
+      </uib-accordion-heading>
                 
                 <table class="table table-hover table-striped">
                     <thead class="table-info" >
                         <tr>
-                            <th>title</th>
-                            <th>date</th>
-                            <th>authors</th>
-                            <th>publication</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Authors</th>
+                            <th>Publication</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="paper in papers">
+                        <tr ng-repeat="paper in papers| orderBy:'-year'">
                            <td >
-                     <a class="link" href="resources/static/papers/{{paper.link}}">{{paper.title}} </a>
+                           
+                     <a class="link" href="resources/static/papers/{{paper.link}}">{{paper.title}}{{paper.year}} </a>
                             </td>
                             <td >
                            {{paper.publication_date}}
@@ -45,17 +48,19 @@
                 
       
             </uib-accordion-group>
-            <uib-accordion-group heading='Presentations'>
-                <br/>
+            <uib-accordion-group heading='Presentations' is-open="status1.open">
+<uib-accordion-heading>
+     <i class="glyphicon" ng-class="{'glyphicon-chevron-down': status1.open, 'glyphicon-chevron-right': !status1.open}"></i>  Presentations
+      </uib-accordion-heading>
 
                 
  <table class="table table-hover table-striped">
                     <thead class="table-info" >
                         <tr>
-                            <th>title</th>
-                            <th>date</th>
-                            <th>authors</th>
-                            <th>publication</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Authors</th>
+                            <th>Publication</th>
                         </tr>
                     </thead>
                     <tbody>

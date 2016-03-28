@@ -2,7 +2,7 @@
 <div class=" ui-view-container well  ">
 
 <div class="panel panel-info">
-  <div class="panel-heading">  <h3><strong>Documents</strong></h3></div>
+  <div class="panel-heading">  <h3><strong>Resources</strong></h3></div>
   <div class="panel-body">
 
 
@@ -66,17 +66,19 @@
         </select>
         <br/>
           <br/>
-<div class="panel panel-info" ng-repeat="ig in IGs">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{ig.name}}</h3>
-  </div>
-
-    <div class="panel-body">
-<div class="panel panel-warning">
+          <div class="panel panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">PROFILES</h3>
   </div>
   
+      <div class="panel-body">
+  
+<div class="panel panel-warning" ng-repeat="ig in IGs">
+  <div class="panel-heading">
+       <h3 class="panel-title">{{ig.name}}</h3>
+  </div>
+
+
   
 
         
@@ -88,10 +90,12 @@
 
         <br/>
          <uib-accordion >
-            <uib-accordion-group  ng-repeat= "artifact in ig.profiles | filter : domain |filter :sort" >
+            <uib-accordion-group  ng-repeat= "artifact in ig.profiles | filter : domain |filter :sort" is-open="artifact.open">
             <uib-accordion-heading>
+            
+           
             <div class=row>
-            <div class= "col-md-6">    <strong>{{artifact.title}}   </strong></div>
+            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-chevron-down': artifact.open, 'glyphicon-chevron-right': !artifact.open}"> </i>  <strong>{{artifact.title}}   </strong> </div>
               <div class= "col-md-6" style=" color:black;font-size:12px;">    <strong> {{artifact.spec}}   </strong></div>
             </div>
 <!--         <strong>{{artifact.title}}   </strong>                            <span style="float: right;"> {{artifact.spec}}</span> -->
@@ -111,9 +115,9 @@
                 <table class="table table-hover" >
                     <thead>
                         <tr>
-                            <th>profile</th>
-                            <th>value_set</th>
-                            <th>constraints</th>
+                            <th>Profile</th>
+                            <th>Value_set</th>
+                            <th>Constraints</th>
                       
                         </tr>
                     </thead>
@@ -142,9 +146,9 @@
                     <table class="table table-hover" >
                     <thead>
                         <tr>
-                            <th>profile</th>
-                            <th>value_set</th>
-                            <th>constraints</th>
+                            <th>Profile</th>
+                            <th>Value sets</th>
+                            <th>Constraints</th>
                       
                         </tr>
                     </thead>
@@ -167,22 +171,66 @@
                     </tbody>
                 </table>
                           </div>   
-           
+            </uib-accordion-group>
         </uib-accordion>
   </div>
 </div>
 </div>
 </div>
-<!-- <div class="panel panel-info"> -->
-<!--   <div class="panel-heading"> -->
-<!--     <h3 class="panel-title">SCHEMAS</h3> -->
-<!--   </div> -->
-<!--   <div class="panel-body"> -->
-<!--     Panel content -->
-<!--   </div> -->
-<!-- </div> -->
-<!--   </div> -->
-<!-- </div> -->
+
+          <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Schemas</h3>
+  </div>
+  
+      <div class="panel-body">
+    <uib-accordion >
+            <uib-accordion-group  ng-repeat= "domain in schemaDomain " is-open="domain.open">
+            <uib-accordion-heading>
+            
+           
+            <div class=row>
+            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-chevron-down': domain.open, 'glyphicon-chevron-right': !doamain.open}"> </i>  <strong>{{domain.title}}   </strong> </div>
+              <div class= "col-md-6" style=" color:black;font-size:12px;">   
+            </div>
+
+                   </div>
+                 
+      </uib-accordion-heading>
+<table class="table table-hover" >
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat= "schema in domain.schemas" >
+                           <td >
+                          {{schema.description}} 
+                            </td>
+                            
+                    
+                            <td>
+                                <a href="resources/static/schemas/{{schema.source}}.xml"> {{schema.source}}</a>
+                            </td>
+
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+
+       </uib-accordion-group>
+       
+         <uib-accordion>
+      </div>
+
+   </div>
+
+
+
+
 
 
 		<footer id="footer" style= "border-top:2px solid;" >

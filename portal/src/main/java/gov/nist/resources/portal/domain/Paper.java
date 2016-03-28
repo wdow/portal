@@ -13,6 +13,13 @@ public class Paper {
 	private String author;
 	public String keywords;
 	private String place;
+	private double year;
+	public double getYear() {
+		return year;
+	}
+	public void setYear(double year) {
+		this.year = year;
+	}
 	public String getPlace() {
 		return place;
 	}

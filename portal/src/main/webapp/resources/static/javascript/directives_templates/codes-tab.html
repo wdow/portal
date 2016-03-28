@@ -21,8 +21,10 @@
 		</div>
 		<div>
 			<uib-accordion> 
-			<uib-accordion-group ng-repeat="tool in tools| filter: sort" heading={{tool.title}} >
-			
+			<uib-accordion-group ng-repeat="tool in tools| filter: sort" is-open="artifact.open">
+			<uib-accordion-heading>
+     <i class="glyphicon" ng-class="{'glyphicon-chevron-down': artifact.open, 'glyphicon-chevron-right': !artifact.open}"> </i> {{tool.title}} 
+      </uib-accordion-heading>
 			<img
 				src="resources/static/images/github.png" alt="github">
 				<strong>github :</strong> <a href=" https://github.com/haffo/hit-iz-tool"> code repository </a>

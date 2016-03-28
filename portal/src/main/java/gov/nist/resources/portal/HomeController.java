@@ -3,20 +3,25 @@ package gov.nist.resources.portal;
 
 import java.util.ArrayList;
 import java.util.List;
+import gov.nist.resources.portal.domain.*;
 
 import gov.nist.resources.portal.domain.Artifact;
 import gov.nist.resources.portal.domain.IG_Document;
 import gov.nist.resources.portal.domain.Paper;
 import gov.nist.resources.portal.domain.Presentation;
+import gov.nist.resources.portal.domain.Schema;
 import gov.nist.resources.portal.domain.Tool;
 import gov.nist.resources.portal.repository.ArtifactRepository;
 import gov.nist.resources.portal.repository.IG_DocumentRepository;
 import gov.nist.resources.portal.repository.PaperRepository;
 import gov.nist.resources.portal.repository.PresentationRepository;
+import gov.nist.resources.portal.repository.SchemaDomainRepository;
+import gov.nist.resources.portal.repository.SchemaRepository;
 import gov.nist.resources.portal.repository.ToolRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.geo.GeoJson;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,9 +37,13 @@ PaperRepository papers;
 @Autowired
 ArtifactRepository artifacts;
 @Autowired
+SchemaRepository schemas;
+@Autowired
 PresentationRepository presentations; 
 @Autowired
 IG_DocumentRepository IGs; 
+@Autowired
+SchemaDomainRepository SchemaDomain;
 
 @RequestMapping(value="/", method= RequestMethod.POST)
 	public String home(){
@@ -73,6 +82,22 @@ public List<Artifact> POSTArtifacts(){
 }
 
 
+@RequestMapping(value="/schemas", method= RequestMethod.POST)
+public List<Schema> POSTSchemas(){
+
+
+   List<Schema> all=  schemas.findAll();
+  
+	return all;
+}
+@RequestMapping(value="/schemaDomain", method= RequestMethod.POST)
+public List<gov.nist.resources.portal.domain.SchemaDomain> postSchemaDomain(){
+
+
+   List<SchemaDomain> all= SchemaDomain.findAll();
+  
+	return all;
+}
 @RequestMapping(value="/presentations", method= RequestMethod.POST)
 public List<Presentation> POSTPresentations(){
 
