@@ -28,6 +28,10 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   open : "true"
 		   
    };
+   $scope.archived ={
+		   archived : "false"
+		   
+   };
    $scope.version ={
 		   standardVersion : ""
    };

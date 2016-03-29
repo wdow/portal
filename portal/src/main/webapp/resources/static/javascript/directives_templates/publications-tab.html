@@ -23,19 +23,20 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="paper in papers| orderBy:'-year'">
-                           <td >
+                           <td class="col-md-4">
                            
-                     <a class="link" href="resources/static/papers/{{paper.link}}">{{paper.title}}{{paper.year}} </a>
+                     <a class="link" href="resources/static/papers/{{paper.link}}">{{paper.title}}</a>
                             </td>
-                            <td >
+                            <td class="col-md-2">
                            {{paper.publication_date}}
                             </td>
                         
-                            <td>
+                            <td class="col-md-3">
                             {{paper.author}}
                             </td>
-                            <td>
-                         {{paper.place}}
+                            <td class="col-md-3">
+<!--                          {{paper.place}} -->
+                         <p ng-bind-html="paper.place |sanitize"></p>
                         
                             </td>
                         </tr>
@@ -76,7 +77,7 @@
                             {{presentation.author}}
                             </td>
                             <td>
-                         {{presentation.place}} National institute of standards and technology
+                   {{presentation.place}}
                         
                             </td>
                         </tr>

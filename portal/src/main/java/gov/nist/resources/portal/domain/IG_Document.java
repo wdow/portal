@@ -17,6 +17,13 @@ public class IG_Document {
 	@Id
 	private Object id;
 	private String name;
+	private String domain;
+	public String getDomain() {
+		return domain;
+	}
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
 	private List<Artifact> profiles;
 	public Object getId() {
 		return id;

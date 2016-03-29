@@ -8,7 +8,14 @@ public class Presentation {
 	@Id
 	private Object id; 
 	private String title;
+	private String place;
 
+	public String getPlace() {
+		return place;
+	}
+	public void setPlace(String place) {
+		this.place = place;
+	}
 	public String getTitle() {
 		return title;
 	}

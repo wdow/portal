@@ -73,7 +73,7 @@
   
       <div class="panel-body">
   
-<div class="panel panel-warning" ng-repeat="ig in IGs">
+<div class="panel panel-warning" ng-repeat="ig in IGs|filter : domain">
   <div class="panel-heading">
        <h3 class="panel-title">{{ig.name}}</h3>
   </div>
@@ -200,7 +200,7 @@
 <table class="table table-hover" >
                     <thead>
                         <tr>
-                            <th>Description</th>
+                            <th>Name</th>
                             <th>Source</th>
                         </tr>
                     </thead>

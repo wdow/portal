@@ -6,6 +6,8 @@
   <div class="panel-heading"><h3><strong> HL7 V2 Tools</strong></h3></div>
   <div class="panel-body">
         <div class= "row ">
+        
+ 
     <select class= "Select col-md-6 " ng-model="cat.categorie" ng-click="FilterTools(tools)" >
         <option value='' >All Tools</option>
         <option value='ONC Certification Related Tools' ng-click="pagination.toPageId(0)">ONC Certification Related Tools</option>
@@ -14,6 +16,10 @@
         <option value='Productivity Tools'>Productivity Tools</option>
     </select>
     
+     <label>Show Archived:
+  <input type="checkbox" ng-model="archived.archived" ng-true-value="'true'" ng-false-value="'false'">
+  </label>
+   
 <!--     {{categorie}} -->
 <!-- <!--     <label> --> 
 <!-- <!--     <input type="radio" ng-model="activity" value="Active" > --> 
@@ -30,15 +36,16 @@
 
 
 
-  <div  class="input-group col-md-2 col-xs-offset-1">
+  <div  class="input-group col-md-2 " style="float:right; margin-right:5px;">
   <span class="input-group-addon" id="basic-addon1">
   <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
   </span>
   <input type= "text" ng-model ="sort.title" class="form-control"></input> </div>
+
  </div>
- 
+  
 	<div class="row toolsboxes">
-		<div class="box1 col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage ">
+		<div class="box1 col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " ng-show="tool.activity==='Active'">
 			<a href={{tool.link}}>	
 			<div class="boxhead">
 			<span style="font-size: 20px; color: white;">
@@ -51,15 +58,42 @@
 		
 			</div> </a>
 			
-			
+			<a href="">
 				<div class="col-md-1" > 
 				
 	<span class = "glyphicon glyphicon-info-sign info" ng-click="open(tool)"/> 
 				 </div>
-
+</a>
 			</div>
 
 		</div>
+		
+			<div class="box1 archived col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " ng-show="tool.activity==='Archived'&& archived.archived==='true'" >
+			<a href={{tool.link}}>	
+			<div class="boxhead">
+			<span style="font-size: 20px; color: white;">
+			<p ng-bind-html="tool.html_title |sanitize"></p>
+			</span>
+			</div></a>
+			<div class="row">
+		
+		<a href={{tool.link}}>	<div class="col-md-6 col-xs-offset-4">
+		
+			</div> </a>
+			
+			<a href="">
+				<div class="col-md-1" > 
+				
+	<span class = "glyphicon glyphicon-info-sign info" ng-click="open(tool)"/> 
+				 </div>
+</a>
+			</div>
+
+		</div>
+		
+		
+		
+		
 
 	</div>
 
@@ -126,9 +160,10 @@
 
 		<p ng-bind-html="tool.description |sanitize"></p>
 		<hr />
-		<h4>Specification</h4>
+<div ng-hide= "tool.spec==='none'">
+		<h4 >Specification</h4>
 		{{tool.spec}}
-		<hr />
+		<hr /></div>
 		<h4>Last Update:</h4>
 		{{tool.last_update}}
 		<hr />
@@ -137,9 +172,9 @@
 		<h4>Use: {{tool.categorie}}</h4>
 		<hr />
 		<h4>Status: {{tool.activity}}</h4>
-		<hr />
-		<h4>Conformance profiles</h4>
-		<div class="conformace">
+		<hr ng-hide="tool.profiles.length===0"></hr>
+		<h4 ng-hide="tool.profiles.length===0">Conformance profiles</h4>
+		<div class="conformace" ng-hide="tool.profiles.length===0">
 		<ul>
 			<li class="col-md-4" ng-repeat="profil in tool.profiles">{{profil}}</li>
 		</ul>
