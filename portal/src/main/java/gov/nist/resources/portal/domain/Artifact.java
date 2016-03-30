@@ -7,6 +7,34 @@ public class Artifact {
 @Id
 private Object id;
 private String domain;
+private String valueSets;
+private String constraintes;
+
+public String getValueSets() {
+	return valueSets;
+}
+
+
+
+public void setValueSets(String valueSets) {
+	this.valueSets = valueSets;
+}
+
+
+
+public String getconstraintes() {
+	return constraintes;
+}
+
+
+
+public void setconstraintes(String constraintes) {
+	constraintes = constraintes;
+}
+
+
+
+
 
 private String title;
 public Object getId() {
