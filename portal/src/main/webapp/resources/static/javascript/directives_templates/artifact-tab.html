@@ -140,18 +140,18 @@
 
           <div ng-show="compareToDomainss(artifact.domain)==false ||ig.name==='SS MU 2014 1.0, HL7 2.5.1'" > 
              
-             <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
+             <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
                     </button></a> 
-                {{artifact.constraintes===undefined}}
+            
                 <table class="table table-hover" >
                 
                     <thead>
                         <tr>
                             <th>Profile</th>
-                            <th ng-hide="artifact.valueSets==='undefined'">Value_set</th>
-                            <th ng-hide="artifact.constraintes==='undefined'">Constraints</th>
+                            <th ng-hide="artifact.valueSets===null">Value_set</th>
+                            <th ng-hide="artifact.constraintes===null">Constraints</th>
                       
                         </tr>
                     </thead>
@@ -160,10 +160,10 @@
                            <td class="getLogo">
                                 <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a>
                             </td>
-                            <td ng-hide="artifact.valueSets===undefined" class="getLogo">
+                            <td ng-hide="artifact.valueSets===null" class="getLogo">
                                 <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_ValueSetLibrary</a>
                             </td>
-                            <td ng-hide="artifact.constraintes===undefined"class="getLogo">
+                            <td ng-hide="artifact.constraintes===null"class="getLogo">
                                 <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml" target="_blank"><img src="resources/static/images/get.png">{{artifact.title}}_Constraints.xml</a>
                             </td>
 
@@ -246,7 +246,7 @@
                             
                     
                             <td>
-                                <a href="resources/static/schemas/{{schema.source}}.xml"> {{schema.source}}</a>
+                                <a href="resources/static/schemas/{{schema.source}}" target="_blank"> {{schema.source}}</a>
                             </td>
 
                         </tr>

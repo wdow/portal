@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2013-01-24 15:31:30 updated by JY, V1.0 -->
+<HL7v2xConformanceProfile HL7Version="2.5" ProfileType="Constrainable"> 
+  <MetaData Date="01/24/2013" Name="PIX" OrgName="NIST" Status="Informative" Topics="confsig-a-2.5-profile-accNE_accAL-Deferred" Version="2.5"/>  
+  <Encodings> 
+    <Encoding>ER7</Encoding> 
+  </Encodings>  
+  <DynamicDef AccAck="NE" AppAck="AL" MsgAckMode="Deferred"/>  
+  <HL7v2xStaticDef EventDesc="QBP - Find candidates" EventType="Q22" MsgStructID="QBP_Q21" MsgType="QBP" Role="Sender"> 
+    <MetaData Date="01/24/2013" Name="PIX" OrgName="NIST" Status="Informative" Topics="confsig-a-2.5-profile-accNE_accAL-Deferred" Version="2.5"/>  
+    <Segment LongName="Message Header" Max="1" Min="1" Name="MSH" Usage="R">
+      <Field Datatype="ST" ItemNo="00001" Length="1" Max="1" Min="1" Name="Field Separator" Usage="R"/>
+      <Field Datatype="ST" ItemNo="00002" Length="4" Max="1" Min="1" Name="Encoding Characters" Usage="R"/>
+      <Field Datatype="HD_ITI" ItemNo="00003" Length="180" Max="1" Min="0" Name="Sending Application" Table="0361" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00004" Length="180" Max="1" Min="0" Name="Sending Facility" Table="0362" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00005" Length="180" Max="1" Min="0" Name="Receiving Application" Table="0361" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00006" Length="180" Max="1" Min="0" Name="Receiving Facility" Table="0362" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="TS_ITI" ItemNo="00007" Length="26" Max="1" Min="1" Name="Date/Time Of Message" Usage="R">
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+      <Field Datatype="ST" ItemNo="00008" Length="40" Max="1" Min="0" Name="Security" Usage="O"/>
+      <Field Datatype="MSG" ItemNo="00009" Length="15" Max="1" Min="1" Name="Message Type" Usage="R">
+        <Component Datatype="ID" Length="3" Name="message code" Table="0076" Usage="R">
+          <ConformanceStatement Profile="Base" id="QBP_Q22_001"> 
+            <EnglishDescription>MSH-9.1 SHALL be valued "QBP".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="QBP"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ID" Length="3" Name="trigger event" Table="0003" Usage="R">
+          <ConformanceStatement Profile="Base" id="QBP_Q22_002"> 
+            <EnglishDescription>MSH-9.2 SHALL be valued "Q22".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="Q22"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ID" Length="7" Name="message structure" Table="0354" Usage="R">
+          <ConformanceStatement Profile="Base" id="QBP_Q22_003"> 
+            <EnglishDescription>MSH-9.3 SHALL be valued "QBP_Q21".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="QBP_Q21"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="ST" ItemNo="00010" Length="20" Max="1" Min="1" Name="Message Control ID" Usage="R"/>
+      <Field Datatype="PT" ItemNo="00011" Length="3" Max="1" Min="1" Name="Processing ID" Usage="R">
+        <Component Datatype="ID" Length="1" Name="processing ID" Table="0103" Usage="O"/>
+        <Component Datatype="ID" Length="1" Name="processing mode" Table="0207" Usage="O"/>
+      </Field>
+      <Field Datatype="VID" ItemNo="00012" Length="60" Max="1" Min="1" Name="Version ID" Table="0104" Usage="R">
+        <Component Datatype="ID" Length="5" Name="version ID" Table="0104" Usage="O">
+          <ConformanceStatement Profile="Base" id="QBP_Q22_004"> 
+            <EnglishDescription>MSH-12.1 SHALL be valued "2.5".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="2.5"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="CE" Length="483" Name="internationalization code" Table="0399" Usage="O">
+          <SubComponent Datatype="ST" Name="identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of coding system" Table="0396" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of alternate coding system" Table="0396" Usage="O"/>
+        </Component>
+        <Component Datatype="CE" Length="483" Name="international version ID" Usage="O">
+          <SubComponent Datatype="ST" Name="identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of coding system" Table="0396" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of alternate coding system" Table="0396" Usage="O"/>
+        </Component>
+      </Field>
+      <Field Datatype="NM" ItemNo="00013" Length="15" Max="1" Min="0" Name="Sequence Number" Usage="O"/>
+      <Field Datatype="ST" ItemNo="00014" Length="180" Max="1" Min="0" Name="Continuation Pointer" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00015" Length="2" Max="1" Min="0" Name="Accept Acknowledgment Type" Table="0155" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00016" Length="2" Max="1" Min="0" Name="Application Acknowledgment Type" Table="0155" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00017" Length="3" Max="1" Min="0" Name="Country Code" Table="0399" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00692" Length="16" Max="*" Min="0" Name="Character Set" Table="0211" Usage="C"/>
+      <Field Datatype="CE" ItemNo="00693" Length="250" Max="1" Min="0" Name="Principal Language Of Message" Usage="O">
+        <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of coding system" Table="0396" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of alternate coding system" Table="0396" Usage="O"/>
+      </Field>
+      <Field Datatype="ID" ItemNo="01317" Length="20" Max="1" Min="0" Name="Alternate Character Set Handling Scheme" Table="0356" Usage="O"/>
+      <Field Datatype="EI" ItemNo="01598" Length="427" Max="*" Min="0" Name="Message Profile Identifier" Usage="O">
+        <Component Datatype="ST" Length="199" Name="entity identifier" Usage="O"/>
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0363" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" Usage="C"/>
+        <Component Datatype="ID" Length="6" Name="universal ID type" Table="0301" Usage="C"/>
+      </Field>
+    </Segment>  
+    <Segment LongName="Software Segment" Max="*" Min="0" Name="SFT" Usage="O">
+      <Field Datatype="XON" ItemNo="01834" Length="567" Max="1" Min="1" Name="Software Vendor Organization" Usage="R">
+        <Component Datatype="ST" Length="50" Name="organization name" Usage="O"/>
+        <Component Datatype="IS" Length="20" Name="organization name type code" Table="0204" Usage="O"/>
+        <Component Datatype="NM" Length="4" Name="ID number" Usage="B"/>
+        <Component Datatype="NM" Length="1" Name="check digit" Usage="O"/>
+        <Component Datatype="ID" Length="3" Name="check digit scheme" Table="0061" Usage="O"/>
+        <Component Datatype="HD" Length="227" Name="assigning authority" Table="0363" Usage="O">
+          <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+          <SubComponent Datatype="ST" Name="universal ID" Usage="C"/>
+          <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="C"/>
+        </Component>
+        <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+        <Component Datatype="HD" Length="227" Name="assigning facility ID" Usage="O">
+          <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+          <SubComponent Datatype="ST" Name="universal ID" Usage="C"/>
+          <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="C"/>
+        </Component>
+        <Component Datatype="ID" Length="1" Name="name representation code" Table="0465" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="organization identifier" Usage="O"/>
+      </Field>
+      <Field Datatype="ST" ItemNo="01835" Length="15" Max="1" Min="1" Name="Software Certified Version or Release Number" Usage="R"/>
+      <Field Datatype="ST" ItemNo="01836" Length="20" Max="1" Min="1" Name="Software Product Name" Usage="R"/>
+      <Field Datatype="ST" ItemNo="01837" Length="20" Max="1" Min="1" Name="Software Binary ID" Usage="R"/>
+      <Field Datatype="TX" ItemNo="01838" Length="1024" Max="1" Min="0" Name="Software Product Information" Usage="O"/>
+      <Field Datatype="TS" ItemNo="01839" Length="26" Max="1" Min="0" Name="Software Install Date" Usage="O">
+        <Component Datatype="DTM" Length="24" Name="time" Usage="R"/>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Table="0529" Usage="B"/>
+      </Field>
+    </Segment>  
+    <Segment LongName="Query Parameter Definition" Max="1" Min="1" Name="QPD" Usage="R">
+      <Field Datatype="CE" ItemNo="01375" Length="483" Max="1" Min="1" Name="Message Query Name" Table="0471" Usage="R">
+        <Component Datatype="ST" Length="20" Name="identifier" Usage="O">
+          <ConformanceStatement Profile="Base" id="QBP_Q22_005"> 
+            <EnglishDescription>QPD-1.1 SHALL be valued "IHE PDQ Query".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="IHE PDQ Query"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of coding system" Table="0396" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of alternate coding system" Table="0396" Usage="O"/>
+      </Field>
+      <Field Datatype="ST" ItemNo="00696" Length="32" Max="1" Min="1" Name="Query Tag" Usage="R"/>
+      <Field Datatype="QIP" ItemNo="01435" Length="212" Max="*" Min="1" Name="Demographics Fields" Usage="R">
+        <Component Datatype="ST" Length="12" Name="segment field name" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="values" Usage="R"/>
+      </Field>
+      <Field Datatype="NM" ItemNo="01435" Length="16" Max="1" Min="0" Name="Search Confidence Threshold" Usage="O"/>
+      <Field Datatype="ST" ItemNo="01435" Length="199" Max="1" Min="0" Name="Algorithm Name" Usage="O"/>
+      <Field Datatype="ST" ItemNo="01435" Length="199" Max="1" Min="0" Name="Algorithm Version" Usage="O"/>
+      <Field Datatype="ST" ItemNo="01435" Length="199" Max="1" Min="0" Name="Algorithm Description" Usage="O"/>
+      <Field Datatype="CX_3" ItemNo="01435" Length="1913" Max="*" Min="0" Name="What Domains Returned" Usage="O">
+        <Component Datatype="ST" Length="15" Name="ID" Usage="X"/>
+        <Component Datatype="ST" Length="1" Name="check digit" Usage="X"/>
+        <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="X"/>
+        <Component Datatype="HD_3" Length="227" Name="assigning authority" Table="0363" Usage="R">
+          <SubComponent Datatype="IS" Name="namespace ID" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0363" Usage="C">
+            <Predicate> 
+              <EnglishDescription>If HD_ITI.3 (Universal ID Type) is NOT valued.</EnglishDescription>  
+              <Condition> 
+                <NOT> 
+                  <Valued location="./3"/> 
+                </NOT> 
+              </Condition> 
+            </Predicate>
+          </SubComponent>
+          <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+            <Predicate> 
+              <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+              <Condition> 
+                <Valued location="./3"/> 
+              </Condition> 
+            </Predicate>
+          </SubComponent>
+          <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0301" Usage="C">
+            <Predicate> 
+              <EnglishDescription>If HD_ITI.1 (Namespace ID) is NOT valued.</EnglishDescription>  
+              <Condition> 
+                <NOT> 
+                  <Valued location="./1"/> 
+                </NOT> 
+              </Condition> 
+            </Predicate>
+          </SubComponent>
+        </Component>
+        <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="X"/>
+        <Component Datatype="HD" Length="227" Name="assigning facility" Usage="X"/>
+      </Field>
+    </Segment>  
+    <Segment LongName="Response Control Parameter" Max="1" Min="1" Name="RCP" Usage="R">
+      <Field Datatype="ID" ItemNo="00027" Length="1" Max="1" Min="1" Name="Query Priority" Table="0091" Usage="R">
+        <ConformanceStatement Profile="Base" id="QBP_Q22_006"> 
+          <EnglishDescription>RCP-1 SHALL be valued "I".</EnglishDescription>  
+          <Assertion> 
+            <PlainText location="." value="I"/> 
+          </Assertion> 
+        </ConformanceStatement>
+      </Field>
+      <Field Datatype="CQ" ItemNo="00031" Length="10" Max="1" Min="0" Name="Quantity Limited Request" Table="0126" Usage="O">
+        <Component Datatype="NM" Length="16" Name="Quantity" Usage="O"> 
+          <Reference>2.16.50</Reference> 
+        </Component>
+        <Component Datatype="CE" Length="483" Name="units" Usage="O">
+          <SubComponent Datatype="ST" Name="identifier" Usage="O">
+            <ConformanceStatement Profile="Base" id="QBP_Q22_007"> 
+              <EnglishDescription>RCP-2.2.1 SHALL be valued "RD" when present.</EnglishDescription>  
+              <Assertion> 
+                <PlainText location="." value="RD"/> 
+              </Assertion> 
+            </ConformanceStatement>
+          </SubComponent>
+          <SubComponent Datatype="ST" Name="text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of coding system" Table="0396" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate text" Usage="O"/>
+          <SubComponent Datatype="ID" Name="name of alternate coding system" Table="0396" Usage="O"/>
+        </Component>
+      </Field>
+      <Field Datatype="CE" ItemNo="01440" Length="250" Max="1" Min="0" Name="Response Modality" Table="0394" Usage="O">
+        <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of coding system" Table="0396" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+        <Component Datatype="ID" Length="20" Name="name of alternate coding system" Table="0396" Usage="O"/>
+      </Field>
+      <Field Datatype="TS_ITI" ItemNo="01441" Length="26" Max="1" Min="0" Name="Execution and Delivery Time" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+        <Predicate> 
+          <EnglishDescription>If RCP-1(Query Priority) is valued "D".</EnglishDescription>  
+          <Condition> 
+            <PlainText location="./1" locationContent="D"/> 
+          </Condition> 
+        </Predicate>
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+      <Field Datatype="ID" ItemNo="01443" Length="1" Max="1" Min="0" Name="Modify Indicator" Table="0395" Usage="O"/>
+      <Field Datatype="SRT" ItemNo="01624" Length="512" Max="*" Min="0" Name="Sort-by Field" Usage="O">
+        <Component Datatype="ST" Length="12" Name="sort-by field" Usage="R"/>
+        <Component Datatype="ID" Length="2" Name="sequencing" Table="0397" Usage="O"/>
+      </Field>
+      <Field Datatype="ID" ItemNo="01594" Length="256" Max="*" Min="0" Name="Segment group inclusion" Usage="O"/>
+    </Segment>  
+    <Segment LongName="Continuation Pointer" Max="1" Min="0" Name="DSC" Usage="O">
+      <Field Datatype="ST" ItemNo="00014" Length="180" Max="1" Min="0" Name="Continuation Pointer" Usage="O"/>
+      <Field Datatype="ID" ItemNo="01354" Length="1" Max="1" Min="0" Name="Continuation Style" Table="0398" Usage="O">
+        <ConformanceStatement Profile="Base" id="QBP_Q22_008"> 
+          <EnglishDescription>DSC-2 SHALL be valued "I" when present.</EnglishDescription>  
+          <Assertion> 
+            <PlainText location="." value="I"/> 
+          </Assertion> 
+        </ConformanceStatement>
+      </Field>
+    </Segment> 
+  </HL7v2xStaticDef> 
+</HL7v2xConformanceProfile>

@@ -73,7 +73,7 @@
   
       <div class="panel-body">
   
-<div class="panel panel-warning" ng-repeat="ig in IGs">
+<div class="panel panel-warning" ng-repeat="ig in IGs|filter : domain">
   <div class="panel-heading">
        <h3 class="panel-title">{{ig.name}}</h3>
   </div>
@@ -95,7 +95,7 @@
             
            
             <div class=row>
-            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-chevron-down': artifact.open, 'glyphicon-chevron-right': !artifact.open}"> </i>  <strong>{{artifact.title}}   </strong> </div>
+            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-triangle-bottom': artifact.open, 'glyphicon-triangle-right': !artifact.open}"> </i>  <strong>{{artifact.title}}   </strong> </div>
               <div class= "col-md-6" style=" color:black;font-size:12px;">    <strong> {{artifact.spec}}   </strong></div>
             </div>
 <!--         <strong>{{artifact.title}}   </strong>                            <span style="float: right;"> {{artifact.spec}}</span> -->
@@ -105,32 +105,66 @@
                     
       </uib-accordion-heading>
             
-             <div ng-show="compareToDomainss(artifact.domain)==false " > 
+<!--              <div ng-show="compareToDomainss(artifact.domain)==false " >  -->
              
-             <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
+<!--              <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope"> -->
+<!--                         <i class="fa fa-download"></i> -->
+<!--                         Download All Artifacts (.zip) -->
+<!--                     </button></a>  -->
+                
+<!--                 <table class="table table-hover" > -->
+<!--                     <thead> -->
+<!--                         <tr> -->
+<!--                             <th>Profile</th> -->
+<!--                             <th>Value_set</th> -->
+<!--                             <th>Constraints</th> -->
+                      
+<!--                         </tr> -->
+<!--                     </thead> -->
+<!--                     <tbody> -->
+<!--                         <tr> -->
+<!--                            <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a> -->
+<!--                             </td> -->
+<!--                             <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_ValueSetLibrary.xml</a> -->
+<!--                             </td> -->
+<!--                             <td class="getLogo"> -->
+<!--                                 <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml" target="_blank"><img src="resources/static/images/get.png">{{artifact.title}}_Constraints.xml</a> -->
+<!--                             </td> -->
+
+<!--                         </tr> -->
+                        
+<!--                     </tbody> -->
+<!--                 </table> </div> -->
+
+          <div ng-show="compareToDomainss(artifact.domain)==false ||ig.name==='SS MU 2014 1.0, HL7 2.5.1'" > 
+             
+             <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
                     </button></a> 
-                
+            
                 <table class="table table-hover" >
+                
                     <thead>
                         <tr>
                             <th>Profile</th>
-                            <th>Value_set</th>
-                            <th>Constraints</th>
+                            <th ng-hide="artifact.valueSets===null">Value_set</th>
+                            <th ng-hide="artifact.constraintes===null">Constraints</th>
                       
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                            <td class="getLogo">
-                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a>
+                                <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_Profile.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_Profile.xml</a>
                             </td>
-                            <td class="getLogo">
-                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_ValueSetLibrary.xml</a>
+                            <td ng-hide="artifact.valueSets===null" class="getLogo">
+                                <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_ValueSetLibrary.xml" target="_blank"><img src="resources/static/images/get.png"/> {{artifact.title}}_ValueSetLibrary</a>
                             </td>
-                            <td class="getLogo">
-                                <a href="resources/static/Artifact/{{artifact.domain}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml" target="_blank"><img src="resources/static/images/get.png">{{artifact.title}}_Constraints.xml</a>
+                            <td ng-hide="artifact.constraintes===null"class="getLogo">
+                                <a href="resources/static/Igs/{{ig.name}}/{{artifact.title}}/{{artifact.title}}_Constraints.xml" target="_blank"><img src="resources/static/images/get.png">{{artifact.title}}_Constraints.xml</a>
                             </td>
 
                         </tr>
@@ -138,7 +172,7 @@
                     </tbody>
                 </table> </div>
                 
-                <div ng-show="compareToDomainss(artifact.domain)==true">
+                <div ng-show="compareToDomainss(artifact.domain)==true && ig.name==='PHIN Messaging Guide for Syndromic Surveillance: Emergency Department, Urgent, Ambulatory Care, and Inpatient Settings, Release 2.0, April 21, 2015'">
                     <a href="resources/static/Artifact/{{artifact.domain}}/ss.zip">  <button title="Download All" type="button" class="btn btn-sm btn-info ng-binding ng-scope">
                         <i class="fa fa-download"></i>
                         Download All Artifacts (.zip)
@@ -180,7 +214,7 @@
 
           <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Schemas</h3>
+    <h3 class="panel-title">SCHEMAS</h3>
   </div>
   
       <div class="panel-body">
@@ -190,7 +224,7 @@
             
            
             <div class=row>
-            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-chevron-down': domain.open, 'glyphicon-chevron-right': !doamain.open}"> </i>  <strong>{{domain.title}}   </strong> </div>
+            <div class= "col-md-6">   <i class="glyphicon" ng-class="{'glyphicon-triangle-bottom': domain.open, 'glyphicon-triangle-right': !doamain.open}"> </i>  <strong>{{domain.title}}   </strong> </div>
               <div class= "col-md-6" style=" color:black;font-size:12px;">   
             </div>
 
@@ -200,7 +234,7 @@
 <table class="table table-hover" >
                     <thead>
                         <tr>
-                            <th>Description</th>
+                            <th>Name</th>
                             <th>Source</th>
                         </tr>
                     </thead>
@@ -212,7 +246,7 @@
                             
                     
                             <td>
-                                <a href="resources/static/schemas/{{schema.source}}.xml"> {{schema.source}}</a>
+                                <a href="resources/static/schemas/{{schema.source}}" target="_blank"> {{schema.source}}</a>
                             </td>
 
                         </tr>
@@ -232,25 +266,50 @@
 
 
 
+  <div id="footer" class="ng-scope" style="border-top:1px solid;">
 
-		<footer id="footer" style= "border-top:2px solid;" >
-			<a href="http://www.nist.gov" target="_blank"><img
-				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a
-				href="http://www.itl.nist.gov/" target="_blank"><img
-				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a>
-			<div style="text-align: right;">
-				<p>
-					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm"
-						target="_blank" title="View Disclaimer">Disclaimer</a> | <a
-						href="mailto:haffo[at]nist[dot]gov"
-						title="Email Website Administrator: rochb">Email Website
-						Administrator</a> | <a
-						href="http://www.nist.gov/public_affairs/privacy.htm"
-						target="_blank" title="View Privacy Policy">Privacy/Policy</a>
-				</p>
-			</div>
-		</footer>
+        <table>
+        <tbody>
+        <tr>
+            <td class="box col-md-1">
+                     <a href="http://www.nist.gov" target="_blank"><img class="footerImage" src="resources/static/images/nist_logo.gif" alt="The NIST Logo" title="The NIST Logo"></a>
+            </td>
 
+            <td class="box col-md-3">
+                <div>
+                    <h5>Application Information</h5>
+                    <span class="ng-binding">Date: 03/15/2016 13:01:30, </span>
+                    <span class="ng-binding">Application Version: 1.0</span>
+               
+                </div>
+            </td>
+
+            <td class="box col-md-3">
+                <div>
+                    <h5>Supported Browsers</h5>
+                    <span><i class="fa fa-firefox"></i> Firefox, <i class="fa fa-chrome"></i> Chrome, <i class="fa fa-safari"></i>
+Safari, <i class="fa fa-internet-explorer"></i> IE 9 and 10</span>
+                </div>
+            </td>
+
+            <td class="box col-md-4">
+                <div>
+                    <h5>External Links</h5>
+                    <a class="footer-link" href="http://www.nist.gov/public_affairs/disclaimer.cfm" target="_blank" title="View Disclaimer">Disclaimer</a> |
+                        <a class="footer-link" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy" target="_blank" title="View Privacy Policy">Privacy/Policy</a>|
+                         <a class="footer-link" ng-href="mailto:robert.snelick@nist.gov" title="Email Website Administrator @: robert.snelick@nist.gov" href="mailto:robert.snelick@nist.gov">Website Administrator</a>
+                 </div>
+            </td>
+
+            <td class="box col-md-2">
+                <a href="http://www.itl.nist.gov" target="_blank"><img class="footerImage" src="resources/static/images/itl-logo.jpg" alt="ITL Logo" title="ITL Logo"></a>
+            </td>
+
+        </tr>
+        </tbody>
+
+</table>
+ </div>
 
 </div>
 

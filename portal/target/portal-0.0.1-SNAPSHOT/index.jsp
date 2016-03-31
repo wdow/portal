@@ -55,6 +55,9 @@
 					<li ng-class="{ active :isActive(4)}" ng-click="setActive(4)"><a
 						ui-sref="sourcecodes "><span style="color: black;">
 								Source Code</span></a></li>
+					<li ng-class="{ active :isActive(5)}" ng-click="setActive(5)"><a
+						ui-sref="about "><span style="color: black;">
+								About</span></a></li>
 					</a>
 					</li>
 				</ul>

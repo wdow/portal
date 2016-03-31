@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2013-01-24 15:23:26 updated by JY, V1.0 -->
+<HL7v2xConformanceProfile HL7Version="2.3.1" ProfileType="Constrainable"> 
+  <MetaData Date="01/24/2013" Name="PIX" OrgName="NIST" Status="Informative" Topics="confsig-a-2.3.1-profile-accNE_accAL-Deferred" Version="2.3.1"/>  
+  <Encodings> 
+    <Encoding>ER7</Encoding> 
+  </Encodings>  
+  <DynamicDef AccAck="NE" AppAck="AL" MsgAckMode="Deferred"/>  
+  <HL7v2xStaticDef EventDesc="ADT/ACK - Merge patient - patient identifier list" EventType="A40" MsgStructID="ADT_A39" MsgType="ADT" Role="Sender"> 
+    <MetaData Date="01/24/2013" Name="PIX" OrgName="NIST" Status="Informative" Topics="confsig-a-2.3.1-profile-accNE_accAL-Deferred" Version="2.3.1"/>  
+    <Segment LongName="message header segment" Max="1" Min="1" Name="MSH" Usage="R">
+      <Field Datatype="ST" ItemNo="00001" Length="1" Max="1" Min="1" Name="Field Separator" Usage="R"/>
+      <Field Datatype="ST" ItemNo="00002" Length="4" Max="1" Min="1" Name="Encoding Characters" Usage="R"/>
+      <Field Datatype="HD_ITI" ItemNo="00003" Length="180" Max="1" Min="1" Name="Sending Application" Table="0361" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00004" Length="180" Max="1" Min="1" Name="Sending Facility" Table="0362" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00005" Length="180" Max="1" Min="1" Name="Receiving Application" Table="0361" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="HD_ITI" ItemNo="00006" Length="180" Max="1" Min="1" Name="Receiving Facility" Table="0362" Usage="R">
+        <Component Datatype="IS" Length="20" Name="namespace ID" Table="0300" Usage="R"/>
+        <Component Datatype="ST" Length="199" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./3"/> 
+            </Condition> 
+          </Predicate>
+        </Component>
+        <Component Datatype="ID" Length="6" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+          <Predicate> 
+            <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+            <Condition> 
+              <Valued location="./2"/> 
+            </Condition> 
+          </Predicate>
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+            <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ISO"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="TS_ITI" ItemNo="00007" Length="26" Max="1" Min="1" Name="Date/Time Of Message" Usage="R">
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+      <Field Datatype="ST" ItemNo="00008" Length="40" Max="1" Min="1" Name="Security" Usage="O"/>
+      <Field Datatype="CM_MSG" ItemNo="00009" Length="11" Max="1" Min="1" Name="Message Type" Table="0076" Usage="R">
+        <Component Datatype="ID" Length="3" Name="message type" Table="0076" Usage="R">
+          <ConformanceStatement Profile="Base" id="ADT_A40_001"> 
+            <EnglishDescription>MSH-9.1 SHALL be valued "ADT".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ADT"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ID" Length="3" Name="trigger event" Table="0003" Usage="R">
+          <ConformanceStatement Profile="Base" id="ADT_A40_002"> 
+            <EnglishDescription>MSH-9.2 SHALL be valued "A40".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="A40"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ID" Length="7" Name="message structure" Table="0354" Usage="O">
+          <ConformanceStatement Profile="Base" id="ADT_A40_003"> 
+            <EnglishDescription>MSH-9.3 SHALL be valued "ADT_A39" when present.</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="ADT_A39"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+      </Field>
+      <Field Datatype="ST" ItemNo="00010" Length="20" Max="1" Min="1" Name="Message Control ID" Usage="R"/>
+      <Field Datatype="PT" ItemNo="00011" Length="7" Max="1" Min="1" Name="Processing ID" Table="0103" Usage="R">
+        <Component Datatype="ID" Length="1" Name="processing ID" Usage="O"/>
+        <Component Datatype="ID" Length="1" Name="processing mode" Usage="O"/>
+      </Field>
+      <Field Datatype="VID" ItemNo="00012" Length="60" Max="1" Min="1" Name="Version ID" Table="0104" Usage="R">
+        <Component Datatype="ID" Length="5" Name="version ID" Usage="O">
+          <ConformanceStatement Profile="Base" id="ADT_A40_004"> 
+            <EnglishDescription>MSH-12.1 SHALL be valued "2.3.1".</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="2.3.1"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="CE" Length="483" Name="internationalization code" Usage="O">
+          <SubComponent Datatype="ST" Name="identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="text" Usage="O"/>
+          <SubComponent Datatype="ST" Name="name of coding system" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate text" Usage="O"/>
+          <SubComponent Datatype="ST" Name="name of alternate coding system" Usage="O"/>
+        </Component>
+        <Component Datatype="CE" Length="483" Name="international version ID" Usage="O">
+          <SubComponent Datatype="ST" Name="identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="text" Usage="O"/>
+          <SubComponent Datatype="ST" Name="name of coding system" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate identifier" Usage="O"/>
+          <SubComponent Datatype="ST" Name="alternate text" Usage="O"/>
+          <SubComponent Datatype="ST" Name="name of alternate coding system" Usage="O"/>
+        </Component>
+      </Field>
+      <Field Datatype="NM" ItemNo="00013" Length="15" Max="1" Min="0" Name="Sequence Number" Usage="O"/>
+      <Field Datatype="ST" ItemNo="00014" Length="180" Max="1" Min="0" Name="Continuation Pointer" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00015" Length="2" Max="1" Min="0" Name="Accept Acknowledgment Type" Table="0155" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00016" Length="2" Max="1" Min="0" Name="Application Acknowledgment Type" Table="0155" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00017" Length="2" Max="1" Min="0" Name="Country Code" Table="0399" Usage="O"/>
+      <Field Datatype="ID" ItemNo="00692" Length="16" Max="*" Min="0" Name="Character Set" Table="0211" Usage="C"/>
+      <Field Datatype="CE" ItemNo="00693" Length="60" Max="1" Min="0" Name="Principal Language Of Message" Usage="O">
+        <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+        <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+      </Field>
+      <Field Datatype="ID" ItemNo="01317" Length="20" Max="1" Min="0" Name="Alternate Character Set Handling Scheme" Table="0356" Usage="O"/>
+    </Segment>  
+    <Segment LongName="event type segment" Max="1" Min="1" Name="EVN" Usage="R">
+      <ConformanceStatement Profile="Base" id="ADT_A40_005"> 
+        <EnglishDescription>EVN-1 SHALL be identical as MSH-9.2 when present.</EnglishDescription>  
+        <Assertion> 
+          <Custom className="gov.nist.healthcare.validation.custom.EVN" id="1"/> 
+        </Assertion> 
+      </ConformanceStatement>
+      <Field Datatype="ID" ItemNo="00099" Length="3" Max="1" Min="0" Name="Event Type Code" Table="0003" Usage="O"/>
+      <Field Datatype="TS_ITI" ItemNo="00100" Length="26" Max="1" Min="1" Name="Recorded Date/Time" Usage="R">
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+      <Field Datatype="TS_ITI" ItemNo="00101" Length="26" Max="1" Min="0" Name="Date/Time Planned Event" Usage="O">
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+      <Field Datatype="IS" ItemNo="00102" Length="3" Max="1" Min="0" Name="Event Reason Code" Table="0062" Usage="O"/>
+      <Field Datatype="XCN" ItemNo="00103" Length="60" Max="*" Min="0" Name="Operator ID" Table="0188" Usage="O">
+        <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+        <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+          <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+          <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+        </Component>
+        <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+        <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+        <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+        <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+        <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+        <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+          <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+          <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+          <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+        </Component>
+        <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+        <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+        <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+        <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+        <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+          <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+          <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+          <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+        </Component>
+        <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+      </Field>
+      <Field Datatype="TS_ITI" ItemNo="01278" Length="26" Max="1" Min="0" Name="Event Occurred" Usage="RE">
+        <Component Datatype="DTM" Length="24" Name="Date/Time" Usage="R">
+          <ConformanceStatement Profile="Base" id="PIX_PDQ_002"> 
+            <EnglishDescription>TS_ITI.1 (Time) SHALL follow the format YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].</EnglishDescription>  
+            <Assertion> 
+              <Regex location="." regex="([0-9]{4})(((0[1-9])|(1[0-2]))(((0[1-9])|([1-2][0-9])|(3[0-1]))((([0-1][0-9])|(2[0-3]))(([0-5][0-9])(([0-5][0-9])((\.[0-9]{1,4})){0,1}){0,1}){0,1}){0,1}){0,1}){0,1}((\+|\-)[0-9]{4}){0,1}"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Component>
+        <Component Datatype="ST" Length="1" Name="degree of precision" Usage="X"/>
+      </Field>
+    </Segment>  
+    <SegGroup LongName="PATIENT" Max="*" Min="1" Name="PATIENT" Usage="R"> 
+      <Segment LongName="patient identification segment" Max="1" Min="1" Name="PID" Usage="R">
+        <Field Datatype="SI" ItemNo="00104" Length="4" Max="1" Min="0" Name="Set ID - PID" Usage="O">
+          <ConformanceStatement Profile="Base" id="ADT_A40_006"> 
+            <EnglishDescription>PID-1 SHALL be valued "1" when present.</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="1"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Field>
+        <Field Datatype="CX_ITI" ItemNo="00105" Length="20" Max="1" Min="0" Name="Patient ID" Usage="B">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="R"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="O"/>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning authority" Table="0363" Usage="R">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+          <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="RE"/>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+        </Field>
+        <Field Datatype="CX_2" ItemNo="00106" Length="250" Max="*" Min="1" Name="Patient Identifier List" Usage="R">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="R"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="O"/>
+          <Component Datatype="HD_3" Length="227" Name="assigning authority" Table="0363" Usage="R">
+            <SubComponent Datatype="IS" Name="namespace ID" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0363" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./3"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.1 (Namespace ID) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./1"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+          </Component>
+          <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD_2" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.1 (Namespace ID) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./1"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+          </Component>
+        </Field>
+        <Field Datatype="CX_ITI" ItemNo="00107" Length="20" Max="*" Min="0" Name="Alternate Patient ID - PID" Usage="B">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="R"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="O"/>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning authority" Table="0363" Usage="R">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+          <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="RE"/>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+        </Field>
+        <Field Datatype="XPN_ITI" ItemNo="00108" Length="250" Max="*" Min="1" Name="Patient Name" Usage="R">
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="RE">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="6" Name="degree (e.g., MD)" Table="0360" Usage="X"/>
+          <Component Datatype="ID" Length="1" Name="name type code" Table="0200" Usage="R"/>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="XPN_ITI" ItemNo="00109" Length="250" Max="*" Min="0" Name="Mother's Maiden Name" Usage="O">
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="RE">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="6" Name="degree (e.g., MD)" Table="0360" Usage="X"/>
+          <Component Datatype="ID" Length="1" Name="name type code" Table="0200" Usage="R"/>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="TS" ItemNo="00110" Length="26" Max="1" Min="0" Name="Date/Time Of Birth" Usage="O">
+          <Component Datatype="NM" Length="24" Name="Date/Time" Usage="R"> 
+            <ImpNote>YYYYMMDD[HHHMM[SS[.SSSS]]][+- ZZZZ]</ImpNote> 
+          </Component>
+          <Component Datatype="ST" Length="1" Name="degree of precision" Usage="B"> 
+            <ImpNote>Retained for backward compatibility only</ImpNote> 
+          </Component>
+        </Field>
+        <Field Datatype="IS" ItemNo="00111" Length="1" Max="1" Min="0" Name="Sex" Table="0001" Usage="O"/>
+        <Field Datatype="XPN" ItemNo="00112" Length="250" Max="*" Min="0" Name="Patient Alias" Usage="O">
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="6" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00113" Length="250" Max="*" Min="0" Name="Race" Table="0005" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="XAD" ItemNo="00114" Length="250" Max="*" Min="0" Name="Patient Address" Usage="O">
+          <Component Datatype="ST" Length="184" Name="street address" Usage="O"/>
+          <Component Datatype="ST" Length="120" Name="other designation" Usage="O"/>
+          <Component Datatype="ST" Length="50" Name="city" Usage="O"/>
+          <Component Datatype="ST" Length="50" Name="state or province" Usage="O"/>
+          <Component Datatype="ST" Length="12" Name="zip or postal code" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="country" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="address type" Usage="O"/>
+          <Component Datatype="ST" Length="50" Name="other geographic designation" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="county/parish code" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="census tract" Usage="O"/>
+          <Component Datatype="ID" Length="1" Name="address representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00115" Length="4" Max="1" Min="0" Name="County Code" Table="0289" Usage="B"/>
+        <Field Datatype="XTN" ItemNo="00116" Length="250" Max="*" Min="0" Name="Phone Number - Home" Usage="O">
+          <Component Datatype="TN" Length="199" Name="[(999)] 999-9999 [X99999][C any text]" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="telecommunication use code" Usage="O"/>
+          <Component Datatype="ID" Length="8" Name="telecommunication equipment type (ID)" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Email address" Usage="O"/>
+          <Component Datatype="NM" Length="3" Name="Country Code" Usage="O"/>
+          <Component Datatype="NM" Length="5" Name="Area/city code" Usage="O"/>
+          <Component Datatype="NM" Length="9" Name="Phone number" Usage="O"/>
+          <Component Datatype="NM" Length="5" Name="Extension" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="any text" Usage="O"/>
+        </Field>
+        <Field Datatype="XTN" ItemNo="00117" Length="250" Max="*" Min="0" Name="Phone Number - Business" Usage="O">
+          <Component Datatype="TN" Length="199" Name="[(999)] 999-9999 [X99999][C any text]" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="telecommunication use code" Usage="O"/>
+          <Component Datatype="ID" Length="8" Name="telecommunication equipment type (ID)" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Email address" Usage="O"/>
+          <Component Datatype="NM" Length="3" Name="Country Code" Usage="O"/>
+          <Component Datatype="NM" Length="5" Name="Area/city code" Usage="O"/>
+          <Component Datatype="NM" Length="9" Name="Phone number" Usage="O"/>
+          <Component Datatype="NM" Length="5" Name="Extension" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="any text" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00118" Length="250" Max="1" Min="0" Name="Primary Language" Table="0296" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00119" Length="250" Max="1" Min="0" Name="Marital Status" Table="0002" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00120" Length="250" Max="1" Min="0" Name="Religion" Table="0006" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="CX_ITI" ItemNo="00121" Length="250" Max="1" Min="0" Name="Patient Account Number" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="R"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="O"/>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning authority" Table="0363" Usage="R">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+          <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="RE">
+            <ConformanceStatement Profile="Base" id="ADT_A40_007"> 
+              <EnglishDescription>PID-18.5 SHALL be valued "AN" when present.</EnglishDescription>  
+              <Assertion> 
+                <PlainText location="." value="AN"/> 
+              </Assertion> 
+            </ConformanceStatement>
+          </Component>
+          <Component Datatype="HD_ITI" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="R"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="X" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.2 (Universal ID) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./2"/> 
+                </Condition> 
+              </Predicate>
+              <ConformanceStatement Profile="Base" id="PIX_PDQ_001"> 
+                <EnglishDescription>HD_ITI.3 (Universal ID Type) SHALL be valued "ISO".</EnglishDescription>  
+                <Assertion> 
+                  <PlainText location="." value="ISO"/> 
+                </Assertion> 
+              </ConformanceStatement>
+            </SubComponent>
+          </Component>
+        </Field>
+        <Field Datatype="ST" ItemNo="00122" Length="16" Max="1" Min="0" Name="SSN Number - Patient" Usage="B"/>
+        <Field Datatype="DLN" ItemNo="00123" Length="25" Max="1" Min="0" Name="Driver's License Number - Patient" Usage="O">
+          <Component Datatype="ST" Length="20" Name="Driver's License Number" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="Issuing State, province, country" Usage="O"/>
+          <Component Datatype="DT" Length="24" Name="expiration date" Usage="O"/>
+        </Field>
+        <Field Datatype="CX" ItemNo="00124" Length="250" Max="*" Min="0" Name="Mother's Identifier" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CE" ItemNo="00125" Length="250" Max="*" Min="0" Name="Ethnic Group" Table="0189" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="ST" ItemNo="00126" Length="250" Max="1" Min="0" Name="Birth Place" Usage="O"/>
+        <Field Datatype="ID" ItemNo="00127" Length="1" Max="1" Min="0" Name="Multiple Birth Indicator" Table="0136" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00128" Length="2" Max="1" Min="0" Name="Birth Order" Usage="O"/>
+        <Field Datatype="CE" ItemNo="00129" Length="250" Max="*" Min="0" Name="Citizenship" Table="0171" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00130" Length="250" Max="1" Min="0" Name="Veterans Military Status" Table="0172" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="CE" ItemNo="00739" Length="250" Max="1" Min="0" Name="Nationality" Table="0212" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="TS" ItemNo="00740" Length="26" Max="1" Min="0" Name="Patient Death Date and Time" Usage="O">
+          <Component Datatype="NM" Length="24" Name="Date/Time" Usage="R"> 
+            <ImpNote>YYYYMMDD[HHHMM[SS[.SSSS]]][+- ZZZZ]</ImpNote> 
+          </Component>
+          <Component Datatype="ST" Length="1" Name="degree of precision" Usage="B"> 
+            <ImpNote>Retained for backward compatibility only</ImpNote> 
+          </Component>
+        </Field>
+        <Field Datatype="ID" ItemNo="00741" Length="1" Max="1" Min="0" Name="Patient Death Indicator" Table="0136" Usage="O"/>
+      </Segment>  
+      <Segment LongName="patient additional demographic segment" Max="1" Min="0" Name="PD1" Usage="O">
+        <Field Datatype="IS" ItemNo="00755" Length="2" Max="*" Min="0" Name="Living Dependency" Table="0223" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00742" Length="2" Max="1" Min="0" Name="Living Arrangement" Table="0220" Usage="O"/>
+        <Field Datatype="XON" ItemNo="00756" Length="90" Max="*" Min="0" Name="Patient Primary Facility" Usage="O">
+          <Component Datatype="ST" Length="50" Name="organization name" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="organization name type code" Usage="O"/>
+          <Component Datatype="NM" Length="4" Name="ID number (NM)" Usage="O"/>
+          <Component Datatype="NM" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility ID" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="XCN" ItemNo="00757" Length="90" Max="*" Min="0" Name="Patient Primary Care Provider Name &amp; ID No." Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00745" Length="2" Max="1" Min="0" Name="Student Indicator" Table="0231" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00753" Length="2" Max="1" Min="0" Name="Handicap" Table="0295" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00759" Length="2" Max="1" Min="0" Name="Living Will" Table="0315" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00760" Length="2" Max="1" Min="0" Name="Organ Donor" Table="0316" Usage="O"/>
+        <Field Datatype="ID" ItemNo="00761" Length="1" Max="1" Min="0" Name="Separate Bill" Table="0136" Usage="O"/>
+        <Field Datatype="CX" ItemNo="00762" Length="36" Max="2" Min="0" Name="Duplicate Patient" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CE" ItemNo="00743" Length="80" Max="1" Min="0" Name="Publicity Code" Table="0215" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="ID" ItemNo="00744" Length="1" Max="1" Min="0" Name="Protection Indicator" Table="0136" Usage="O"/>
+      </Segment>  
+      <Segment LongName="merge patient information segment-" Max="1" Min="1" Name="MRG" Usage="R">
+        <Field Datatype="CX_2" ItemNo="00211" Length="250" Max="*" Min="1" Name="Prior Patient Identifier List" Usage="R">
+          <ConformanceStatement Profile="Base" id="ADT_A40_008"> 
+            <EnglishDescription>MRG-1.4 SHALL be identical to PID-3.4</EnglishDescription>  
+            <Assertion> 
+              <AND> 
+                <PlainText location="./4/1" locationContent="../../1/3/4/1"/>  
+                <AND> 
+                  <PlainText location="./4/2" locationContent="../../1/3/4/2"/>  
+                  <PlainText location="./4/3" locationContent="../../1/3/4/3"/> 
+                </AND> 
+              </AND> 
+            </Assertion> 
+          </ConformanceStatement>
+          <Component Datatype="ST" Length="15" Name="ID" Usage="R"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Table="0061" Usage="O"/>
+          <Component Datatype="HD_3" Length="227" Name="assigning authority" Table="0363" Usage="R">
+            <SubComponent Datatype="IS" Name="namespace ID" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0363" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./3"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.1 (Namespace ID) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./1"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+          </Component>
+          <Component Datatype="ID" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD_2" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" PredicateFalseUsage="X" PredicateTrueUsage="R" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.3 (Universal ID Type) is valued.</EnglishDescription>  
+                <Condition> 
+                  <Valued location="./3"/> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+            <SubComponent Datatype="ID" Name="universal ID type" PredicateFalseUsage="O" PredicateTrueUsage="R" Table="0301" Usage="C">
+              <Predicate> 
+                <EnglishDescription>If HD_ITI.1 (Namespace ID) is NOT valued.</EnglishDescription>  
+                <Condition> 
+                  <NOT> 
+                    <Valued location="./1"/> 
+                  </NOT> 
+                </Condition> 
+              </Predicate>
+            </SubComponent>
+          </Component>
+        </Field>
+        <Field Datatype="CX" ItemNo="00212" Length="250" Max="*" Min="0" Name="Prior Alternate Patient ID" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CX" ItemNo="00213" Length="250" Max="1" Min="0" Name="Prior Patient Account Number" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CX" ItemNo="00214" Length="250" Max="1" Min="0" Name="Prior Patient ID" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CX" ItemNo="01279" Length="250" Max="1" Min="0" Name="Prior Visit Number" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="CX" ItemNo="01280" Length="250" Max="1" Min="0" Name="Prior Alternate Visit ID" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="XPN" ItemNo="01281" Length="250" Max="*" Min="0" Name="Prior Patient Name" Usage="O">
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="6" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+      </Segment>  
+      <Segment LongName="patient visit segment-" Max="1" Min="0" Name="PV1" Usage="O">
+        <Field Datatype="SI" ItemNo="00131" Length="4" Max="1" Min="0" Name="Set ID - PV1" Usage="O">
+          <ConformanceStatement Profile="Base" id="ADT_A40_009"> 
+            <EnglishDescription>PV1-1 SHALL be valued "1" when present.</EnglishDescription>  
+            <Assertion> 
+              <PlainText location="." value="1"/> 
+            </Assertion> 
+          </ConformanceStatement>
+        </Field>
+        <Field Datatype="IS" ItemNo="00132" Length="1" Max="1" Min="1" Name="Patient Class" Table="0004" Usage="R"/>
+        <Field Datatype="PL" ItemNo="00133" Length="80" Max="1" Min="0" Name="Assigned Patient Location" Usage="O">
+          <Component Datatype="IS" Length="20" Name="point of care" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="room" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="bed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="facility (HD)" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="20" Name="location status" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="person location type" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="building" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="floor" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Location description" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00134" Length="2" Max="1" Min="0" Name="Admission Type" Table="0007" Usage="O"/>
+        <Field Datatype="CX" ItemNo="00135" Length="20" Max="1" Min="0" Name="Preadmit Number" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="PL" ItemNo="00136" Length="80" Max="1" Min="0" Name="Prior Patient Location" Usage="O">
+          <Component Datatype="IS" Length="20" Name="point of care" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="room" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="bed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="facility (HD)" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="20" Name="location status" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="person location type" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="building" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="floor" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Location description" Usage="O"/>
+        </Field>
+        <Field Datatype="XCN" ItemNo="00137" Length="60" Max="*" Min="0" Name="Attending Doctor" Table="0010" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="XCN" ItemNo="00138" Length="60" Max="*" Min="0" Name="Referring Doctor" Table="0010" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="XCN" ItemNo="00139" Length="60" Max="*" Min="0" Name="Consulting Doctor" Table="0010" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00140" Length="3" Max="1" Min="0" Name="Hospital Service" Table="0069" Usage="O"/>
+        <Field Datatype="PL" ItemNo="00141" Length="80" Max="1" Min="0" Name="Temporary Location" Usage="O">
+          <Component Datatype="IS" Length="20" Name="point of care" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="room" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="bed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="facility (HD)" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="20" Name="location status" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="person location type" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="building" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="floor" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Location description" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00142" Length="2" Max="1" Min="0" Name="Preadmit Test Indicator" Table="0087" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00143" Length="2" Max="1" Min="0" Name="Re-admission Indicator" Table="0092" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00144" Length="3" Max="1" Min="0" Name="Admit Source" Table="0023" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00145" Length="2" Max="*" Min="0" Name="Ambulatory Status" Table="0009" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00146" Length="2" Max="1" Min="0" Name="VIP Indicator" Table="0099" Usage="O"/>
+        <Field Datatype="XCN" ItemNo="00147" Length="60" Max="*" Min="0" Name="Admitting Doctor" Table="0010" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00148" Length="2" Max="1" Min="0" Name="Patient Type" Table="0018" Usage="O"/>
+        <Field Datatype="CX" ItemNo="00149" Length="20" Max="1" Min="0" Name="Visit Number" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="FC" ItemNo="00150" Length="50" Max="*" Min="0" Name="Financial Class" Table="0064" Usage="O">
+          <Component Datatype="IS" Length="20" Name="Financial Class" Table="0064" Usage="O"/>
+          <Component Datatype="TS" Length="26" Name="Effective Date" Usage="O">
+            <SubComponent Datatype="NM" Name="Date/Time" Usage="R"/>
+            <SubComponent Datatype="ST" Name="degree of precision" Usage="B"/>
+          </Component>
+        </Field>
+        <Field Datatype="IS" ItemNo="00151" Length="2" Max="1" Min="0" Name="Charge Price Indicator" Table="0032" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00152" Length="2" Max="1" Min="0" Name="Courtesy Code" Table="0045" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00153" Length="2" Max="1" Min="0" Name="Credit Rating" Table="0046" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00154" Length="2" Max="*" Min="0" Name="Contract Code" Table="0044" Usage="O"/>
+        <Field Datatype="DT" ItemNo="00155" Length="8" Max="*" Min="0" Name="Contract Effective Date" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00156" Length="12" Max="*" Min="0" Name="Contract Amount" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00157" Length="3" Max="*" Min="0" Name="Contract Period" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00158" Length="2" Max="1" Min="0" Name="Interest Code" Table="0073" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00159" Length="1" Max="1" Min="0" Name="Transfer to Bad Debt Code" Table="0110" Usage="O"/>
+        <Field Datatype="DT" ItemNo="00160" Length="8" Max="1" Min="0" Name="Transfer to Bad Debt Date" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00161" Length="10" Max="1" Min="0" Name="Bad Debt Agency Code" Table="0021" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00162" Length="12" Max="1" Min="0" Name="Bad Debt Transfer Amount" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00163" Length="12" Max="1" Min="0" Name="Bad Debt Recovery Amount" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00164" Length="1" Max="1" Min="0" Name="Delete Account Indicator" Table="0111" Usage="O"/>
+        <Field Datatype="DT" ItemNo="00165" Length="8" Max="1" Min="0" Name="Delete Account Date" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00166" Length="3" Max="1" Min="0" Name="Discharge Disposition" Table="0112" Usage="O"/>
+        <Field Datatype="CM_DLD" ItemNo="00167" Length="25" Max="1" Min="0" Name="Discharged to Location" Table="0113" Usage="O">
+          <Component Datatype="ID" Length="20" Name="discharge location" Usage="O"/>
+          <Component Datatype="TS" Length="26" Name="effective date" Usage="O">
+            <SubComponent Datatype="NM" Name="Date/Time" Usage="R"/>
+            <SubComponent Datatype="ST" Name="degree of precision" Usage="B"/>
+          </Component>
+        </Field>
+        <Field Datatype="CE" ItemNo="00168" Length="80" Max="1" Min="0" Name="Diet Type" Table="0114" Usage="O">
+          <Component Datatype="ST" Length="20" Name="identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of coding system" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="alternate identifier" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="alternate text" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="name of alternate coding system" Usage="O"/>
+        </Field>
+        <Field Datatype="IS" ItemNo="00169" Length="2" Max="1" Min="0" Name="Servicing Facility" Table="0115" Usage="O"/>
+        <Field Datatype="IS" ItemNo="00170" Length="1" Max="1" Min="0" Name="Bed Status" Table="0116" Usage="B"/>
+        <Field Datatype="IS" ItemNo="00171" Length="2" Max="1" Min="0" Name="Account Status" Table="0117" Usage="O"/>
+        <Field Datatype="PL" ItemNo="00172" Length="80" Max="1" Min="0" Name="Pending Location" Usage="O">
+          <Component Datatype="IS" Length="20" Name="point of care" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="room" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="bed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="facility (HD)" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="20" Name="location status" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="person location type" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="building" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="floor" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Location description" Usage="O"/>
+        </Field>
+        <Field Datatype="PL" ItemNo="00173" Length="80" Max="1" Min="0" Name="Prior Temporary Location" Usage="O">
+          <Component Datatype="IS" Length="20" Name="point of care" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="room" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="bed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="facility (HD)" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="20" Name="location status" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="person location type" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="building" Usage="O"/>
+          <Component Datatype="IS" Length="20" Name="floor" Usage="O"/>
+          <Component Datatype="ST" Length="199" Name="Location description" Usage="O"/>
+        </Field>
+        <Field Datatype="TS" ItemNo="00174" Length="26" Max="1" Min="0" Name="Admit Date/Time" Usage="O">
+          <Component Datatype="NM" Length="24" Name="Date/Time" Usage="R"> 
+            <ImpNote>YYYYMMDD[HHHMM[SS[.SSSS]]][+- ZZZZ]</ImpNote> 
+          </Component>
+          <Component Datatype="ST" Length="1" Name="degree of precision" Usage="B"> 
+            <ImpNote>Retained for backward compatibility only</ImpNote> 
+          </Component>
+        </Field>
+        <Field Datatype="TS" ItemNo="00175" Length="26" Max="1" Min="0" Name="Discharge Date/Time" Usage="O">
+          <Component Datatype="NM" Length="24" Name="Date/Time" Usage="R"> 
+            <ImpNote>YYYYMMDD[HHHMM[SS[.SSSS]]][+- ZZZZ]</ImpNote> 
+          </Component>
+          <Component Datatype="ST" Length="1" Name="degree of precision" Usage="B"> 
+            <ImpNote>Retained for backward compatibility only</ImpNote> 
+          </Component>
+        </Field>
+        <Field Datatype="NM" ItemNo="00176" Length="12" Max="1" Min="0" Name="Current Patient Balance" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00177" Length="12" Max="1" Min="0" Name="Total Charges" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00178" Length="12" Max="1" Min="0" Name="Total Adjustments" Usage="O"/>
+        <Field Datatype="NM" ItemNo="00179" Length="12" Max="1" Min="0" Name="Total Payments" Usage="O"/>
+        <Field Datatype="CX" ItemNo="00180" Length="20" Max="1" Min="0" Name="Alternate Visit ID" Table="0203" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Table="0203" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+        </Field>
+        <Field Datatype="IS" ItemNo="01226" Length="1" Max="1" Min="0" Name="Visit Indicator" Table="0326" Usage="O"/>
+        <Field Datatype="XCN" ItemNo="01274" Length="60" Max="*" Min="0" Name="Other Healthcare Provider" Table="0010" Usage="O">
+          <Component Datatype="ST" Length="15" Name="ID number (ST)" Usage="O"/>
+          <Component Datatype="CM_FAM_NAME" Length="194" Name="family+last name prefix" Usage="O">
+            <SubComponent Datatype="ST" Name="family name" Usage="O"/>
+            <SubComponent Datatype="ST" Name="last name prefix" Usage="O"/>
+          </Component>
+          <Component Datatype="ST" Length="30" Name="given name" Usage="O"/>
+          <Component Datatype="ST" Length="30" Name="middle initial or name" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="suffix (e.g., JR or III)" Usage="O"/>
+          <Component Datatype="ST" Length="20" Name="prefix (e.g., DR)" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="degree (e.g., MD)" Usage="O"/>
+          <Component Datatype="IS" Length="4" Name="source table" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning authority" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="name type code" Usage="O"/>
+          <Component Datatype="ST" Length="1" Name="identifier check digit" Usage="O"/>
+          <Component Datatype="ID" Length="3" Name="code identifying the check digit scheme employed" Usage="O"/>
+          <Component Datatype="IS" Length="5" Name="identifier type code" Usage="O"/>
+          <Component Datatype="HD" Length="227" Name="assigning facility" Usage="O">
+            <SubComponent Datatype="IS" Name="namespace ID" Table="0300" Usage="O"/>
+            <SubComponent Datatype="ST" Name="universal ID" Usage="O"/>
+            <SubComponent Datatype="ID" Name="universal ID type" Table="0301" Usage="O"/>
+          </Component>
+          <Component Datatype="ID" Length="1" Name="Name Representation code" Usage="O"/>
+        </Field>
+      </Segment> 
+    </SegGroup> 
+  </HL7v2xStaticDef> 
+</HL7v2xConformanceProfile>

@@ -28,6 +28,10 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   open : "true"
 		   
    };
+   $scope.archived ={
+		   archived : "false"
+		   
+   };
    $scope.version ={
 		   standardVersion : ""
    };
@@ -265,6 +269,12 @@ app.directive('publicationsTab', function() {
         templateUrl: 'resources/static/javascript/directives_templates/puclications-tab.html'
     };
 });
+app.directive('aboutTab', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'resources/static/javascript/directives_templates/about-tab.html'
+    };
+});
 
 app.filter("sanitize", ['$sce', function($sce) {
     return function(htmlCode) {
@@ -313,7 +323,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
   
     	 url: '/resources',
          templateUrl: 'resources/static/javascript/directives_templates/artifact-tab.html'
-    });
+    }).
+    state('about', {
+    	  
+   	 url: '/about',
+        templateUrl: 'resources/static/javascript/directives_templates/about-tab.html'
+   });
     $urlRouterProvider.otherwise('/');
     
     

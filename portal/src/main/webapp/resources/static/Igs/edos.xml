@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<ValueSetLibrary Description="NIST Created" Name="EDOS" ValueSetLibraryIdentifier="eDOS" ValueSetLibraryVersion="1.0">
+	<NoValidation>
+		<!-- TMP -->
+		<BindingIdentifier>HL70396</BindingIdentifier>
+		<BindingIdentifier>0396</BindingIdentifier>
+
+		<!-- end of TMP -->
+		<BindingIdentifier>9999</BindingIdentifier>
+		<BindingIdentifier>HL70076_USL</BindingIdentifier>
+		<BindingIdentifier>HL70003_USL</BindingIdentifier>
+		<BindingIdentifier>HL70354_USL</BindingIdentifier>
+		<BindingIdentifier>HL70103_USL</BindingIdentifier>
+		<BindingIdentifier>HL70132_USL</BindingIdentifier>
+
+		<BindingIdentifier>HL70088_USL.1</BindingIdentifier>
+
+	</NoValidation>
+	<ValueSetDefinitions Group="HL7" Order="1">
+		<ValueSetDefinition BindingIdentifier="SNOMED_CT_USL.2" Name="SNOMED CT" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM3-4-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="SNOMED CT" DisplayName="Systematized Nomenclature of Medicine--Clinical Terms" CodeSystemVersion="" Usage="P" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;organism" CodeSystem="SNOMED CT" DisplayName="organism hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;qualifier" CodeSystem="SNOMED CT" DisplayName="qualifier hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;clinical finding" CodeSystem="SNOMED CT" DisplayName="clinical finding hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;specimen" CodeSystem="SNOMED CT" DisplayName="specimen hierarchy for OM4-6 and SPM-4" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;Procedure" CodeSystem="SNOMED CT" DisplayName="Procedure hierarchy for OBX-17 and SPM-7" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;core problem list" CodeSystem="SNOMED CT" DisplayName="core problem list subset for OBR-31" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;anatomical structure" CodeSystem="SNOMED CT" DisplayName="anatomical structure hierarchy for SPM-8" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;topographical modifier" CodeSystem="SNOMED CT" DisplayName="topographical modifier heirarchy for SPM-9" CodeSystemVersion="" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70913_USL.1" Name="ISO-4217 Monetary Denomination Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MO.2-->
+			<ValueElement Value="USD" CodeSystem="HL70913" DisplayName="US Dollar" CodeSystemVersion="2.7.1" Usage="R" Comments="Constrained to literal value ‘USD’" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="SNOMED_CT_USL.4" Name="SNOMED CT" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OMC-11-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="SNOMED CT" DisplayName="Systematized Nomenclature of Medicine--Clinical Terms" CodeSystemVersion="" Usage="P" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;organism" CodeSystem="SNOMED CT" DisplayName="organism hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;qualifier" CodeSystem="SNOMED CT" DisplayName="qualifier hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;clinical finding" CodeSystem="SNOMED CT" DisplayName="clinical finding hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;specimen" CodeSystem="SNOMED CT" DisplayName="specimen hierarchy for OM4-6 and SPM-4" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;Procedure" CodeSystem="SNOMED CT" DisplayName="Procedure hierarchy for OBX-17 and SPM-7" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;core problem list" CodeSystem="SNOMED CT" DisplayName="core problem list subset for OBR-31" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;anatomical structure" CodeSystem="SNOMED CT" DisplayName="anatomical structure hierarchy for SPM-8" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;topographical modifier" CodeSystem="SNOMED CT" DisplayName="topographical modifier heirarchy for SPM-9" CodeSystemVersion="" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70001_USL.2" Name="Administrative Sex" Description="This value set defines all values for the patient administrative sex." Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM1-58-->
+			<ValueElement Value="A" CodeSystem="HL70001" DisplayName="Ambiguous" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="F" CodeSystem="HL70001" DisplayName="Female" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="M" CodeSystem="HL70001" DisplayName="Male" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="N" CodeSystem="HL70001" DisplayName="Not Applicable" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="O" CodeSystem="HL70001" DisplayName="Other" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="U" CodeSystem="HL70001" DisplayName="Unknown" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70072_USL.1" Name="Insurance Plan ID" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--PM1-1-->
+			<ValueElement Value="NA" CodeSystem="HL70353" DisplayName="Not Applicable" CodeSystemVersion="2.5.1" Usage="E" Comments="LOI: If no user components of HL70072 or locally defined table, use the default value of ‘NA’ (not applicable) from Table HL70353 CWE Status Codes or draw another appropriate value from Table HL70353." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70180_USL.1" Name="Record-level Event Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MFE-1-->
+			<ValueElement Value="MAD" CodeSystem="HL70180" DisplayName="Add record to master file" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="MDL" CodeSystem="HL70180" DisplayName="Delete record from master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MUP" CodeSystem="HL70180" DisplayName="Update record for master file" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="MDC" CodeSystem="HL70180" DisplayName="Deactivate: discontinue using record in master file, but do not delete from database" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="MAC" CodeSystem="HL70180" DisplayName="Reactivate deactivated record" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="LOINC_USL.3" Name="LOINC" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM1-56-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="LOINC" DisplayName="Logical Observation Identifiers Names and Codes" CodeSystemVersion="2.52" Usage="R" Comments="https://www.ietf.org/rfc/rfc2046.txt" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70136_USL.2" Name="Yes/No Indicator" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM1-12-->
+			<ValueElement Value="Y" CodeSystem="HL70136" DisplayName="Yes" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="N" CodeSystem="HL70136" DisplayName="No" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70174_USL.1" Name="Nature of Service/Test/Observation" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--OM1-18-->
+			<ValueElement Value="P" CodeSystem="HL70174" DisplayName="Profile or battery consisting of many independent atomic observations (e.g., SMA12, electrolytes), usually done at one instrument on one specimen " CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="F" CodeSystem="HL70174" DisplayName="Functional procedure that may consist of one or more interrelated measures (e.g., glucose tolerance test, creatinine clearance), usually done at different times and/or on different specimens " CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="A" CodeSystem="HL70174" DisplayName="Atomic service/test/observation (test code or treatment code) " CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="S" CodeSystem="HL70174" DisplayName="Superset--a set of batteries or procedures ordered under a single code unit but processed as separate batteries (e.g., routines = CBC, UA, electrolytes). This set indicates that the code being described is used to order multiple service/test/observation batteries.&#x0A;This set indicates that the code being described is used to order multiple service/test/observation batteries. For example, a client who routinely orders a CBC, a differential, and a thyroxine as an outpatient profile might use a single, special code to order all three test batteries, instead of having to submit three separate order codes. " CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="C" CodeSystem="HL70174" DisplayName="Single observation calculated via a rule or formula from other independent observations (e.g., Alveolar--arterial ratio, cardiac output) &#x0A;This set indicates that the code being described is used to order multiple service/test/observation batteries. For example, a client who routinely orders a CBC, a differential, and a thyroxine as an outpatient profile might use a single, special code to order all three Single observation calculated via a rule or formula from other independent observations (e.g., Alveolar--arterial ratio, cardiac output) " CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70088_USL.1" Name="Procedure Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--CDM-7.3-->
+			<ValueElement Value="C4" CodeSystem="HL70088" DisplayName="CPT-4" CodeSystemVersion="2.8" Usage="R" Comments="Note: for CDM-7, the requirement is that the code SHALL be drawn from CPT-4, the string &quot;CPT-4&quot; is not conveyed in the CDM-7" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70938_USL.1" Name="Collection Event/Process Step Limit" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OMC-5-->
+			<ValueElement Value="ORD" CodeSystem="HL70938" DisplayName="Placing the order" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="DRW" CodeSystem="HL70938" DisplayName="Collecting the specimen" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="LOINC_USL.2" Name="LOINC" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM1-52-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="LOINC" DisplayName="Logical Observation Identifiers Names and Codes" CodeSystemVersion="2.52" Usage="R" Comments="https://www.ietf.org/rfc/rfc2046.txt" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70178_USL.1" Name="File-Level Event Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MFI-3-->
+			<ValueElement Value="REP" CodeSystem="HL70178" DisplayName="Replace current version of this master file with the version contained in this message" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="UPD" CodeSystem="HL70178" DisplayName="Change file records as defined in the record-level event codes for each record that follows" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70920_USL.1" Name="Preferred Specimen/Attribute Status" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM4-16-->
+			<ValueElement Value="P" CodeSystem="HL70920" DisplayName="Preferred" CodeSystemVersion="2.8" Usage="R" Comments="(HL7 base comment) This specimen is Preferred for all attributes (Container and Additive) identified in the OM4 segment." />
+			<ValueElement Value="A" CodeSystem="HL70920" DisplayName="Alternate" CodeSystemVersion="2.8" Usage="R" Comments="(HL7 base comment) This is a specimen that is acceptable as a replacement for a preferred specimen.  In the following field (OM4-17), the sequence number of the preferred specimen must be messaged." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="SNOMED_CT_USL.3" Name="SNOMED CT" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM3-5-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="SNOMED CT" DisplayName="Systematized Nomenclature of Medicine--Clinical Terms" CodeSystemVersion="" Usage="P" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;organism" CodeSystem="SNOMED CT" DisplayName="organism hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;qualifier" CodeSystem="SNOMED CT" DisplayName="qualifier hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;clinical finding" CodeSystem="SNOMED CT" DisplayName="clinical finding hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;specimen" CodeSystem="SNOMED CT" DisplayName="specimen hierarchy for OM4-6 and SPM-4" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;Procedure" CodeSystem="SNOMED CT" DisplayName="Procedure hierarchy for OBX-17 and SPM-7" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;core problem list" CodeSystem="SNOMED CT" DisplayName="core problem list subset for OBR-31" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;anatomical structure" CodeSystem="SNOMED CT" DisplayName="anatomical structure hierarchy for SPM-8" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;topographical modifier" CodeSystem="SNOMED CT" DisplayName="topographical modifier heirarchy for SPM-9" CodeSystemVersion="" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70939_USL.1" Name="Communication Location" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OMC-6-->
+			<ValueElement Value="OBR-OBX" CodeSystem="HL70939" DisplayName="OBX segment following an OBR segment" CodeSystemVersion="2.8.2" Usage="R" Comments="For responses related to the test order" />
+			<ValueElement Value="SPM-OBX" CodeSystem="HL70939" DisplayName="OBX segment following an SPM segment" CodeSystemVersion="2.8.2" Usage="R" Comments="For responses related to the specimen" />
+			<ValueElement Value="DG1-3" CodeSystem="HL70939" DisplayName="Diagnosis Code" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="NK1-11" CodeSystem="HL70939" DisplayName="Next of Kin / Associated Parties Job Code/Class" CodeSystemVersion="2.8.2" Usage="R" Comments="Used to convey patient's or next of kin’s employment job class code" />
+			<ValueElement Value="NK1-13" CodeSystem="HL70939" DisplayName="Organization Name – NK1" CodeSystemVersion="2.8.2" Usage="R" Comments="Next of kin's organization name" />
+			<ValueElement Value="NK1-28" CodeSystem="HL70939" DisplayName="Ethnic Group" CodeSystemVersion="2.8.2" Usage="R" Comments="Next of kin's ethnicity" />
+			<ValueElement Value="NK1-35" CodeSystem="HL70939" DisplayName="Race" CodeSystemVersion="2.8.2" Usage="R" Comments="Next of kin's race" />
+			<ValueElement Value="OBR-16" CodeSystem="HL70939" DisplayName="Ordering Provider" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="OBR-13" CodeSystem="HL70939" DisplayName="Relevant Clinical Information" CodeSystemVersion="2.8.2" Usage="R" Comments="The purpose varies based on the AOE referencing this field." />
+			<ValueElement Value="OBR-49" CodeSystem="HL70939" DisplayName="Result Handling" CodeSystemVersion="2.8.2" Usage="R" Comments="This was used for call or fax results back" />
+			<ValueElement Value="PID-11" CodeSystem="HL70939" DisplayName="Patient Address" CodeSystemVersion="2.8.2" Usage="R" Comments="Applies to patient" />
+			<ValueElement Value="PID-3" CodeSystem="HL70939" DisplayName="Patient Identifier List" CodeSystemVersion="2.8.2" Usage="R" Comments="Applies to patient" />
+			<ValueElement Value="PID-5" CodeSystem="HL70939" DisplayName="Patient Name" CodeSystemVersion="2.8.2" Usage="R" Comments="Applies to patient" />
+			<ValueElement Value="PID-6" CodeSystem="HL70939" DisplayName="Mother’s Maiden Name" CodeSystemVersion="2.8.2" Usage="R" Comments="Applies to patient" />
+			<ValueElement Value="PID-7" CodeSystem="HL70939" DisplayName="Date/Time of Birth" CodeSystemVersion="2.8.2" Usage="R" Comments="Applies to patient" />
+			<ValueElement Value="PID-13" CodeSystem="HL70939" DisplayName="Phone Number – Home" CodeSystemVersion="2.8.2" Usage="R" Comments="deprecated field as of v2.7" />
+			<ValueElement Value="PID-14" CodeSystem="HL70939" DisplayName="Phone Number – Business" CodeSystemVersion="2.8.2" Usage="R" Comments="deprecated field as of v2.7" />
+			<ValueElement Value="PID-40" CodeSystem="HL70939" DisplayName="Phone Number" CodeSystemVersion="2.8.2" Usage="R" Comments="New field in V2.7" />
+			<ValueElement Value="PRT-5" CodeSystem="HL70939" DisplayName="Participation Person" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="SPM-4" CodeSystem="HL70939" DisplayName="Specimen Type" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="SPM-8" CodeSystem="HL70939" DisplayName="Specimen Source Site" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="LOINC_USL.5" Name="LOINC" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OMC-4-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="LOINC" DisplayName="Logical Observation Identifiers Names and Codes" CodeSystemVersion="2.52" Usage="R" Comments="https://www.ietf.org/rfc/rfc2046.txt" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70362_USL.1" Name="Sending/Receiving Facility" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--MSH-4-->
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70203_USL.1" Name="Identifier Type Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--PM1-2.7-->
+			<ValueElement Value="ACSN" CodeSystem="HL70203" DisplayName="Accession ID" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="AM" CodeSystem="HL70203" DisplayName="American Express " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="AMA" CodeSystem="HL70203" DisplayName="American Medical Association Number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="AN" CodeSystem="HL70203" DisplayName="Account number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="ANC" CodeSystem="HL70203" DisplayName="Account number Creditor " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="AND" CodeSystem="HL70203" DisplayName="Account number debitor " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="ANON" CodeSystem="HL70203" DisplayName="Anonymous identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="ANT" CodeSystem="HL70203" DisplayName="Temporary Account Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="APRN" CodeSystem="HL70203" DisplayName="Advanced Practice Registered Nurse number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="ASID" CodeSystem="HL70203" DisplayName="Ancestor Specimen ID" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BA" CodeSystem="HL70203" DisplayName="Bank Account Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BC" CodeSystem="HL70203" DisplayName="Bank Card Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BCT" CodeSystem="HL70203" DisplayName="Birth Certificate" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BR" CodeSystem="HL70203" DisplayName="Birth registry number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BRN" CodeSystem="HL70203" DisplayName="Breed Registry Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="BSNR" CodeSystem="HL70203" DisplayName="Primary physician office number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CC" CodeSystem="HL70203" DisplayName="Cost Center number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CONM" CodeSystem="HL70203" DisplayName="Change of Name Document" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CY" CodeSystem="HL70203" DisplayName="County number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CZ" CodeSystem="HL70203" DisplayName="Citizenship Card" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DDS" CodeSystem="HL70203" DisplayName="Dentist license number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DEA" CodeSystem="HL70203" DisplayName="Drug Enforcement Administration registration number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DFN" CodeSystem="HL70203" DisplayName="Drug Furnishing or prescriptive authority Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DI" CodeSystem="HL70203" DisplayName="Diner_s Club card " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DL" CodeSystem="HL70203" DisplayName="Driver_s license number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DN" CodeSystem="HL70203" DisplayName="Doctor number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DO" CodeSystem="HL70203" DisplayName="Osteopathic License number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DP" CodeSystem="HL70203" DisplayName="Diplomatic Passport" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DPM" CodeSystem="HL70203" DisplayName="Podiatrist license number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DR" CodeSystem="HL70203" DisplayName="Donor Registration Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="DS" CodeSystem="HL70203" DisplayName="Discover Card " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="EI" CodeSystem="HL70203" DisplayName="Employee number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="EN" CodeSystem="HL70203" DisplayName="Employer number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="ESN" CodeSystem="HL70203" DisplayName="Staff Enterprise Number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="FI" CodeSystem="HL70203" DisplayName="Facility ID " CodeSystemVersion="2.5.1" Usage="E" Comments="SR - R (Required) for the reciever;  The sender must support (S) a least one in the set mark as SR. SR means one in the set marked as SR is required to be supported by the sender and required by the receiver." />
+			<ValueElement Value="GI" CodeSystem="HL70203" DisplayName="Guarantor internal identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="GL" CodeSystem="HL70203" DisplayName="General ledger number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="GN" CodeSystem="HL70203" DisplayName="Guarantor external identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="HC" CodeSystem="HL70203" DisplayName="Health Card Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="IND" CodeSystem="HL70203" DisplayName="Indigenous/Aboriginal " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="JHN" CodeSystem="HL70203" DisplayName="Jurisdictional health number (Canada) " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LACSN" CodeSystem="HL70203" DisplayName="Laboratory Accession ID" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LANR" CodeSystem="HL70203" DisplayName="Lifelong physician number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LI" CodeSystem="HL70203" DisplayName="Labor and industries number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LN" CodeSystem="HL70203" DisplayName="License number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LR" CodeSystem="HL70203" DisplayName="Local Registry ID " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MA" CodeSystem="HL70203" DisplayName="Patient Medicaid number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MB" CodeSystem="HL70203" DisplayName="Member Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MC" CodeSystem="HL70203" DisplayName="Patient's Medicare number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MCD" CodeSystem="HL70203" DisplayName="Practitioner Medicaid number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MCN" CodeSystem="HL70203" DisplayName="Microchip Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MCR" CodeSystem="HL70203" DisplayName="Practitioner Medicare number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MCT" CodeSystem="HL70203" DisplayName="Marriage Certificate" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MD" CodeSystem="HL70203" DisplayName="Medical License number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MI" CodeSystem="HL70203" DisplayName="Military ID number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MR" CodeSystem="HL70203" DisplayName="Medical record number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MRT" CodeSystem="HL70203" DisplayName="Temporary Medical Record Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="MS" CodeSystem="HL70203" DisplayName="MasterCard " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NBSNR" CodeSystem="HL70203" DisplayName="Secondary physician office number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NCT" CodeSystem="HL70203" DisplayName="Naturalization Certificate" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NE" CodeSystem="HL70203" DisplayName="National employer identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NH" CodeSystem="HL70203" DisplayName="National Health Plan Identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NI" CodeSystem="HL70203" DisplayName="National unique individual identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NII" CodeSystem="HL70203" DisplayName="National Insurance Organization Identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NIIP" CodeSystem="HL70203" DisplayName="National Insurance Payor Identifier (Payor) " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NNxxx" CodeSystem="HL70203" DisplayName="National Person Identifier where the xxx is the ISO table 3166 3-character (alphabetic) country code" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NP" CodeSystem="HL70203" DisplayName="Nurse practitioner number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="NPI" CodeSystem="HL70203" DisplayName="National provider identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="OD" CodeSystem="HL70203" DisplayName="Optometrist license number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PA" CodeSystem="HL70203" DisplayName="Physician Assistant number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PC" CodeSystem="HL70203" DisplayName="Parole Card" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PCN" CodeSystem="HL70203" DisplayName="Penitentiary/correctional institution Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PE" CodeSystem="HL70203" DisplayName="Living Subject Enterprise Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PEN" CodeSystem="HL70203" DisplayName="Pension Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PI" CodeSystem="HL70203" DisplayName="Patient internal identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PN" CodeSystem="HL70203" DisplayName="Person number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PNT" CodeSystem="HL70203" DisplayName="Temporary Living Subject Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PPIN" CodeSystem="HL70203" DisplayName="Medicare/CMS Performing Provider Identification Number" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PPN" CodeSystem="HL70203" DisplayName="Passport number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PRC" CodeSystem="HL70203" DisplayName="Permanent Resident Card Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PRN" CodeSystem="HL70203" DisplayName="Provider number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PT" CodeSystem="HL70203" DisplayName="Patient external identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="QA" CodeSystem="HL70203" DisplayName="QA number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RI" CodeSystem="HL70203" DisplayName="Resource identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RN" CodeSystem="HL70203" DisplayName="Registered Nurse Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RPH" CodeSystem="HL70203" DisplayName="Pharmacist license number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RR" CodeSystem="HL70203" DisplayName="Railroad Retirement number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RRI" CodeSystem="HL70203" DisplayName="Regional registry ID " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="RRP" CodeSystem="HL70203" DisplayName="Railroad Retirement Provider" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="SID" CodeSystem="HL70203" DisplayName="Specimen identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="SL" CodeSystem="HL70203" DisplayName="State license " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="SN" CodeSystem="HL70203" DisplayName="Subscriber Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="SP" CodeSystem="HL70203" DisplayName="Study Permit" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="SR" CodeSystem="HL70203" DisplayName="State registry ID " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="SS" CodeSystem="HL70203" DisplayName="Social Security number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="TAX" CodeSystem="HL70203" DisplayName="Tax ID number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="TN" CodeSystem="HL70203" DisplayName="Treaty Number/ (Canada) " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="TPR" CodeSystem="HL70203" DisplayName="Temporary Permanent Resident (Canada)" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="U" CodeSystem="HL70203" DisplayName="Unspecified identifier " CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="UPIN" CodeSystem="HL70203" DisplayName="Medicare/CMS (formerly HCFA)_s Universal Physician Identification numbers " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="USID" CodeSystem="HL70203" DisplayName="Unique Specimen ID" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="VN" CodeSystem="HL70203" DisplayName="Visit number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="VP" CodeSystem="HL70203" DisplayName="Visitor Permit" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="VS" CodeSystem="HL70203" DisplayName="VISA " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="WC" CodeSystem="HL70203" DisplayName="WIC identifier " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="WCN" CodeSystem="HL70203" DisplayName="Workers_ Comp Number " CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="WP" CodeSystem="HL70203" DisplayName="Work Permit" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="XX" CodeSystem="HL70203" DisplayName="Organization identifier " CodeSystemVersion="2.5.1" Usage="R" Comments="SR - R (Required) for the reciever;  The sender must support (S) a least one in the set mark as SR. SR means one in the set marked as SR is required to be supported by the sender and required by the receiver." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="LOINC_USL.4" Name="LOINC" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM5-2-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="LOINC" DisplayName="Logical Observation Identifiers Names and Codes" CodeSystemVersion="2.52" Usage="R" Comments="https://www.ietf.org/rfc/rfc2046.txt" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70516_USL.1" Name="Error Severity" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--ERR-4-->
+			<ValueElement Value="W" CodeSystem="HL70516" DisplayName="Warning" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="I" CodeSystem="HL70516" DisplayName="Information" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="E" CodeSystem="HL70516" DisplayName="Error" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="F" CodeSystem="HL70516" DisplayName="Fatal Error" CodeSystemVersion="2.8.1" Usage="P" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70487_USL.1" Name="Specimen Type" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--OM4-6-->
+			<ValueElement Value="ABS" CodeSystem="HL70487" DisplayName="Abscess" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ACNE" CodeSystem="HL70487" DisplayName="Tissue, Acne" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ACNFLD" CodeSystem="HL70487" DisplayName="Fluid, Acne" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AIRS" CodeSystem="HL70487" DisplayName="Air Sample" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ALL" CodeSystem="HL70487" DisplayName="Allograft" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AMN" CodeSystem="HL70487" DisplayName="Amniotic fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AMP" CodeSystem="HL70487" DisplayName="Amputation" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ANGI" CodeSystem="HL70487" DisplayName="Catheter Tip, Angio" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ARTC" CodeSystem="HL70487" DisplayName="Catheter Tip, Arterial" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ASERU" CodeSystem="HL70487" DisplayName="Serum, Acute" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ASP" CodeSystem="HL70487" DisplayName="Aspirate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ATTE" CodeSystem="HL70487" DisplayName="Environment, Attest" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AUTOA" CodeSystem="HL70487" DisplayName="Environmental, Autoclave Ampule" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AUTOC" CodeSystem="HL70487" DisplayName="Environmental, Autoclave Capsule" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="AUTP" CodeSystem="HL70487" DisplayName="Autopsy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BBL" CodeSystem="HL70487" DisplayName="Blood bag" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BCYST" CodeSystem="HL70487" DisplayName="Cyst, Baker's" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BDY" CodeSystem="HL70487" DisplayName="Whole body" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BIFL" CodeSystem="HL70487" DisplayName="Bile Fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BITE" CodeSystem="HL70487" DisplayName="Bite" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLD" CodeSystem="HL70487" DisplayName="Whole blood" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLDA" CodeSystem="HL70487" DisplayName="Blood arterial" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLDCO" CodeSystem="HL70487" DisplayName="Cord blood" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLDV" CodeSystem="HL70487" DisplayName="Blood venous" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLEB" CodeSystem="HL70487" DisplayName="Bleb" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BLIST" CodeSystem="HL70487" DisplayName="Blister" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BOIL" CodeSystem="HL70487" DisplayName="Boil" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BON" CodeSystem="HL70487" DisplayName="Bone" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BOWL" CodeSystem="HL70487" DisplayName="Bowel contents" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BPH" CodeSystem="HL70487" DisplayName="Basophils" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BPU" CodeSystem="HL70487" DisplayName="Blood product unit" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BRN" CodeSystem="HL70487" DisplayName="Burn" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BRSH" CodeSystem="HL70487" DisplayName="Brush" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BRTH" CodeSystem="HL70487" DisplayName="Breath (use EXHLD)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BRUS" CodeSystem="HL70487" DisplayName="Brushing" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BUB" CodeSystem="HL70487" DisplayName="Bubo" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BULLA" CodeSystem="HL70487" DisplayName="Bulla/Bullae" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="BX" CodeSystem="HL70487" DisplayName="Biopsy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CALC" CodeSystem="HL70487" DisplayName="Calculus (=Stone)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CARBU" CodeSystem="HL70487" DisplayName="Carbuncle" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CAT" CodeSystem="HL70487" DisplayName="Catheter" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CBITE" CodeSystem="HL70487" DisplayName="Bite, Cat" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CDM" CodeSystem="HL70487" DisplayName="Cardiac muscle" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CLIPP" CodeSystem="HL70487" DisplayName="Clippings" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CNJT" CodeSystem="HL70487" DisplayName="Conjunctiva" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CNL" CodeSystem="HL70487" DisplayName="Cannula" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="COL" CodeSystem="HL70487" DisplayName="Colostrum" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CONE" CodeSystem="HL70487" DisplayName="Biospy, Cone" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSCR" CodeSystem="HL70487" DisplayName="Scratch, Cat" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSERU" CodeSystem="HL70487" DisplayName="Serum, Convalescent" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSF" CodeSystem="HL70487" DisplayName="Cerebral spinal fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSITE" CodeSystem="HL70487" DisplayName="Catheter Insertion Site" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSMY" CodeSystem="HL70487" DisplayName="Fluid,  Cystostomy Tube" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CST" CodeSystem="HL70487" DisplayName="Fluid, Cyst" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CSVR" CodeSystem="HL70487" DisplayName="Blood, Cell Saver" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CTP" CodeSystem="HL70487" DisplayName="Catheter tip" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CUR" CodeSystem="HL70487" DisplayName="Curretage" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CVM" CodeSystem="HL70487" DisplayName="Cervical Mucus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CVPS" CodeSystem="HL70487" DisplayName="Site, CVP" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CVPT" CodeSystem="HL70487" DisplayName="Catheter Tip, CVP" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CYN" CodeSystem="HL70487" DisplayName="Nodule, Cystic" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CYST" CodeSystem="HL70487" DisplayName="Cyst" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DBITE" CodeSystem="HL70487" DisplayName="Bite, Dog" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DCS" CodeSystem="HL70487" DisplayName="Sputum, Deep Cough" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DEC" CodeSystem="HL70487" DisplayName="Ulcer, Decubitus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DEION" CodeSystem="HL70487" DisplayName="Environmental, Water  (Deionized)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DIA" CodeSystem="HL70487" DisplayName="Dialysate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DIAF" CodeSystem="HL70487" DisplayName="Dialysis Fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DISCHG" CodeSystem="HL70487" DisplayName="Discharge" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DIV" CodeSystem="HL70487" DisplayName="Diverticulum" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DRN" CodeSystem="HL70487" DisplayName="Drain" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DRNG" CodeSystem="HL70487" DisplayName="Drainage, Tube" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DRNGP" CodeSystem="HL70487" DisplayName="Drainage, Penrose" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DUFL" CodeSystem="HL70487" DisplayName="Duodenal fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EARW" CodeSystem="HL70487" DisplayName="Ear wax (cerumen)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EBRUSH" CodeSystem="HL70487" DisplayName="Brush, Esophageal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EEYE" CodeSystem="HL70487" DisplayName="Environmental, Eye Wash" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EFF" CodeSystem="HL70487" DisplayName="Environmental, Effluent" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EFFUS" CodeSystem="HL70487" DisplayName="Effusion" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EFOD" CodeSystem="HL70487" DisplayName="Environmental, Food" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EISO" CodeSystem="HL70487" DisplayName="Environmental, Isolette" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ELT" CodeSystem="HL70487" DisplayName="Electrode" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ENVIR" CodeSystem="HL70487" DisplayName="Environmental, Unidentified Substance" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EOS" CodeSystem="HL70487" DisplayName="Eosinophils" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EOTH" CodeSystem="HL70487" DisplayName="Environmental, Other Substance" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ESOI" CodeSystem="HL70487" DisplayName="Environmental, Soil" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ESOS" CodeSystem="HL70487" DisplayName="Environmental, Solution (Sterile)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ETA" CodeSystem="HL70487" DisplayName="Aspirate,  Endotrach" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ETTP" CodeSystem="HL70487" DisplayName="Catheter Tip, Endotracheal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ETTUB" CodeSystem="HL70487" DisplayName="Tube, Endotracheal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EWHI" CodeSystem="HL70487" DisplayName="Environmental, Whirlpool" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EXG" CodeSystem="HL70487" DisplayName="Gas, exhaled (=breath)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EXS" CodeSystem="HL70487" DisplayName="Shunt, External" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EXUDTE" CodeSystem="HL70487" DisplayName="Exudate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FAW" CodeSystem="HL70487" DisplayName="Environmental, Water  (Well)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FBLOOD" CodeSystem="HL70487" DisplayName="Blood, Fetal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FGA" CodeSystem="HL70487" DisplayName="Fluid,  Abdomen" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FIB" CodeSystem="HL70487" DisplayName="Fibroblasts" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FIST" CodeSystem="HL70487" DisplayName="Fistula" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FLD" CodeSystem="HL70487" DisplayName="Fluid, Other" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FLT" CodeSystem="HL70487" DisplayName="Filter" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FLU" CodeSystem="HL70487" DisplayName="Fluid, Body unsp" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FLUID" CodeSystem="HL70487" DisplayName="Fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FOLEY" CodeSystem="HL70487" DisplayName="Catheter Tip, Foley" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FRS" CodeSystem="HL70487" DisplayName="Fluid, Respiratory" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FSCLP" CodeSystem="HL70487" DisplayName="Scalp, Fetal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="FUR" CodeSystem="HL70487" DisplayName="Furuncle" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GAS" CodeSystem="HL70487" DisplayName="Gas" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GASA" CodeSystem="HL70487" DisplayName="Aspirate, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GASAN" CodeSystem="HL70487" DisplayName="Antrum, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GASBR" CodeSystem="HL70487" DisplayName="Brushing, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GASD" CodeSystem="HL70487" DisplayName="Drainage, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GAST" CodeSystem="HL70487" DisplayName="Fluid/contents, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GENL" CodeSystem="HL70487" DisplayName="Genital lochia" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GENV" CodeSystem="HL70487" DisplayName="Genital vaginal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GRAFT" CodeSystem="HL70487" DisplayName="Graft" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GRAFTS" CodeSystem="HL70487" DisplayName="Graft Site" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GRANU" CodeSystem="HL70487" DisplayName="Granuloma" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GROSH" CodeSystem="HL70487" DisplayName="Catheter, Groshong" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GSOL" CodeSystem="HL70487" DisplayName="Solution, Gastrostomy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GSPEC" CodeSystem="HL70487" DisplayName="Biopsy, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GT" CodeSystem="HL70487" DisplayName="Tube, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GTUBE" CodeSystem="HL70487" DisplayName="Drainage Tube, Drainage (Gastrostomy)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HAR" CodeSystem="HL70487" DisplayName="Hair" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HBITE" CodeSystem="HL70487" DisplayName="Bite, Human" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HBLUD" CodeSystem="HL70487" DisplayName="Blood, Autopsy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HEMAQ" CodeSystem="HL70487" DisplayName="Catheter Tip, Hemaquit" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HEMO" CodeSystem="HL70487" DisplayName="Catheter Tip, Hemovac" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HERNI" CodeSystem="HL70487" DisplayName="Tissue, Herniated" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HEV" CodeSystem="HL70487" DisplayName="Drain, Hemovac" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HIC" CodeSystem="HL70487" DisplayName="Catheter, Hickman" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="HYDC" CodeSystem="HL70487" DisplayName="Fluid, Hydrocele" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IBITE" CodeSystem="HL70487" DisplayName="Bite, Insect" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ICYST" CodeSystem="HL70487" DisplayName="Cyst, Inclusion" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IDC" CodeSystem="HL70487" DisplayName="Catheter Tip, Indwelling" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IHG" CodeSystem="HL70487" DisplayName="Gas, Inhaled" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ILEO" CodeSystem="HL70487" DisplayName="Drainage, Ileostomy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ILLEG" CodeSystem="HL70487" DisplayName="Source of Specimen Is Illegible" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IMP" CodeSystem="HL70487" DisplayName="Implant" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="INCI" CodeSystem="HL70487" DisplayName="Site, Incision/Surgical" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="INFIL" CodeSystem="HL70487" DisplayName="Infiltrate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="INS" CodeSystem="HL70487" DisplayName="Insect" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="INTRD" CodeSystem="HL70487" DisplayName="Catheter Tip, Introducer" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ISLT" CodeSystem="HL70487" DisplayName="Isolate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IT" CodeSystem="HL70487" DisplayName="Intubation tube" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IUD" CodeSystem="HL70487" DisplayName="Intrauterine Device" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IVCAT" CodeSystem="HL70487" DisplayName="Catheter Tip, IV" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IVFLD" CodeSystem="HL70487" DisplayName="Fluid, IV" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="IVTIP" CodeSystem="HL70487" DisplayName="Tubing Tip, IV" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="JEJU" CodeSystem="HL70487" DisplayName="Drainage, Jejunal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="JNTFLD" CodeSystem="HL70487" DisplayName="Fluid, Joint" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="JP" CodeSystem="HL70487" DisplayName="Drainage, Jackson Pratt" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="KELOI" CodeSystem="HL70487" DisplayName="Lavage" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="KIDFLD" CodeSystem="HL70487" DisplayName="Fluid, Kidney" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LAVG" CodeSystem="HL70487" DisplayName="Lavage, Bronhial" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LAVGG" CodeSystem="HL70487" DisplayName="Lavage, Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LAVGP" CodeSystem="HL70487" DisplayName="Lavage, Peritoneal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LAVPG" CodeSystem="HL70487" DisplayName="Lavage, Pre-Bronch" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LENS1" CodeSystem="HL70487" DisplayName="Contact Lens" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LENS2" CodeSystem="HL70487" DisplayName="Contact Lens Case" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LESN" CodeSystem="HL70487" DisplayName="Lesion" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LIQ" CodeSystem="HL70487" DisplayName="Liquid, Unspecified" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LIQO" CodeSystem="HL70487" DisplayName="Liquid, Other" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LNA" CodeSystem="HL70487" DisplayName="Line arterial" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LNV" CodeSystem="HL70487" DisplayName="Line venous" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LSAC" CodeSystem="HL70487" DisplayName="Fluid, Lumbar Sac" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="LYM" CodeSystem="HL70487" DisplayName="Lymphocytes" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MAC" CodeSystem="HL70487" DisplayName="Macrophages" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MAHUR" CodeSystem="HL70487" DisplayName="Catheter Tip, Makurkour" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MAR" CodeSystem="HL70487" DisplayName="Marrow" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MASS" CodeSystem="HL70487" DisplayName="Mass" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MBLD" CodeSystem="HL70487" DisplayName="Blood, Menstrual" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MEC" CodeSystem="HL70487" DisplayName="Meconium" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MILK" CodeSystem="HL70487" DisplayName="Breast milk" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MLK" CodeSystem="HL70487" DisplayName="Milk" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MUCOS" CodeSystem="HL70487" DisplayName="Mucosa" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MUCUS" CodeSystem="HL70487" DisplayName="Mucus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NAIL" CodeSystem="HL70487" DisplayName="Nail" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NASDR" CodeSystem="HL70487" DisplayName="Drainage, Nasal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NEDL" CodeSystem="HL70487" DisplayName="Needle" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NEPH" CodeSystem="HL70487" DisplayName="Site, Nephrostomy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NGASP" CodeSystem="HL70487" DisplayName="Aspirate, Nasogastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NGAST" CodeSystem="HL70487" DisplayName="Drainage, Nasogastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NGS" CodeSystem="HL70487" DisplayName="Site, Naso/Gastric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NODUL" CodeSystem="HL70487" DisplayName="Nodule(s)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NSECR" CodeSystem="HL70487" DisplayName="Secretion, Nasal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ORH" CodeSystem="HL70487" DisplayName="Other" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="ORL" CodeSystem="HL70487" DisplayName="Lesion, Oral" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="OTH" CodeSystem="HL70487" DisplayName="Source, Other" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PACEM" CodeSystem="HL70487" DisplayName="Pacemaker" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PAFL" CodeSystem="HL70487" DisplayName="Pancreatic fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PCFL" CodeSystem="HL70487" DisplayName="Fluid, Pericardial" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PDSIT" CodeSystem="HL70487" DisplayName="Site, Peritoneal Dialysis" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PDTS" CodeSystem="HL70487" DisplayName="Site, Peritoneal Dialysis Tunnel" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PELVA" CodeSystem="HL70487" DisplayName="Abscess, Pelvic" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PENIL" CodeSystem="HL70487" DisplayName="Lesion, Penile" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PERIA" CodeSystem="HL70487" DisplayName="Abscess, Perianal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PINS" CodeSystem="HL70487" DisplayName="Site, Pin" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PIS" CodeSystem="HL70487" DisplayName="Site, Pacemaker Insetion" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLAN" CodeSystem="HL70487" DisplayName="Plant Material" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLAS" CodeSystem="HL70487" DisplayName="Plasma" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLB" CodeSystem="HL70487" DisplayName="Plasma bag" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLC" CodeSystem="HL70487" DisplayName="Placenta" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLEVS" CodeSystem="HL70487" DisplayName="Serum, Peak Level" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PLR" CodeSystem="HL70487" DisplayName="Pleural fluid (thoracentesis fluid)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PMN" CodeSystem="HL70487" DisplayName="Polymorphonuclear neutrophils" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PND" CodeSystem="HL70487" DisplayName="Drainage, Penile" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="POL" CodeSystem="HL70487" DisplayName="Polyps" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="POPGS" CodeSystem="HL70487" DisplayName="Graft Site, Popliteal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="POPLG" CodeSystem="HL70487" DisplayName="Graft, Popliteal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="POPLV" CodeSystem="HL70487" DisplayName="Site, Popliteal Vein" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PORTA" CodeSystem="HL70487" DisplayName="Catheter, Porta" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PPP" CodeSystem="HL70487" DisplayName="Plasma, Platelet poor" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PROST" CodeSystem="HL70487" DisplayName="Prosthetic Device" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PRP" CodeSystem="HL70487" DisplayName="Plasma, Platelet rich" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PSC" CodeSystem="HL70487" DisplayName="Pseudocyst" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PUNCT" CodeSystem="HL70487" DisplayName="Wound, Puncture" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PUS" CodeSystem="HL70487" DisplayName="Pus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PUSFR" CodeSystem="HL70487" DisplayName="Pustule" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PUST" CodeSystem="HL70487" DisplayName="Pus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="QC3" CodeSystem="HL70487" DisplayName="Quality Control" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RANDU" CodeSystem="HL70487" DisplayName="Urine, Random" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RBC" CodeSystem="HL70487" DisplayName="Erythrocytes" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RBITE" CodeSystem="HL70487" DisplayName="Bite, Reptile" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RECT" CodeSystem="HL70487" DisplayName="Drainage, Rectal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RECTA" CodeSystem="HL70487" DisplayName="Abscess, Rectal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RENALC" CodeSystem="HL70487" DisplayName="Cyst, Renal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RENC" CodeSystem="HL70487" DisplayName="Fluid, Renal Cyst" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RES" CodeSystem="HL70487" DisplayName="Respiratory" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SAL" CodeSystem="HL70487" DisplayName="Saliva" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SCAR" CodeSystem="HL70487" DisplayName="Tissue, Keloid (Scar)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SCLV" CodeSystem="HL70487" DisplayName="Catheter Tip, Subclavian" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SCROA" CodeSystem="HL70487" DisplayName="Abscess, Scrotal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SECRE" CodeSystem="HL70487" DisplayName="Secretion(s)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SER" CodeSystem="HL70487" DisplayName="Serum" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SHU" CodeSystem="HL70487" DisplayName="Site, Shunt" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SHUNF" CodeSystem="HL70487" DisplayName="Fluid, Shunt" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SHUNT" CodeSystem="HL70487" DisplayName="Shunt" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SITE" CodeSystem="HL70487" DisplayName="Site" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SKBP" CodeSystem="HL70487" DisplayName="Biopsy, Skin" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SKN" CodeSystem="HL70487" DisplayName="Skin" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SMM" CodeSystem="HL70487" DisplayName="Mass, Sub-Mandibular" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SMN" CodeSystem="HL70487" DisplayName="Seminal fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SNV" CodeSystem="HL70487" DisplayName="Fluid, synovial (Joint fluid)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPRM" CodeSystem="HL70487" DisplayName="Spermatozoa" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPRP" CodeSystem="HL70487" DisplayName="Catheter Tip, Suprapubic" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPRPB" CodeSystem="HL70487" DisplayName="Cathether Tip, Suprapubic" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPS" CodeSystem="HL70487" DisplayName="Environmental, Spore Strip" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPT" CodeSystem="HL70487" DisplayName="Sputum" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPTC" CodeSystem="HL70487" DisplayName="Sputum - coughed" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPTT" CodeSystem="HL70487" DisplayName="Sputum - tracheal aspirate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPUT1" CodeSystem="HL70487" DisplayName="Sputum, Simulated" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPUTIN" CodeSystem="HL70487" DisplayName="Sputum, Inducted" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SPUTSP" CodeSystem="HL70487" DisplayName="Sputum, Spontaneous" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="STER" CodeSystem="HL70487" DisplayName="Environmental, Sterrad" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="STL" CodeSystem="HL70487" DisplayName="Stool = Fecal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="STONE" CodeSystem="HL70487" DisplayName="Stone, Kidney" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SUBMA" CodeSystem="HL70487" DisplayName="Abscess, Submandibular" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SUBMX" CodeSystem="HL70487" DisplayName="Abscess, Submaxillary" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SUMP" CodeSystem="HL70487" DisplayName="Drainage, Sump" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SUP" CodeSystem="HL70487" DisplayName="Suprapubic Tap" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SUTUR" CodeSystem="HL70487" DisplayName="Suture" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SWGZ" CodeSystem="HL70487" DisplayName="Catheter Tip, Swan Gantz" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SWT" CodeSystem="HL70487" DisplayName="Sweat" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TASP" CodeSystem="HL70487" DisplayName="Aspirate, Tracheal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TEAR" CodeSystem="HL70487" DisplayName="Tears" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="THRB" CodeSystem="HL70487" DisplayName="Thrombocyte (platelet)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TISS" CodeSystem="HL70487" DisplayName="Tissue" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TISU" CodeSystem="HL70487" DisplayName="Tissue ulcer" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TLC" CodeSystem="HL70487" DisplayName="Cathether Tip, Triple Lumen" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TRAC" CodeSystem="HL70487" DisplayName="Site, Tracheostomy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TRANS" CodeSystem="HL70487" DisplayName="Transudate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TSERU" CodeSystem="HL70487" DisplayName="Serum, Trough" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TSTES" CodeSystem="HL70487" DisplayName="Abscess, Testicular" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TTRA" CodeSystem="HL70487" DisplayName="Aspirate, Transtracheal" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TUBES" CodeSystem="HL70487" DisplayName="Tubes" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TUMOR" CodeSystem="HL70487" DisplayName="Tumor" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TZANC" CodeSystem="HL70487" DisplayName="Smear, Tzanck" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="UDENT" CodeSystem="HL70487" DisplayName="Source, Unidentified" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="UMED" CodeSystem="HL70487" DisplayName="Unknown Medicine" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="UR" CodeSystem="HL70487" DisplayName="Urine" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URC" CodeSystem="HL70487" DisplayName="Urine clean catch" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URINB" CodeSystem="HL70487" DisplayName="Urine, Bladder Washings" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URINC" CodeSystem="HL70487" DisplayName="Urine, Catheterized" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URINM" CodeSystem="HL70487" DisplayName="Urine, Midstream" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URINN" CodeSystem="HL70487" DisplayName="Urine, Nephrostomy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URINP" CodeSystem="HL70487" DisplayName="Urine, Pedibag" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URNS" CodeSystem="HL70487" DisplayName="Urine sediment" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="URT" CodeSystem="HL70487" DisplayName="Urine catheter" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="USCOP" CodeSystem="HL70487" DisplayName="Urine, Cystoscopy" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="USPEC" CodeSystem="HL70487" DisplayName="Source, Unspecified" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="USUB" CodeSystem="HL70487" DisplayName="Unkown substance" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="VASTIP" CodeSystem="HL70487" DisplayName="Catheter Tip, Vas" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="VENT" CodeSystem="HL70487" DisplayName="Catheter Tip, Ventricular" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="VITF" CodeSystem="HL70487" DisplayName="Vitreous Fluid" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="VOM" CodeSystem="HL70487" DisplayName="Vomitus" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WASH" CodeSystem="HL70487" DisplayName="Wash" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WASI" CodeSystem="HL70487" DisplayName="Washing, e.g. bronchial washing" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WAT" CodeSystem="HL70487" DisplayName="Water" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WB" CodeSystem="HL70487" DisplayName="Blood, Whole" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WBC" CodeSystem="HL70487" DisplayName="Leukocytes" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WEN" CodeSystem="HL70487" DisplayName="Wen" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WICK" CodeSystem="HL70487" DisplayName="Wick" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WND" CodeSystem="HL70487" DisplayName="Wound" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WNDA" CodeSystem="HL70487" DisplayName="Wound abscess" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WNDD" CodeSystem="HL70487" DisplayName="Wound drainage" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WNDE" CodeSystem="HL70487" DisplayName="Wound exudate" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WORM" CodeSystem="HL70487" DisplayName="Worm" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WRT" CodeSystem="HL70487" DisplayName="Wart" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WWA" CodeSystem="HL70487" DisplayName="Environmental, Water" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WWO" CodeSystem="HL70487" DisplayName="Environmental, Water (Ocean)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WWT" CodeSystem="HL70487" DisplayName="Environmental, Water  (Tap)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="&lt;ANY&gt; &lt;&lt;123038009" CodeSystem="SNOMED CT" DisplayName="&lt;ANY codes from Specimen hierarchy&gt; " CodeSystemVersion="" Usage="R" Comments="This concept and all its decendents in the specimen hierarchy. A crossmapping table exists between SCT codes and the HL70487 codes - care should be taken to use either one or the other in the negotiated value set, so that each concept is represented ONLY once" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70136_USL.1" Name="Yes/No Indicator" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM1-4-->
+			<ValueElement Value="Y" CodeSystem="HL70136" DisplayName="Yes" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="N" CodeSystem="HL70136" DisplayName="No" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70362_USL.2" Name="Sending/Receiving Facility" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--MSH-6-->
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70175_USL.1" Name="Master File Identifier Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MFI-1-->
+			<ValueElement Value="CDM" CodeSystem="HL70175" DisplayName="Charge description master file" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CMA" CodeSystem="HL70175" DisplayName="Clinical study with phases and scheduled master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CMB" CodeSystem="HL70175" DisplayName="Clinical study without phases but with scheduled master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="LOC" CodeSystem="HL70175" DisplayName="Location master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="OMA" CodeSystem="HL70175" DisplayName="Numerical observation master file" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="OMB" CodeSystem="HL70175" DisplayName="Categorical observation master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="OMC" CodeSystem="HL70175" DisplayName="Observation batteries master file" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="OMD" CodeSystem="HL70175" DisplayName="Calculated observations master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="PRA" CodeSystem="HL70175" DisplayName="Practitioner master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="STF" CodeSystem="HL70175" DisplayName="Staff master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="CLN" CodeSystem="HL70175" DisplayName="Clinic master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="OME" CodeSystem="HL70175" DisplayName="Other Observation/Service Item master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="INV" CodeSystem="HL70175" DisplayName="Inventory master file" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="OMM" CodeSystem="HL70175" DisplayName="Mixed type observation master file" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="MLCP" CodeSystem="HL70175" DisplayName="Medicare Limited Coverage Process" CodeSystemVersion="2.8.2" Usage="P" Comments="This identifies Universal Service Identifiers that are not approved for a CPT code based on an ICD." />
+			<ValueElement Value="MACP" CodeSystem="HL70175" DisplayName="Medicare Approved Coverage Process" CodeSystemVersion="2.8.2" Usage="P" Comments="This identifies Universal Service Identifier that are approved for an ICD based on the CPT." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70376_USL.1" Name="Special Handling Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--OM4-15-->
+			<ValueElement Value="C37" CodeSystem="HL70376" DisplayName="Body temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="AMB" CodeSystem="HL70376" DisplayName="Ambient temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CAMB" CodeSystem="HL70376" DisplayName="Critical ambient temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="REF" CodeSystem="HL70376" DisplayName="Refrigerated temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CREF" CodeSystem="HL70376" DisplayName="Critical refrigerated temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="FRZ" CodeSystem="HL70376" DisplayName="Frozen temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CFRZ" CodeSystem="HL70376" DisplayName="Critical frozen temperature" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="DFRZ" CodeSystem="HL70376" DisplayName="Deep frozen" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="UFRZ" CodeSystem="HL70376" DisplayName="Ultra frozen" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="NTR" CodeSystem="HL70376" DisplayName="Liquid nitrogen" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PRTL" CodeSystem="HL70376" DisplayName="Protect from light" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CATM" CodeSystem="HL70376" DisplayName="Protect from air" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="DRY" CodeSystem="HL70376" DisplayName="Dry" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PSO" CodeSystem="HL70376" DisplayName="No shock" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PSA" CodeSystem="HL70376" DisplayName="Do not shake" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="UPR" CodeSystem="HL70376" DisplayName="Upright" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="MTLF" CodeSystem="HL70376" DisplayName="Metal Free" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70206_USL.1" Name="Segment Action Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OMC-2-->
+			<ValueElement Value="A" CodeSystem="HL70206" DisplayName="Add/Insert" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="D" CodeSystem="HL70206" DisplayName="Delete" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="U" CodeSystem="HL70206" DisplayName="Update" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="SNOMED_CT_USL.1" Name="SNOMED CT" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM4-6-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="SNOMED CT" DisplayName="Systematized Nomenclature of Medicine--Clinical Terms" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;organism" CodeSystem="SNOMED CT" DisplayName="organism hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;qualifier" CodeSystem="SNOMED CT" DisplayName="qualifier hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;clinical finding" CodeSystem="SNOMED CT" DisplayName="clinical finding hierarchy for OBX-5 (OM3-4 and OM3-5, though not specifically called out)" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;specimen" CodeSystem="SNOMED CT" DisplayName="specimen hierarchy for OM4-6 and SPM-4" CodeSystemVersion="" Usage="P" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;Procedure" CodeSystem="SNOMED CT" DisplayName="Procedure hierarchy for OBX-17 and SPM-7" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;core problem list" CodeSystem="SNOMED CT" DisplayName="core problem list subset for OBR-31" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;anatomical structure" CodeSystem="SNOMED CT" DisplayName="anatomical structure hierarchy for SPM-8" CodeSystemVersion="" Usage="R" Comments="" />
+			<ValueElement Value="&lt;ANY&gt;topographical modifier" CodeSystem="SNOMED CT" DisplayName="topographical modifier heirarchy for SPM-9" CodeSystemVersion="" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70008_USL.1" Name="Acknowledgment Code" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MSA-1-->
+			<ValueElement Value="AA" CodeSystem="HL70008" DisplayName="Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept" CodeSystemVersion="2.5.1" Usage="R" Comments="Note: This code is used in an application level acknowledgement message when an incoming message has been successfully parsed and processed and there are no hard or soft errors.  Parsing and processing may include validating conformance to IG and evaluation of ability of receiving system to consume and store content." />
+			<ValueElement Value="AE" CodeSystem="HL70008" DisplayName="Original mode: Application Error - Enhanced mode: Application acknowledgment: Error" CodeSystemVersion="2.5.1" Usage="R" Comments="Note: This code is used in an application level acknowledgement message when  there are hard and/or soft errors within the incoming message that do not preclude processing at least part of the message.  Parsing and processing may include validating conformance to IG and evaluation of ability of receiving system to consume and store content." />
+			<ValueElement Value="AR" CodeSystem="HL70008" DisplayName="Original mode: Application Reject - Enhanced mode: Application acknowledgment: Reject " CodeSystemVersion="2.5.1" Usage="R" Comments="Note:  This code is used in an application level acknowledgement message when  there are hard errors within the incoming message that suspend processing  of the entire message.  Parsing and processing may include validating conformance to IG and evaluation of ability of receiving system to consume and store content." />
+			<ValueElement Value="CA" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Accept" CodeSystemVersion="2.5.1" Usage="P" Comments="Note: This code is used in the system level acknowledgement message when an incoming message has been successfully received.  This is not used to acknowledge successful parsing or processing of the message." />
+			<ValueElement Value="CE" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Error" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CR" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Reject" CodeSystemVersion="2.5.1" Usage="P" Comments="Note: This code is used in the system level acknowledgement message when receipt of an incoming message has failed.  This is not used to acknowledge message parsing or processing  errors." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70371_USL.1" Name="Additive/Preservative" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--OM4-7-->
+			<ValueElement Value="F10" CodeSystem="HL70371" DisplayName="10% Formalin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="C32" CodeSystem="HL70371" DisplayName="3.2% Citrate" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="C38" CodeSystem="HL70371" DisplayName="3.8% Citrate" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="HCL6" CodeSystem="HL70371" DisplayName="6N HCL" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ACDA" CodeSystem="HL70371" DisplayName="ACD Solution A" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ACDB" CodeSystem="HL70371" DisplayName="ACD Solution B" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ACET" CodeSystem="HL70371" DisplayName="Acetic Acid" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="AMIES" CodeSystem="HL70371" DisplayName="Amies transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="HEPA" CodeSystem="HL70371" DisplayName="Ammonium heparin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="BACTM" CodeSystem="HL70371" DisplayName="Bacterial Transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="BOR" CodeSystem="HL70371" DisplayName="Borate Boric Acid" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="BOUIN" CodeSystem="HL70371" DisplayName="Bouin's solution" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="BF10" CodeSystem="HL70371" DisplayName="Buffered 10% formalin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="WEST" CodeSystem="HL70371" DisplayName="Buffered Citrate (Westergren Sedimentation Rate)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="BSKM" CodeSystem="HL70371" DisplayName="Buffered skim milk" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CARS" CodeSystem="HL70371" DisplayName="Carson's Modified 10% formalin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CARY" CodeSystem="HL70371" DisplayName="Cary Blair Medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CHLTM" CodeSystem="HL70371" DisplayName="Chlamydia transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="CTAD" CodeSystem="HL70371" DisplayName="CTAD (this should be spelled out if not universally understood)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ENT" CodeSystem="HL70371" DisplayName="Enteric bacteria transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ENT+" CodeSystem="HL70371" DisplayName="Enteric plus" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="JKM" CodeSystem="HL70371" DisplayName="Jones Kendrick Medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="KARN" CodeSystem="HL70371" DisplayName="Karnovsky's fixative" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="LIA" CodeSystem="HL70371" DisplayName="Lithium iodoacetate" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="HEPL" CodeSystem="HL70371" DisplayName="Lithium/Li Heparin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="M4" CodeSystem="HL70371" DisplayName="M4" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="M4RT" CodeSystem="HL70371" DisplayName="M4-RT" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="M5" CodeSystem="HL70371" DisplayName="M5" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="MICHTM" CodeSystem="HL70371" DisplayName="Michel's transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="MMDTM" CodeSystem="HL70371" DisplayName="MMD transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="HNO3" CodeSystem="HL70371" DisplayName="Nitric Acid" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="NONE" CodeSystem="HL70371" DisplayName="None" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PAGE" CodeSystem="HL70371" DisplayName="Pages's Saline" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PHENOL" CodeSystem="HL70371" DisplayName="Phenol" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="KOX" CodeSystem="HL70371" DisplayName="Potassium Oxalate" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="EDTK" CodeSystem="HL70371" DisplayName="Potassium/K EDTA" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="EDTK15" CodeSystem="HL70371" DisplayName="Potassium/K EDTA 15%" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="EDTK75" CodeSystem="HL70371" DisplayName="Potassium/K EDTA 7.5%" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="PVA" CodeSystem="HL70371" DisplayName="PVA (polyvinyl alcohol)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="RLM" CodeSystem="HL70371" DisplayName="Reagan Lowe Medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="SST" CodeSystem="HL70371" DisplayName="Serum Separator Tube (Polymer Gel)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="SILICA" CodeSystem="HL70371" DisplayName="Siliceous earth, 12 mg" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="NAF" CodeSystem="HL70371" DisplayName="Sodium Fluoride" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="FL100" CodeSystem="HL70371" DisplayName="Sodium Fluoride, 100mg" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="FL10" CodeSystem="HL70371" DisplayName="Sodium Fluoride, 10mg" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="NAPS" CodeSystem="HL70371" DisplayName="Sodium polyanethol sulfonate0.35% in 0.85% sodium chloride" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="HEPN" CodeSystem="HL70371" DisplayName="Sodium/Na Heparin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="EDTN" CodeSystem="HL70371" DisplayName="Sodium/Na EDTA" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="SPS" CodeSystem="HL70371" DisplayName="SPS(this should be spelled out if not universally understood)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="STUTM" CodeSystem="HL70371" DisplayName="Stuart transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="THROM" CodeSystem="HL70371" DisplayName="Thrombin" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="FDP" CodeSystem="HL70371" DisplayName="Thrombin NIH; soybean trypsin inhibitor (Fibrin Degradation Products)" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="THYMOL" CodeSystem="HL70371" DisplayName="Thymol" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="THYO" CodeSystem="HL70371" DisplayName="Thyoglycollate broth" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="TOLU" CodeSystem="HL70371" DisplayName="Toluene" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="URETM" CodeSystem="HL70371" DisplayName="Ureaplasma transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="VIRTM" CodeSystem="HL70371" DisplayName="Viral transport medium" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70361_USL.1" Name="Sending/Receiving Application" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--MSH-3-->
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70074_USL.1" Name="Diagnostic Service Section ID" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--OM1-49-->
+			<ValueElement Value="AU" CodeSystem="HL70074" DisplayName="Audiology" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="BG" CodeSystem="HL70074" DisplayName="Blood Gases" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="BLB" CodeSystem="HL70074" DisplayName="Blood Bank" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="CUS" CodeSystem="HL70074" DisplayName="Cardiac Ultrasound" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CTH" CodeSystem="HL70074" DisplayName="Cardiac Catheterization" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CT" CodeSystem="HL70074" DisplayName="Cat Scan" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CH" CodeSystem="HL70074" DisplayName="Chemistry" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="CP" CodeSystem="HL70074" DisplayName="Cytopathology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="EC" CodeSystem="HL70074" DisplayName="Electrocardiac (E.G., Ekg,  Eec, Holter)" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="EN" CodeSystem="HL70074" DisplayName="Electroneuro (Eeg, Emg,Ep,Psg)" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="HM" CodeSystem="HL70074" DisplayName="Hematology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="ICU" CodeSystem="HL70074" DisplayName="Bedside Icu Monitoring" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="IMM" CodeSystem="HL70074" DisplayName="Immunology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="LAB" CodeSystem="HL70074" DisplayName="Laboratory" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="MB" CodeSystem="HL70074" DisplayName="Microbiology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="MCB" CodeSystem="HL70074" DisplayName="Mycobacteriology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="MYC" CodeSystem="HL70074" DisplayName="Mycology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="NMS" CodeSystem="HL70074" DisplayName="Nuclear Medicine Scan" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NMR" CodeSystem="HL70074" DisplayName="Nuclear Magnetic Resonance" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NRS" CodeSystem="HL70074" DisplayName="Nursing Service Measures" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OUS" CodeSystem="HL70074" DisplayName="Ob Ultrasound" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OT" CodeSystem="HL70074" DisplayName="Occupational Therapy" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OTH" CodeSystem="HL70074" DisplayName="Other" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="OSL" CodeSystem="HL70074" DisplayName="Outside Lab" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="PHR" CodeSystem="HL70074" DisplayName="Pharmacy" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PT" CodeSystem="HL70074" DisplayName="Physical Therapy" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PHY" CodeSystem="HL70074" DisplayName="Physician (Hx. Dx, Admission Note, Etc.)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="PF" CodeSystem="HL70074" DisplayName="Pulmonary Function" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RAD" CodeSystem="HL70074" DisplayName="Radiology" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RX" CodeSystem="HL70074" DisplayName="Radiograph" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RUS" CodeSystem="HL70074" DisplayName="Radiology Ultrasound" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RC" CodeSystem="HL70074" DisplayName="Respiratory Care (Therapy)" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RT" CodeSystem="HL70074" DisplayName="Radiation Therapy" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SR" CodeSystem="HL70074" DisplayName="Serology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="SP" CodeSystem="HL70074" DisplayName="Surgical Pathology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="TX" CodeSystem="HL70074" DisplayName="Toxicology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="VUS" CodeSystem="HL70074" DisplayName="Vascular Ultrasound" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VR" CodeSystem="HL70074" DisplayName="Virology" CodeSystemVersion="2.8.2" Usage="R" Comments="" />
+			<ValueElement Value="XRC" CodeSystem="HL70074" DisplayName="Cineradiograph" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70919_USL.1" Name="Exclusive Test" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM1-48-->
+			<ValueElement Value="Y" CodeSystem="HL70919" DisplayName="This test should be exclusive" CodeSystemVersion="2.8" Usage="R" Comments="" />
+			<ValueElement Value="N" CodeSystem="HL70919" DisplayName="This test can be included with any number of other tests" CodeSystemVersion="2.8" Usage="R" Comments="" />
+			<ValueElement Value="D" CodeSystem="HL70919" DisplayName="In some cases, this test should be only exclusively with like tests (examples are cyto or pathology)" CodeSystemVersion="2.8" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70125_USL.2" Name="Value Type" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OMC-9-->
+			<ValueElement Value="AUI" CodeSystem="HL70125" DisplayName="Authorization information" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CCD" CodeSystem="HL70125" DisplayName="Charge code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CCP" CodeSystem="HL70125" DisplayName="Channel calibration parameters" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CD" CodeSystem="HL70125" DisplayName="Channel definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CF" CodeSystem="HL70125" DisplayName="Coded element with formatted values" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CNE" CodeSystem="HL70125" DisplayName="Coded with no exceptions" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CNN" CodeSystem="HL70125" DisplayName="Composite ID number and name simplified" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CP" CodeSystem="HL70125" DisplayName="Composite Price" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CSU" CodeSystem="HL70125" DisplayName="Channel sensitivity and units" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CWE" CodeSystem="HL70125" DisplayName="Coded with Exception" CodeSystemVersion="2.8.2" Usage="P" Comments="Data type flavor to format OBX-5: CWE_CR, when OBX-2 is valued 'CWE'" />
+			<ValueElement Value="CX" CodeSystem="HL70125" DisplayName="Extended Composite ID With Check Digit" CodeSystemVersion="2.8.2" Usage="P" Comments="Data type flavor to format OBX-5: Use appropriate CX_NG or CX_GU, when OBX-2 is valued 'CX' " />
+			<ValueElement Value="DDI" CodeSystem="HL70125" DisplayName="Daily deductible information" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DIN" CodeSystem="HL70125" DisplayName="Date and institution name" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLD" CodeSystem="HL70125" DisplayName="Discharge to location and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLN" CodeSystem="HL70125" DisplayName="Driver's license number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLT" CodeSystem="HL70125" DisplayName="Delta" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DR" CodeSystem="HL70125" DisplayName="Date/time range" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DT" CodeSystem="HL70125" DisplayName="Date" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DTM" CodeSystem="HL70125" DisplayName="Date/time" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DTN" CodeSystem="HL70125" DisplayName="Day type and number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ED" CodeSystem="HL70125" DisplayName="Encapsulated Data" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EI" CodeSystem="HL70125" DisplayName="Entity identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="EIP" CodeSystem="HL70125" DisplayName="Entity identifier pair" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ERL" CodeSystem="HL70125" DisplayName="Error location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="FC" CodeSystem="HL70125" DisplayName="Financial class" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="FT" CodeSystem="HL70125" DisplayName="Formatted Text (Display)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GTS" CodeSystem="HL70125" DisplayName="General timing specification" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="HD" CodeSystem="HL70125" DisplayName="Hierarchic designator" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ICD" CodeSystem="HL70125" DisplayName="Insurance certification definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="IS" CodeSystem="HL70125" DisplayName="Coded value for user-defined tables" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="JCC" CodeSystem="HL70125" DisplayName="Job code/class" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="LA1" CodeSystem="HL70125" DisplayName="Location with address variation 1" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="LA2" CodeSystem="HL70125" DisplayName="Location with address variation 2" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MA" CodeSystem="HL70125" DisplayName="Multiplexed array" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MO" CodeSystem="HL70125" DisplayName="Money" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MOC" CodeSystem="HL70125" DisplayName="Money and charge code" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MOP" CodeSystem="HL70125" DisplayName="Money or percentage" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MSG" CodeSystem="HL70125" DisplayName="Message type" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NA" CodeSystem="HL70125" DisplayName="Numeric array" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NDL" CodeSystem="HL70125" DisplayName="Name with date and location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NM" CodeSystem="HL70125" DisplayName="Numeric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NR" CodeSystem="HL70125" DisplayName="Numeric range" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OCD" CodeSystem="HL70125" DisplayName="Occurrence code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OSP" CodeSystem="HL70125" DisplayName="Occurrence span code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PIP" CodeSystem="HL70125" DisplayName="Practitioner institutional privileges" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PL" CodeSystem="HL70125" DisplayName="Person location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PLN" CodeSystem="HL70125" DisplayName="Practitioner license or other ID number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PPN" CodeSystem="HL70125" DisplayName="Performing person time stamp" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PRL" CodeSystem="HL70125" DisplayName="Parent result link" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PT" CodeSystem="HL70125" DisplayName="Processing type" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PTA" CodeSystem="HL70125" DisplayName="Policy type and amount" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="QIP" CodeSystem="HL70125" DisplayName="Query input parameter list" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="QSC" CodeSystem="HL70125" DisplayName="Query selection criteria" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RCD" CodeSystem="HL70125" DisplayName="Row column definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RFR" CodeSystem="HL70125" DisplayName="Reference range" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RI" CodeSystem="HL70125" DisplayName="Repeat interval" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RMC" CodeSystem="HL70125" DisplayName="Room coverage" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RP" CodeSystem="HL70125" DisplayName="Reference Pointer" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RPT" CodeSystem="HL70125" DisplayName="Repeat pattern" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SCV" CodeSystem="HL70125" DisplayName="Scheduling class value pair" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SN" CodeSystem="HL70125" DisplayName="Structured Numeric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SNM" CodeSystem="HL70125" DisplayName="String of telephone number digits" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SPD" CodeSystem="HL70125" DisplayName="Specialty description" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SRT" CodeSystem="HL70125" DisplayName="Sort order" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ST" CodeSystem="HL70125" DisplayName="String Data" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TM" CodeSystem="HL70125" DisplayName="Time" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TX" CodeSystem="HL70125" DisplayName="Text Data (Display)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="UVC" CodeSystem="HL70125" DisplayName="UB value code and amount" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VH" CodeSystem="HL70125" DisplayName="Visiting hours" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VID" CodeSystem="HL70125" DisplayName="Version identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VR" CodeSystem="HL70125" DisplayName="Value range" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WVI" CodeSystem="HL70125" DisplayName="Channel Identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="WVS" CodeSystem="HL70125" DisplayName="Waveform source" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="XAD" CodeSystem="HL70125" DisplayName="Extended Address" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XCN" CodeSystem="HL70125" DisplayName="Extended Composite Name And Number For Persons" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XON" CodeSystem="HL70125" DisplayName="Extended Composite Name And Number For Organizations" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XPN" CodeSystem="HL70125" DisplayName="Extended Person Name" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XTN" CodeSystem="HL70125" DisplayName="Extended Telecommunications Number" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="LOINC_USL.1" Name="LOINC" Description="" Version="V1" Oid="TBD" Stability="Dynamic" Extensibility="Open" ContentDefinition="intensional">
+			<!--OM1-7-->
+			<ValueElement Value="&lt;ANY&gt;" CodeSystem="LOINC" DisplayName="Logical Observation Identifiers Names and Codes" CodeSystemVersion="2.52" Usage="R" Comments="https://www.ietf.org/rfc/rfc2046.txt" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70125_USL.1" Name="Value Type" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--OM3-7-->
+			<ValueElement Value="AUI" CodeSystem="HL70125" DisplayName="Authorization information" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CCD" CodeSystem="HL70125" DisplayName="Charge code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CCP" CodeSystem="HL70125" DisplayName="Channel calibration parameters" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CD" CodeSystem="HL70125" DisplayName="Channel definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CF" CodeSystem="HL70125" DisplayName="Coded element with formatted values" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CNE" CodeSystem="HL70125" DisplayName="Coded with no exceptions" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CNN" CodeSystem="HL70125" DisplayName="Composite ID number and name simplified" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="CP" CodeSystem="HL70125" DisplayName="Composite Price" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CSU" CodeSystem="HL70125" DisplayName="Channel sensitivity and units" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="CWE" CodeSystem="HL70125" DisplayName="Coded with Exception" CodeSystemVersion="2.8.2" Usage="P" Comments="Data type flavor to format OBX-5: CWE_CR, when OBX-2 is valued 'CWE'" />
+			<ValueElement Value="CX" CodeSystem="HL70125" DisplayName="Extended Composite ID With Check Digit" CodeSystemVersion="2.8.2" Usage="P" Comments="Data type flavor to format OBX-5: Use appropriate CX_NG or CX_GU, when OBX-2 is valued 'CX' " />
+			<ValueElement Value="DDI" CodeSystem="HL70125" DisplayName="Daily deductible information" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DIN" CodeSystem="HL70125" DisplayName="Date and institution name" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLD" CodeSystem="HL70125" DisplayName="Discharge to location and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLN" CodeSystem="HL70125" DisplayName="Driver's license number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DLT" CodeSystem="HL70125" DisplayName="Delta" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="DR" CodeSystem="HL70125" DisplayName="Date/time range" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DT" CodeSystem="HL70125" DisplayName="Date" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DTM" CodeSystem="HL70125" DisplayName="Date/time" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="DTN" CodeSystem="HL70125" DisplayName="Day type and number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ED" CodeSystem="HL70125" DisplayName="Encapsulated Data" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="EI" CodeSystem="HL70125" DisplayName="Entity identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="EIP" CodeSystem="HL70125" DisplayName="Entity identifier pair" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ERL" CodeSystem="HL70125" DisplayName="Error location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="FC" CodeSystem="HL70125" DisplayName="Financial class" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="FT" CodeSystem="HL70125" DisplayName="Formatted Text (Display)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="GTS" CodeSystem="HL70125" DisplayName="General timing specification" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="HD" CodeSystem="HL70125" DisplayName="Hierarchic designator" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ICD" CodeSystem="HL70125" DisplayName="Insurance certification definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="IS" CodeSystem="HL70125" DisplayName="Coded value for user-defined tables" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="JCC" CodeSystem="HL70125" DisplayName="Job code/class" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="LA1" CodeSystem="HL70125" DisplayName="Location with address variation 1" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="LA2" CodeSystem="HL70125" DisplayName="Location with address variation 2" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MA" CodeSystem="HL70125" DisplayName="Multiplexed array" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="MO" CodeSystem="HL70125" DisplayName="Money" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MOC" CodeSystem="HL70125" DisplayName="Money and charge code" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MOP" CodeSystem="HL70125" DisplayName="Money or percentage" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="MSG" CodeSystem="HL70125" DisplayName="Message type" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NA" CodeSystem="HL70125" DisplayName="Numeric array" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="NDL" CodeSystem="HL70125" DisplayName="Name with date and location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NM" CodeSystem="HL70125" DisplayName="Numeric" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="NR" CodeSystem="HL70125" DisplayName="Numeric range" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OCD" CodeSystem="HL70125" DisplayName="Occurrence code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="OSP" CodeSystem="HL70125" DisplayName="Occurrence span code and date" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PIP" CodeSystem="HL70125" DisplayName="Practitioner institutional privileges" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PL" CodeSystem="HL70125" DisplayName="Person location" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PLN" CodeSystem="HL70125" DisplayName="Practitioner license or other ID number" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PPN" CodeSystem="HL70125" DisplayName="Performing person time stamp" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PRL" CodeSystem="HL70125" DisplayName="Parent result link" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PT" CodeSystem="HL70125" DisplayName="Processing type" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="PTA" CodeSystem="HL70125" DisplayName="Policy type and amount" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="QIP" CodeSystem="HL70125" DisplayName="Query input parameter list" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="QSC" CodeSystem="HL70125" DisplayName="Query selection criteria" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RCD" CodeSystem="HL70125" DisplayName="Row column definition" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RFR" CodeSystem="HL70125" DisplayName="Reference range" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RI" CodeSystem="HL70125" DisplayName="Repeat interval" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RMC" CodeSystem="HL70125" DisplayName="Room coverage" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="RP" CodeSystem="HL70125" DisplayName="Reference Pointer" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="RPT" CodeSystem="HL70125" DisplayName="Repeat pattern" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SCV" CodeSystem="HL70125" DisplayName="Scheduling class value pair" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SN" CodeSystem="HL70125" DisplayName="Structured Numeric" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="SNM" CodeSystem="HL70125" DisplayName="String of telephone number digits" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SPD" CodeSystem="HL70125" DisplayName="Specialty description" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="SRT" CodeSystem="HL70125" DisplayName="Sort order" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="ST" CodeSystem="HL70125" DisplayName="String Data" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TM" CodeSystem="HL70125" DisplayName="Time" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="TX" CodeSystem="HL70125" DisplayName="Text Data (Display)" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="UVC" CodeSystem="HL70125" DisplayName="UB value code and amount" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VH" CodeSystem="HL70125" DisplayName="Visiting hours" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VID" CodeSystem="HL70125" DisplayName="Version identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="VR" CodeSystem="HL70125" DisplayName="Value range" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="WVI" CodeSystem="HL70125" DisplayName="Channel Identifier" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="WVS" CodeSystem="HL70125" DisplayName="Waveform source" CodeSystemVersion="2.8.2" Usage="E" Comments="" />
+			<ValueElement Value="XAD" CodeSystem="HL70125" DisplayName="Extended Address" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XCN" CodeSystem="HL70125" DisplayName="Extended Composite Name And Number For Persons" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XON" CodeSystem="HL70125" DisplayName="Extended Composite Name And Number For Organizations" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XPN" CodeSystem="HL70125" DisplayName="Extended Person Name" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+			<ValueElement Value="XTN" CodeSystem="HL70125" DisplayName="Extended Telecommunications Number" CodeSystemVersion="2.8.2" Usage="P" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70001_USL.1" Name="Administrative Sex" Description="This value set defines all values for the patient administrative sex." Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--RFR-2-->
+			<ValueElement Value="A" CodeSystem="HL70001" DisplayName="Ambiguous" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="F" CodeSystem="HL70001" DisplayName="Female" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="M" CodeSystem="HL70001" DisplayName="Male" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="N" CodeSystem="HL70001" DisplayName="Not Applicable" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="O" CodeSystem="HL70001" DisplayName="Other" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="U" CodeSystem="HL70001" DisplayName="Unknown" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70005_USL.1" Name="Race" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--RFR-6-->
+			<ValueElement Value="1002-5" CodeSystem="HL70005" DisplayName="American Indian or Alaska Native" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="2028-9" CodeSystem="HL70005" DisplayName="Asian" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="2054-5" CodeSystem="HL70005" DisplayName="Black or African American" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="2076-8" CodeSystem="HL70005" DisplayName="Native Hawaiian or Other Pacific Islander" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="2106-3" CodeSystem="HL70005" DisplayName="White" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="2131-1" CodeSystem="HL70005" DisplayName="Other Race" CodeSystemVersion="2.5.1" Usage="P" Comments="Excluded as noted as this value is not part of the OMB defined set." />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70357_USL.1" Name="Message Error Condition Codes" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Open" ContentDefinition="Extensional">
+			<!--ERR-3-->
+			<ValueElement Value="0" CodeSystem="HL70357" DisplayName="Message accepted" CodeSystemVersion="2.5.1" Usage="E" Comments="Managed through the MSA." />
+			<ValueElement Value="100" CodeSystem="HL70357" DisplayName="Segment sequence error" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="101" CodeSystem="HL70357" DisplayName="Required field missing" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="102" CodeSystem="HL70357" DisplayName="Data type error" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="103" CodeSystem="HL70357" DisplayName="Table value not found" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="104" CodeSystem="HL70357" DisplayName="Value too long*" CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="199" CodeSystem="HL70357" DisplayName="Other HL7 Error" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="200" CodeSystem="HL70357" DisplayName="Unsupported message type" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="201" CodeSystem="HL70357" DisplayName="Unsupported event code" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="202" CodeSystem="HL70357" DisplayName="Unsupported processing id" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="203" CodeSystem="HL70357" DisplayName="Unsupported version id" CodeSystemVersion="2.5.1" Usage="R" Comments="" />
+			<ValueElement Value="204" CodeSystem="HL70357" DisplayName="Unknown key identifier" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="205" CodeSystem="HL70357" DisplayName="Duplicate key identifier" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="206" CodeSystem="HL70357" DisplayName="Application record locked" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+			<ValueElement Value="207" CodeSystem="HL70357" DisplayName="Application internal error" CodeSystemVersion="2.5.1" Usage="E" Comments="" />
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70179_USL.1" Name="Response Level" Description="" Version="V1" Oid="TBD" Stability="Static" Extensibility="Closed" ContentDefinition="Extensional">
+			<!--MFI-6-->
+			<ValueElement Value="NE" CodeSystem="HL70179" DisplayName="Never. No application-level response needed " CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="ER" CodeSystem="HL70179" DisplayName="Error/Reject conditions only. Only MFA segments denoting errors must be returned via the application-level acknowledgment for this message " CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="AL" CodeSystem="HL70179" DisplayName="Always. All MFA segments (whether denoting errors or not) must be returned via the application-level acknowledgment message " CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+			<ValueElement Value="SU" CodeSystem="HL70179" DisplayName="Success. Only MFA segments denoting success must be returned via the application-level acknowledgment for this message " CodeSystemVersion="2.5.1" Usage="P" Comments="" />
+		</ValueSetDefinition>
+	</ValueSetDefinitions>
+</ValueSetLibrary>

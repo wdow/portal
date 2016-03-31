@@ -23,7 +23,14 @@ public class Tool {
 	 private String status;
 	 private String spec;
 	 private String html_title;
-	 public String getHtml_title() {
+	 private String git;
+	 public String getGit() {
+		return git;
+	}
+	public void setGit(String git) {
+		this.git = git;
+	}
+	public String getHtml_title() {
 		return html_title;
 	}
 	public void setHtml_title(String html_title) {

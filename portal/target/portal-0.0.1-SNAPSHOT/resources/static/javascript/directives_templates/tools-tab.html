@@ -6,6 +6,8 @@
   <div class="panel-heading"><h3><strong> HL7 V2 Tools</strong></h3></div>
   <div class="panel-body">
         <div class= "row ">
+        
+ 
     <select class= "Select col-md-6 " ng-model="cat.categorie" ng-click="FilterTools(tools)" >
         <option value='' >All Tools</option>
         <option value='ONC Certification Related Tools' ng-click="pagination.toPageId(0)">ONC Certification Related Tools</option>
@@ -14,6 +16,10 @@
         <option value='Productivity Tools'>Productivity Tools</option>
     </select>
     
+     <label>Show Archived:
+  <input type="checkbox" ng-model="archived.archived" ng-true-value="'true'" ng-false-value="'false'">
+  </label>
+   
 <!--     {{categorie}} -->
 <!-- <!--     <label> --> 
 <!-- <!--     <input type="radio" ng-model="activity" value="Active" > --> 
@@ -30,36 +36,65 @@
 
 
 
-  <div  class="input-group col-md-2 col-xs-offset-1">
+  <div  class="input-group col-md-2 " style="float:right; margin-right:5px;">
   <span class="input-group-addon" id="basic-addon1">
   <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
   </span>
   <input type= "text" ng-model ="sort.title" class="form-control"></input> </div>
+
  </div>
- 
+  
 	<div class="row toolsboxes">
-		<div class="box1 col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage ">
-			<a href={{tool.link}}>	
+		<div class="box1 col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " ng-show="tool.activity==='Active'">
+			<a href={{tool.link}} target="_blank">	
+			<div class="boxhead" style="border:none; margin: none;">
+			<span style="font-size: 20px; color: white;">
+			<p ng-bind-html="tool.html_title |sanitize"></p>
+			</span>
+			</div></a>
+			<div class="row boxbottom" >
+		
+		<a href={{tool.link}} target="_blank">	
+		<div class="col-md-6 col-xs-offset-4">
+		
+			</div> </a>
+			
+			<a href="">
+				<div class="col-md-1" " > 
+				
+	<span class = "glyphicon glyphicon-info-sign info" ng-click="open(tool)"/> 
+				 </div>
+</a>
+			</div>
+
+		</div>
+		
+			<div class="box1 archived col-md-2" ng-repeat="tool in tools | filter : cat| filter: sort|startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " ng-show="tool.activity==='Archived'&& archived.archived==='true'" >
+			<a href={{tool.link}} target="_blank">	
 			<div class="boxhead">
 			<span style="font-size: 20px; color: white;">
 			<p ng-bind-html="tool.html_title |sanitize"></p>
 			</span>
 			</div></a>
-			<div class="row">
+			<div class="row boxbottom" >
 		
-		<a href={{tool.link}}>	<div class="col-md-6 col-xs-offset-4">
+		<a href={{tool.link}} target="_blank">	<div class="col-md-6 col-xs-offset-4">
 		
 			</div> </a>
 			
-			
+			<a href="">
 				<div class="col-md-1" > 
 				
 	<span class = "glyphicon glyphicon-info-sign info" ng-click="open(tool)"/> 
 				 </div>
-
+</a>
 			</div>
 
 		</div>
+		
+		
+		
+		
 
 	</div>
 
@@ -93,23 +128,50 @@
 <!-- 	<div  style="display : inline;"> -->
 
 <hr/>
-		<footer id="footer" style= "border-top:2px solid;" >
-			<a href="http://www.nist.gov" target="_blank"><img
-				src="resources/static/images/logo_nist.gif" alt="NIST Logo"></a> <a
-				href="http://www.itl.nist.gov/" target="_blank"><img
-				src="resources/static/images/itl-logo.jpg" alt="NIST ITL Logo"></a>
-			<div style="text-align: right;">
-				<p>
-					<a href="http://www.nist.gov/public_affairs/disclaimer.cfm"
-						target="_blank" title="View Disclaimer">Disclaimer</a> | <a
-						href="mailto:haffo[at]nist[dot]gov"
-						title="Email Website Administrator: rochb">Email Website
-						Administrator</a> | <a
-						href="http://www.nist.gov/public_affairs/privacy.htm"
-						target="_blank" title="View Privacy Policy">Privacy/Policy</a>
-				</p>
-			</div>
-		</footer>
+	  <div id="footer" class="ng-scope"  style="border-top:1px solid;">
+
+        <table>
+        <tbody>
+        <tr>
+            <td class="box col-md-1">
+                     <a href="http://www.nist.gov" target="_blank"><img class="footerImage" src="resources/static/images/nist_logo.gif" alt="The NIST Logo" title="The NIST Logo"></a>
+            </td>
+
+            <td class="box col-md-3">
+                <div>
+                    <h5>Application Information</h5>
+                    <span class="ng-binding">Date: 03/15/2016 13:01:30, </span>
+                    <span class="ng-binding">Application Version: 1.0</span>
+               
+                </div>
+            </td>
+
+            <td class="box col-md-3">
+                <div>
+                    <h5>Supported Browsers</h5>
+                    <span><i class="fa fa-firefox"></i> Firefox, <i class="fa fa-chrome"></i> Chrome, <i class="fa fa-safari"></i>
+Safari, <i class="fa fa-internet-explorer"></i> IE 9 and 10</span>
+                </div>
+            </td>
+
+            <td class="box col-md-4">
+                <div>
+                    <h5>External Links</h5>
+                    <a class="footer-link" href="http://www.nist.gov/public_affairs/disclaimer.cfm" target="_blank" title="View Disclaimer">Disclaimer</a> |
+                        <a class="footer-link" href="http://www.nist.gov/public_affairs/privacy.cfm#privpolicy" target="_blank" title="View Privacy Policy">Privacy/Policy</a>|
+                         <a class="footer-link" ng-href="mailto:robert.snelick@nist.gov" title="Email Website Administrator @: robert.snelick@nist.gov" href="mailto:robert.snelick@nist.gov">Website Administrator</a>
+                 </div>
+            </td>
+
+            <td class="box col-md-2">
+                <a href="http://www.itl.nist.gov" target="_blank"><img class="footerImage" src="resources/static/images/itl-logo.jpg" alt="ITL Logo" title="ITL Logo"></a>
+            </td>
+
+        </tr>
+        </tbody>
+
+</table>
+ </div>
 
 </div> 
 
@@ -126,20 +188,21 @@
 
 		<p ng-bind-html="tool.description |sanitize"></p>
 		<hr />
-		<h4>Specification</h4>
+<div ng-hide= "tool.spec==='none'">
+		<h4 >Specification</h4>
 		{{tool.spec}}
-		<hr />
+		<hr /></div>
 		<h4>Last Update:</h4>
 		{{tool.last_update}}
-		<hr />
-		<h4>Current Version: {{tool.version}}</h4>
-		<hr />
-		<h4>Use: {{tool.categorie}}</h4>
+		<hr ng-hide="tool.version==='none'" />
+		<h4  ng-hide="tool.version==='none'">Current Version: {{tool.version}}</h4>
+		<hr  ng-hide="tool.categorie==='none'"/>
+		<h4 ng-hide="tool.categorie==='none'">Use: {{tool.categorie}}</h4>
 		<hr />
 		<h4>Status: {{tool.activity}}</h4>
-		<hr />
-		<h4>Conformance profiles</h4>
-		<div class="conformace">
+		<hr ng-hide="tool.profiles.length===0"></hr>
+		<h4 ng-hide="tool.profiles.length===0">Conformance profiles</h4>
+		<div class="conformace" ng-hide="tool.profiles.length===0">
 		<ul>
 			<li class="col-md-4" ng-repeat="profil in tool.profiles">{{profil}}</li>
 		</ul>
