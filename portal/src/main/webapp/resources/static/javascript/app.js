@@ -240,6 +240,27 @@ $http.post("/portal/schemaDomain").success(function (response) {
       });
       $scope.modalInstance = modalInstance;
   };
+  
+  
+  $scope.openDisclaimer = function() {
+
+      var modalInstance = $uibModal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: 'disclaimer.html',
+          scope: $scope,
+          size:'lg',
+          windowClass: 'my-modal-popup'
+
+
+      });
+      $scope.modalInstance = modalInstance;
+  };
+  
+  
+  
+  
+  
+  
 
 	  $scope.cancel = function () {
 		  $scope.modalInstance.dismiss('cancel');

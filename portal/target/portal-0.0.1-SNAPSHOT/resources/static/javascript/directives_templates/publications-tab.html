@@ -19,6 +19,7 @@
                             <th>Date</th>
                             <th>Authors</th>
                             <th>Publication</th>
+                            <th>Slides</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,12 +32,16 @@
                            {{paper.publication_date}}
                             </td>
                         
-                            <td class="col-md-3">
+                            <td class="col-md-2">
                             {{paper.author}}
                             </td>
-                            <td class="col-md-3">
+                            <td class="col-md-2">
 <!--                          {{paper.place}} -->
                          <p ng-bind-html="paper.place |sanitize"></p>
+                        
+                            </td>
+                          <td class="col-md-1">
+				<a ng-hide= "paper.ppt==='none'" class="link" href="resources/static/papers/{{paper.ppt}}"><img src="resources/static/images/get.png"/></a>
                         
                             </td>
                         </tr>

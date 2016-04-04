@@ -10,8 +10,8 @@
 	
 	
 <div class="panel panel-info">
-  <div class="panel-heading"> <h3><strong>Source Code</strong></h3></div>
-  <div class="panel-body">
+  <div class="panel-heading "> <div class="row"><div class="col-md-10"><h3><strong>Source Code</strong></h3></div> <div class="col-md-1"> <h3><button class ="disclaimer" ng-click="openDisclaimer()">Disclaimer</button></h3></div></div>
+  </div><div class="panel-body">
    	<div>
 	
 		<div style="margin-right: 100px;" class="input-group col-md-2">
@@ -46,8 +46,8 @@
             <td class="box col-md-3">
                 <div>
                     <h5>Application Information</h5>
-                    <span class="ng-binding">Date: 03/15/2016 13:01:30, </span>
-                    <span class="ng-binding">Application Version: 1.0</span>
+                    <span class="ng-binding">Date: 04/01/2016 </span>
+                    <br/><span class="ng-binding">Application Version: 1.0</span>
                
                 </div>
             </td>
@@ -78,7 +78,22 @@ Safari, <i class="fa fa-internet-explorer"></i> IE 9 and 10</span>
 
 </table>
  </div>
+</div>
+
+<script type="text/ng-template" id="disclaimer.html">
+<div class="panel panel-info ">
+	<div class="panel-heading">
+		<h2>Disclaimer</h2>
+	</div>
+	<div class="panel-body">
+
+
 	
-	
+		<div class="modal-footer col-md-12">
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+		</div>
+	</div>
 
 </div>
+
+</script>

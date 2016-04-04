@@ -8,12 +8,21 @@ public class Paper {
 	@Id
 	private Object id; 
 	private String title;
+	private String ppt;
 	private String link;
 	private String publication_date;
 	private String author;
 	public String keywords;
 	private String place;
 	private double year;
+
+
+	public String getPpt() {
+		return ppt;
+	}
+	public void setPpt(String ppt) {
+		this.ppt = ppt;
+	}
 	public double getYear() {
 		return year;
 	}
