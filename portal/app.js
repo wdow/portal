@@ -124,10 +124,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('tools', {
             url: '/tools',
             templateUrl: 'resources/static/javascript/directives_templates/tools-tab.html'
-        })
-        
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        
+        }).
+            
+        state('toolsdevs, {
+            url: '/tools/dev',
+            templateUrl: 'resources/static/javascript/directives_templates/tools-tab.html'
+        }) 
     .state('publications', {
         // we'll get to this in a bit  
     	 url: '/publications',

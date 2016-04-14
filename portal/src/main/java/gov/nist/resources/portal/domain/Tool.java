@@ -24,7 +24,14 @@ public class Tool {
 	 private String spec;
 	 private String html_title;
 	 private String git;
-	 public String getGit() {
+	 private String dev;
+	 public String getDev() {
+		return dev;
+	}
+	public void setDev(String dev) {
+		this.dev = dev;
+	}
+	public String getGit() {
 		return git;
 	}
 	public void setGit(String git) {

@@ -18,6 +18,7 @@
 <script src="resources/static/javascript/external_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 <script src="resources/static/javascript/app.js"></script> 
+<script src="resources/static/javascript/login.js"></script> 
 </head>
 
 <body ng-app="app" ng-controller="toolController">
@@ -60,7 +61,14 @@
 								About</span></a></li>
 					</a>
 					</li>
-				</ul>
+										<li ng-class="{ active :isActive(5)}" ng-click="setActive(5)"><a
+						ui-sref="links "><span style="color: black;">
+								Links</span></a></li>
+					</a>
+					</li>
+					
+				
+				
 			</div>
 		</nav>
 

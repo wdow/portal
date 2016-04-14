@@ -1,16 +1,11 @@
 package gov.nist.resources.portal;
 
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
-import gov.nist.resources.portal.domain.*;
 
-import gov.nist.resources.portal.domain.Artifact;
-import gov.nist.resources.portal.domain.IG_Document;
-import gov.nist.resources.portal.domain.Paper;
-import gov.nist.resources.portal.domain.Presentation;
-import gov.nist.resources.portal.domain.Schema;
-import gov.nist.resources.portal.domain.Tool;
+import gov.nist.resources.portal.domain.*;
 import gov.nist.resources.portal.repository.ArtifactRepository;
 import gov.nist.resources.portal.repository.IG_DocumentRepository;
 import gov.nist.resources.portal.repository.PaperRepository;
@@ -23,12 +18,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.geo.GeoJson;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class HomeController {
+	
 @Autowired
 ToolRepository tools;
 @Autowired
@@ -46,14 +45,14 @@ IG_DocumentRepository IGs;
 SchemaDomainRepository SchemaDomain;
 
 @RequestMapping(value="/", method= RequestMethod.POST)
-	public String home(){
+	public @ResponseBody String home(){
 	
 		return "index";
 	}
 
 
 @RequestMapping(value="/tools", method= RequestMethod.POST)
-public List<Tool> getTools(){
+public @ResponseBody List<Tool> POSTTools(){
 
 
    List<Tool> all= tools.findAll();
@@ -62,7 +61,7 @@ public List<Tool> getTools(){
 }
 
 @RequestMapping(value="/papers2", method= RequestMethod.POST)
-public List<Paper> getpapers(){
+public @ResponseBody List<Paper> POSTpapers(){
 
 
 
@@ -73,7 +72,7 @@ public List<Paper> getpapers(){
 }
 
 @RequestMapping(value="/artifacts", method= RequestMethod.POST)
-public List<Artifact> POSTArtifacts(){
+public @ResponseBody List<Artifact> POSTArtifacts(){
 
 
    List<Artifact> all= artifacts.findAll();
@@ -83,7 +82,7 @@ public List<Artifact> POSTArtifacts(){
 
 
 @RequestMapping(value="/schemas", method= RequestMethod.POST)
-public List<Schema> POSTSchemas(){
+public @ResponseBody List<Schema> POSTSchemas(){
 
 
    List<Schema> all=  schemas.findAll();
@@ -91,7 +90,7 @@ public List<Schema> POSTSchemas(){
 	return all;
 }
 @RequestMapping(value="/schemaDomain", method= RequestMethod.POST)
-public List<gov.nist.resources.portal.domain.SchemaDomain> postSchemaDomain(){
+public @ResponseBody List<gov.nist.resources.portal.domain.SchemaDomain> POSTSchemaDomain(){
 
 
    List<SchemaDomain> all= SchemaDomain.findAll();
@@ -99,7 +98,7 @@ public List<gov.nist.resources.portal.domain.SchemaDomain> postSchemaDomain(){
 	return all;
 }
 @RequestMapping(value="/presentations", method= RequestMethod.POST)
-public List<Presentation> POSTPresentations(){
+public @ResponseBody List<Presentation> POSTPresentations(){
 
 
 
@@ -109,7 +108,7 @@ public List<Presentation> POSTPresentations(){
 }
 
 @RequestMapping(value="/IGs", method= RequestMethod.POST)
-public  List<IG_Document> getIGs(){
+public  @ResponseBody List<IG_Document> POSTIGs(){
 
 
 
@@ -118,6 +117,10 @@ public  List<IG_Document> getIGs(){
 	return all;
 }
 
-
+//@RequestMapping(value="/admin", method= RequestMethod.POST)
+//public String user(ModelMap model) {
+//	model.addAttribute("message", "Spring Security - ROLE_ADMIN");
+//	return "hello";
+//}
 
 }
