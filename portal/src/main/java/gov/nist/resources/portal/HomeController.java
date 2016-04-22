@@ -8,6 +8,7 @@ import java.util.List;
 import gov.nist.resources.portal.domain.*;
 import gov.nist.resources.portal.repository.ArtifactRepository;
 import gov.nist.resources.portal.repository.IG_DocumentRepository;
+import gov.nist.resources.portal.repository.LinksRepository;
 import gov.nist.resources.portal.repository.PaperRepository;
 import gov.nist.resources.portal.repository.PresentationRepository;
 import gov.nist.resources.portal.repository.SchemaDomainRepository;
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class HomeController {
 	
 @Autowired
@@ -43,6 +44,9 @@ PresentationRepository presentations;
 IG_DocumentRepository IGs; 
 @Autowired
 SchemaDomainRepository SchemaDomain;
+
+@Autowired
+LinksRepository Links;
 
 @RequestMapping(value="/", method= RequestMethod.POST)
 	public @ResponseBody String home(){
@@ -116,6 +120,28 @@ public  @ResponseBody List<IG_Document> POSTIGs(){
 
 	return all;
 }
+
+@RequestMapping(value="/links", method= RequestMethod.POST)
+public  @ResponseBody List<Links> links(){
+
+
+
+   List<Links> all= Links.findAll();
+
+	return all;
+}
+
+@RequestMapping("/user")
+public Principal user(Principal user) {
+  return user;
+}
+
+
+@RequestMapping("/admin")
+public String admin() {
+  return "admin";
+}
+
 
 //@RequestMapping(value="/admin", method= RequestMethod.POST)
 //public String user(ModelMap model) {

@@ -9,7 +9,14 @@ public class Presentation {
 	private Object id; 
 	private String title;
 	private String place;
+	private double order;
 
+	public double getOrder() {
+		return order;
+	}
+	public void setOrder(double order) {
+		this.order = order;
+	}
 	public String getPlace() {
 		return place;
 	}

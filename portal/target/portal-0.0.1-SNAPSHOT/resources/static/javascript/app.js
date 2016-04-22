@@ -1,4 +1,4 @@
-var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap','ui.router']);
+var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap','ui.router','ngRoute']);
 
 
 
@@ -13,7 +13,8 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    $scope.artifacts =[];
    $scope.presentations =[];
    $scope.schemaDomain = [];
-  
+   $scope.links =[];
+
    $scope.sort ={
 		   title : ""
    };
@@ -24,10 +25,10 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   domain : ""
 		   
    };
-   $scope.status ={
-		   open : "true"
-		   
-   };
+//   $scope.status ={
+//		   open : "false"
+//		   
+//   };
    $scope.archived ={
 		   archived : "false"
 		   
@@ -226,6 +227,14 @@ $http.post("/portal/schemaDomain").success(function (response) {
 	  $scope.schemaDomain = response;
 	});
 
+$http.post("/portal/links").success(function (response) {
+	  console.log(response);
+	  $scope.links = response;
+	});
+
+
+
+
   
   $scope.open = function(tool) {
 	  $scope.tool = tool;
@@ -326,6 +335,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('tools', {
             url: '/tools',
             templateUrl: 'resources/static/javascript/directives_templates/tools-tab.html'
+        })        
+        .state('toolsdev', {
+            url: '/tools/dev',
+            templateUrl: 'resources/static/javascript/directives_templates/tools-tabDev.html'
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
@@ -349,7 +362,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
     	  
    	 url: '/about',
         templateUrl: 'resources/static/javascript/directives_templates/about-tab.html'
-   });
+   }).
+   state('links', {
+ 	  
+	   	 url: '/links',
+	        templateUrl: 'resources/static/javascript/directives_templates/links.html'
+	   }).
+   state('admin', {
+ 	  
+	   	 url: '/admin',
+	     templateUrl: 'resources/static/javascript/directives_templates/login.html'
+	   })
+   ;
     $urlRouterProvider.otherwise('/');
     
     
@@ -359,5 +383,45 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
 });
 
+
+app.controller('login',
+
+		  function($rootScope, $scope, $http, $location) {
+	
+		  var authenticate = function(credentials, callback) {
+
+		    var headers = credentials ? {authorization : "Basic "
+		        + btoa(credentials.username + ":" + credentials.password)
+		    } : {};
+
+		    $http.get('user', {headers : headers}).success(function(data) {
+		      if (data.name) {
+		        $rootScope.authenticated = true;
+		      } else {
+		        $rootScope.authenticated = false;
+		      }
+		      callback && callback();
+		    }).error(function() {
+		      $rootScope.authenticated = false;
+		      callback && callback();
+		    });
+
+		  }
+
+		  authenticate();
+		  $scope.credentials = {};
+		  $scope.test ="sdsdsds";
+		  $scope.login = function() {
+		      authenticate($scope.credentials, function() {
+		        if ($rootScope.authenticated) {
+		          $location.path("/");
+		          $scope.error = false;
+		        } else {
+		          $location.path("/admin");
+		          $scope.error = true;
+		        }
+		      });
+		  };
+		});
 
 

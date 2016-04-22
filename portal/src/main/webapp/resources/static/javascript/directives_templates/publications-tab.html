@@ -56,7 +56,7 @@
             </uib-accordion-group>
             <uib-accordion-group heading='Presentations' is-open="status1.open">
 <uib-accordion-heading>
-     <i class="glyphicon" ng-class="{'glyphicon-triangle-bottom': status1.open, 'glyphicon-triangle-right': !status1.open}"></i>  <strong>Presentations</strong>
+     <i class="glyphicon" ng-class="{'glyphicon-triangle-bottom': status1.open, 'glyphicon-triangle-right': !status1.open}"></i>  <strong>Presentations and Technical Documents</strong>
       </uib-accordion-heading>
 
                 
@@ -70,7 +70,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="presentation in presentations">
+                        <tr ng-repeat="presentation in presentations |orderBy:'-order'">
                            <td >
                      <a class="link" href="resources/static/slides/{{presentation.link}}">      {{presentation.title}} </a>
                             </td>

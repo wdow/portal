@@ -1,4 +1,4 @@
-var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap','ui.router']);
+var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap','ui.router','ngRoute']);
 
 
 
@@ -13,7 +13,8 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
    $scope.artifacts =[];
    $scope.presentations =[];
    $scope.schemaDomain = [];
-  
+   $scope.links =[];
+
    $scope.sort ={
 		   title : ""
    };
@@ -24,10 +25,10 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   domain : ""
 		   
    };
-   $scope.status ={
-		   open : "true"
-		   
-   };
+//   $scope.status ={
+//		   open : "false"
+//		   
+//   };
    $scope.archived ={
 		   archived : "false"
 		   
@@ -226,6 +227,14 @@ $http.post("/portal/schemaDomain").success(function (response) {
 	  $scope.schemaDomain = response;
 	});
 
+$http.post("/portal/links").success(function (response) {
+	  console.log(response);
+	  $scope.links = response;
+	});
+
+
+
+
   
   $scope.open = function(tool) {
 	  $scope.tool = tool;
@@ -310,9 +319,9 @@ app.filter("categoryFilter", [function() {
 }]);
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider,$compileProvider) {
     
-    
+	
     
     $stateProvider
         
@@ -367,18 +376,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
    ;
     $urlRouterProvider.otherwise('/');
     
-    
-    
-    
-    
-    
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|blob):/);
 });
 
 
 app.controller('login',
 
 		  function($rootScope, $scope, $http, $location) {
-
+	
 		  var authenticate = function(credentials, callback) {
 
 		    var headers = credentials ? {authorization : "Basic "

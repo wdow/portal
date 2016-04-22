@@ -32,6 +32,19 @@
 <!--       <beans:constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/> -->
 <!--     </beans:bean> -->
 
+ <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix">
+        <beans:value>/*</beans:value>
+</beans:property>
+	        <beans:property name="suffix">
+	            <beans:value>.jsp</beans:value>
+	        </beans:property>
+
+	    </beans:bean>
+
+
+
+
 
 <mongo:mongo host="127.0.0.1" port="27017" />
 	<mongo:db-factory dbname="ResourcePortal" />

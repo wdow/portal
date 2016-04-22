@@ -14,10 +14,11 @@
  <script src="resources/static/javascript/external_modules/ng-simplePagination/simplePagination.js"></script> 
 <script src="resources/static/javascript/external_modules/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="resources/static/javascript/external_modules/angular-animate/angular-animate.js"></script>
-
+<script src="resources/static/javascript/external_modules/angular-route/angular-route.js"></script>
 <script src="resources/static/javascript/external_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 <script src="resources/static/javascript/app.js"></script> 
+<script src="resources/static/javascript/login.js"></script> 
 </head>
 
 <body ng-app="app" ng-controller="toolController">
@@ -45,21 +46,28 @@
 					<li ng-class="{active :isActive(2)}" ng-click="setActive(2)"><a
 						ui-sref="publications"> <span style="color: black;">
 								Publications</span></a></li>
-					</a>
+				
 					</li>
 					<li ng-class="{active :isActive(3)}" ng-click="setActive(3)" ><a
 						ui-sref="resources"><span style="color: black;">
 								Resources</span></a></li>
-					</a>
 					</li>
 					<li ng-class="{ active :isActive(4)}" ng-click="setActive(4)"><a
 						ui-sref="sourcecodes "><span style="color: black;">
 								Source Code</span></a></li>
+								
+								
 					<li ng-class="{ active :isActive(5)}" ng-click="setActive(5)"><a
+						ui-sref="links "><span style="color: black;">
+								Links</span></a></li>
+					</li>			
+								
+								
+					<li ng-class="{ active :isActive(6)}" ng-click="setActive(6)"><a
 						ui-sref="about "><span style="color: black;">
 								About</span></a></li>
-					</a>
 					</li>
+										
 					
 				
 				

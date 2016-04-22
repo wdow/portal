@@ -32,6 +32,7 @@
 <!--       <beans:constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/> -->
 <!--     </beans:bean> -->
 
+
 <mongo:mongo host="127.0.0.1" port="27017" />
 	<mongo:db-factory dbname="ResourcePortal" />
 
