@@ -69,7 +69,10 @@
 					</li>
 										
 					
-				
+<!-- 									<li ng-class="{ active :isActive(7)}" ng-click="setActive(6)"><a -->
+<!-- 						href="/admin "><span style="color: black;"> -->
+<!-- 								admin</span></a></li> -->
+<!-- 					</li> -->
 				
 			</div>
 		</nav>

@@ -319,9 +319,9 @@ app.filter("categoryFilter", [function() {
 }]);
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider,$compileProvider) {
     
-    
+	
     
     $stateProvider
         
@@ -376,11 +376,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
    ;
     $urlRouterProvider.otherwise('/');
     
-    
-    
-    
-    
-    
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|blob):/);
 });
 
 
