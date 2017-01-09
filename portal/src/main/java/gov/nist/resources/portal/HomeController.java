@@ -20,6 +20,8 @@ import org.springframework.data.mongodb.core.geo.GeoJson;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -62,6 +64,28 @@ public @ResponseBody List<Tool> POSTTools(){
    List<Tool> all= tools.findAll();
 
 	return all;
+}
+
+@RequestMapping(value="/toolsBydomain", method= RequestMethod.POST)
+public @ResponseBody List<Tool> findByDomain(@RequestBody String domain){
+
+
+   List<Tool> all= tools.findAll();
+   List temp=new ArrayList<Tool>();
+   for(Tool t :all){
+	   
+	   if(!t.getTypes().isEmpty()){
+		   for(String s: t.getTypes()){
+			   if(s.equals(domain)){
+			   temp.add(t);
+			   }
+			   
+		   }
+	   }
+   }
+   
+
+	return temp;
 }
 
 @RequestMapping(value="/papers2", method= RequestMethod.POST)

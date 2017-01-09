@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="tools")
 
-public class Tool {
+public class Tool extends TypedResource{
 	
 	 @Id
 	 private Object id;

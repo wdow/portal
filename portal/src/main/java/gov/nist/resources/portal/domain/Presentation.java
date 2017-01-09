@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="presentations")
-public class Presentation {
+public class Presentation extends TypedResource{
 	@Id
 	private Object id; 
 	private String title;

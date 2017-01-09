@@ -4,7 +4,7 @@ var app = angular.module('app', ['simplePagination', 'ngAnimate', 'ui.bootstrap'
 
 
 
-app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log','$templateCache', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance,$templateCache) {
+app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$uibModal','$log','$templateCache','$q', function($scope,$filter, Pagination, $http,$uibModal,$log,$modalInstance,$templateCache,$q) {
 
    $scope.tools =[];
    $scope.FilteredTools=[];
@@ -33,6 +33,53 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 		   archived : "false"
 		   
    };
+   $scope.mapType={};
+   $scope.type="Document Sharing";
+   $scope.setCurrentType=function(type){
+	   
+   	$scope.type=type;
+   	
+   	angular.forEach($scope.tools,function(tool){
+   		if(!$scope.mapType[tool.id]){
+   		
+   		}
+   	})
+   	
+   }
+   
+   $scope.byType = function(element) {
+	   if($scope.type=="ALL"){
+			   return true;
+		   }
+		   
+		   else {
+			   if(element.types){
+				   angular.forEach(element.types, function(type){
+					   if($scope.type==type)
+						   $scope.mapType[element.id]=true;
+				   });
+			   }
+			   
+		   }
+   }
+	  
+	$scope.findByType=function(domain){
+		
+               $http.post('/portal/toolsBydomain',domain).then(function(response) {
+            	   
+                   var info = angular.fromJson(response.data);
+                   $scope.tools=info;
+                  // delay.resolve(info);
+               }, function(error) {
+                 //  delay.reject(error);
+               });
+           
+		
+	}
+   
+   
+   
+   
    $scope.version ={
 		   standardVersion : ""
    };
@@ -102,6 +149,8 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
     	return temp;
     }
     
+    
+    
       //$scope.limit=tools.filter($scope.myFilter).filter($scope.ActivityFilter);
     $scope.myFilter = function(tool) {
         if(tool.hasOwnProperty('categorie'))
@@ -140,7 +189,9 @@ app.controller('toolController', ['$scope','$filter', 'Pagination','$http', '$ui
 //   };
 
    
-
+    $scope.findToolsByType= function(type){
+    	
+    };
 $scope.limit= Math.ceil($scope.FilteredTools.length/$scope.pagination.perPage);
     $scope.setTab = function(activeTab) {
         $scope.tab = activeTab;
@@ -231,6 +282,8 @@ $http.post("/portal/links").success(function (response) {
 	  console.log(response);
 	  $scope.links = response;
 	});
+
+
 
 
 

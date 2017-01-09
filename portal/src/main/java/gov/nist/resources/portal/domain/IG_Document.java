@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection="IG_Document")
-public class IG_Document {
+public class IG_Document extends TypedResource{
 
 	public IG_Document() {
 		// TODO Auto-generated constructor stub

@@ -1,6 +1,6 @@
 package gov.nist.resources.portal.domain;
 
-public class Component {
+public class Component extends TypedResource{
 private String title;
 private String link;
 public String getTitle() {

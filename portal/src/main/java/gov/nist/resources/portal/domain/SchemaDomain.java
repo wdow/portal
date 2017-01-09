@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection="SchemaDomains")
-public class SchemaDomain {
+public class SchemaDomain extends TypedResource{
 
 
 	public SchemaDomain() {

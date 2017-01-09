@@ -3,7 +3,7 @@ package gov.nist.resources.portal.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="artifacts")
-public class Artifact {
+public class Artifact  extends TypedResource{
 @Id
 private Object id;
 private String domain;
