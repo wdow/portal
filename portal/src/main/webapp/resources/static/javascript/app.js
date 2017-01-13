@@ -257,6 +257,7 @@ app
 
 								}
 								$scope.FilteredTools = temp;
+								$scope.com=1;
 
 								return temp;
 							}
