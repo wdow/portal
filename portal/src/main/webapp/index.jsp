@@ -28,7 +28,7 @@
 <script src="resources/static/javascript/login.js"></script>
 </head>
 
-<body ng-app="app" ng-controller="toolController">
+<body ng-app="app" ng-controller="toolController" >
 	<div class="appContent">
 
 

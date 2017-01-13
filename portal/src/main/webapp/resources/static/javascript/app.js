@@ -46,9 +46,9 @@ app
 							$scope.mapType = {};
 							$scope.MenuIsVisible = true;
 							$scope.switchMenu = function() {
-								//console.log($scope.MenuIsVisible);
+								// console.log($scope.MenuIsVisible);
 								$scope.MenuIsVisible = !$scope.MenuIsVisible;
-								//console.log($scope.MenuIsVisible);
+								// console.log($scope.MenuIsVisible);
 
 							}
 							$scope.setCurrentType = function(type) {
@@ -93,21 +93,29 @@ app
 								$scope.domain.domain = "All";
 
 								// grab data by domain
-								$http.post('/portal/tools').then(
-										function(response) {
-											var info = angular
-													.fromJson(response.data);
-											$scope.tools = info;
-											
-											//check tools for github links
-											$scope.sourceCode = [];
-											angular.forEach($scope.tools, function(tool) {
-												if (tool.git) {
-													$scope.sourceCode.push(tool);
-												}
-											});
-										});
-								
+								$http
+										.post('/portal/tools')
+										.then(
+												function(response) {
+													var info = angular
+															.fromJson(response.data);
+													$scope.tools = info;
+
+													// check tools for github
+													// links
+													$scope.sourceCode = [];
+													angular
+															.forEach(
+																	$scope.tools,
+																	function(
+																			tool) {
+																		if (tool.git) {
+																			$scope.sourceCode
+																					.push(tool);
+																		}
+																	});
+												});
+
 								$http.post('/portal/papers2').then(
 										function(response) {
 											var info = angular
@@ -143,10 +151,9 @@ app
 											$scope.links = info;
 										});
 
-
 								// reset back to first page of results
 								$scope.pagination.toPageId(0);
-								console.log("called findAllContent");
+								//console.log("called findAllContent");
 							}
 
 							$scope.findByType = function(domain) {
@@ -168,15 +175,20 @@ app
 															.fromJson(response.data);
 													$scope.tools = info;
 
-													//check retrieved tools for github links
+													// check retrieved tools for
+													// github links
 													$scope.sourceCode = [];
-													angular.forEach($scope.tools, function(tool) {													
-														if (tool.git) {
-															$scope.sourceCode.push(tool);
-														}
-													});
+													angular
+															.forEach(
+																	$scope.tools,
+																	function(
+																			tool) {
+																		if (tool.git) {
+																			$scope.sourceCode
+																					.push(tool);
+																		}
+																	});
 												});
-								
 
 								$http
 										.post('/portal/papersByDomain', domain)
@@ -223,6 +235,7 @@ app
 
 								// reset back to first page of results
 								$scope.pagination.toPageId(0);
+								//console.log("called findByType");
 							}
 
 							$scope.version = {
@@ -257,7 +270,7 @@ app
 
 								}
 								$scope.FilteredTools = temp;
-								$scope.com=1;
+								$scope.com = 1;
 
 								return temp;
 							}
@@ -273,9 +286,9 @@ app
 									categorie : ""
 								};
 								$scope.domain = {
-									domain : "All"
+									domain : ""
 								};
-								//initialize page to display all tools
+								// initialize page to display all tools
 								$scope.findAllContent();
 							}
 							$scope.compareToDomainss = function(domain) {
@@ -399,6 +412,7 @@ app
 									function(response) {
 										// console.log(response);
 										$scope.tools = response;
+										
 									});
 
 							// $http.post("/portal/papers").success(function
@@ -469,8 +483,12 @@ app
 							$scope.cancel = function() {
 								$scope.modalInstance.dismiss('cancel');
 							};
-						} ]);
-
+							//$scope.findAllContent();
+							var init = function() {
+								$scope.findAllContent();
+							}
+							init();
+						}  ]);
 
 
 app
@@ -512,14 +530,14 @@ app
 					};
 				});
 app
-.directive(
-		'adminTab',
-		function() {
-			return {
-				restrict : 'E',
-				templateUrl : 'resources/static/javascript/directives_templates/login.html'
-			};
-		});
+		.directive(
+				'adminTab',
+				function() {
+					return {
+						restrict : 'E',
+						templateUrl : 'resources/static/javascript/directives_templates/login.html'
+					};
+				});
 
 app.filter("sanitize", [ '$sce', function($sce) {
 	return function(htmlCode) {
@@ -626,13 +644,13 @@ function($rootScope, $scope, $http, $location) {
 		$http.get('user', {
 			headers : headers
 		}).success(function(data) {
-			console.log("retrieved");
-			console.log(data);
+			//console.log("retrieved");
+			//console.log(data);
 			if (data.name) {
-				console.log("authenticated successfully");
+				//console.log("authenticated successfully");
 				$rootScope.authenticated = true;
 			} else {
-				console.log("failed authentication");
+				//console.log("failed authentication");
 				$rootScope.authenticated = false;
 			}
 			callback && callback();
@@ -645,15 +663,15 @@ function($rootScope, $scope, $http, $location) {
 
 	authenticate();
 	$scope.credentials = {};
-	//$scope.test = "sdsdsds";
+	// $scope.test = "sdsdsds";
 	$scope.login = function() {
 		authenticate($scope.credentials, function() {
 			if ($rootScope.authenticated) {
-				console.log("logged in!");
+				//console.log("logged in!");
 				$location.path("/");
 				$scope.error = false;
 			} else {
-				console.log("failed to log in");
+				//console.log("failed to log in");
 				$location.path("/admin");
 				$scope.error = true;
 			}
