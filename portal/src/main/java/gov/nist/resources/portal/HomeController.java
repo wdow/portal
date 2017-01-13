@@ -14,10 +14,15 @@ import gov.nist.resources.portal.repository.PresentationRepository;
 import gov.nist.resources.portal.repository.SchemaDomainRepository;
 import gov.nist.resources.portal.repository.SchemaRepository;
 import gov.nist.resources.portal.repository.ToolRepository;
+import gov.nist.resources.portal.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.mongodb.core.geo.GeoJson;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,6 +51,8 @@ PresentationRepository presentations;
 IG_DocumentRepository IGs; 
 @Autowired
 SchemaDomainRepository SchemaDomain;
+@Autowired
+UserRepository user;
 
 @Autowired
 LinksRepository Links;
@@ -55,6 +62,13 @@ LinksRepository Links;
 	
 		return "index";
 	}
+
+/*@RequestMapping("/user")
+public Principal user(Principal user){
+
+
+   return user;
+}*/
 
 
 @RequestMapping(value="/tools", method= RequestMethod.POST)
@@ -67,8 +81,7 @@ public @ResponseBody List<Tool> POSTTools(){
 }
 
 @RequestMapping(value="/toolsBydomain", method= RequestMethod.POST)
-public @ResponseBody List<Tool> findByDomain(@RequestBody String domain){
-
+public @ResponseBody List<Tool> findToolsByDomain(@RequestBody String domain){
 
    List<Tool> all= tools.findAll();
    List temp=new ArrayList<Tool>();
@@ -87,6 +100,100 @@ public @ResponseBody List<Tool> findByDomain(@RequestBody String domain){
 
 	return temp;
 }
+
+@RequestMapping(value="/papersByDomain", method= RequestMethod.POST)
+public @ResponseBody List<Paper> findPapersByDomain(@RequestBody String domain){
+
+   List<Paper> all= papers.findAll();
+   List temp=new ArrayList<Paper>();
+   for(Paper p :all){
+	   
+	   if(!p.getTypes().isEmpty()){
+		   for(String s: p.getTypes()){
+			   if(s.equals(domain)){
+			   temp.add(p);
+			   }
+			   
+		   }
+	   }
+   }
+   return temp;
+}
+
+@RequestMapping(value="/presentationsByDomain", method= RequestMethod.POST)
+public @ResponseBody List<Presentation> findPresentationsByDomain(@RequestBody String domain){
+
+   List<Presentation> all= presentations.findAll();
+   List temp=new ArrayList<Presentation>();
+   for(Presentation p :all){
+	   
+	   if(!p.getTypes().isEmpty()){
+		   for(String s: p.getTypes()){
+			   if(s.equals(domain)){
+			   temp.add(p);
+			   }
+			   
+		   }
+	   }
+   }
+   return temp;
+}
+
+@RequestMapping(value="/IGsByDomain", method= RequestMethod.POST)
+public @ResponseBody List<Paper> findIGsByDomain(@RequestBody String domain){
+
+   List<IG_Document> all= IGs.findAll();
+   List temp=new ArrayList<IG_Document>();
+   for(IG_Document p :all){
+	   
+	   if(!p.getTypes().isEmpty()){
+		   for(String s: p.getTypes()){
+			   if(s.equals(domain)){
+			   temp.add(p);
+			   }
+			   
+		   }
+	   }
+   }
+   return temp;
+}
+
+@RequestMapping(value="/schemasByDomain", method= RequestMethod.POST)
+public @ResponseBody List<SchemaDomain> findSchemasByDomain(@RequestBody String domain){
+
+   List<SchemaDomain> all= SchemaDomain.findAll();
+   List temp=new ArrayList<SchemaDomain>();
+   for(SchemaDomain p :all){
+	   
+	   if(!p.getTypes().isEmpty()){
+		   for(String s: p.getTypes()){
+			   if(s.equals(domain)){
+			   temp.add(p);
+			   }
+			   
+		   }
+	   }
+   }
+   return temp;
+}
+@RequestMapping(value="/linksByDomain", method= RequestMethod.POST)
+public @ResponseBody List<Links> findLinksByDomain(@RequestBody String domain){
+
+	   List<Links> all= Links.findAll();
+	   List temp=new ArrayList<Links>();
+	   for(Links p :all){
+		   
+		   if(!p.getTypes().isEmpty()){
+			   for(String s: p.getTypes()){
+				   if(s.equals(domain)){
+				   temp.add(p);
+				   }
+				   
+			   }
+		   }
+	   }
+	   return temp;
+	}
 
 @RequestMapping(value="/papers2", method= RequestMethod.POST)
 public @ResponseBody List<Paper> POSTpapers(){
@@ -160,6 +267,19 @@ public Principal user(Principal user) {
   return user;
 }
 
+/*@Configuration
+//@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http
+      .httpBasic()
+    .and()
+      .authorizeRequests()
+        .anyRequest().authenticated();
+  }
+}
+*/
 
 @RequestMapping("/admin")
 public String admin() {

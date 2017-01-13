@@ -192,7 +192,7 @@
 	}
 }
 
-@media ( min-width :992px) {
+@media ( ) {
 	.container {
 		width: 970px
 	}
@@ -204,7 +204,7 @@
 		width: 8.3333333333%
 	}
 	.col-md-2 {
-		width: 16.6666666667%
+		width: 12.6666666667%
 	}
 	.col-md-3 {
 		width: 25%
